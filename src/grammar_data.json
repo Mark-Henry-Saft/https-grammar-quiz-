@@ -12,7 +12,7 @@
   },
   {
     "rule": "Well vs Good",
-    "sentence": "She plays the piano very .",
+    "sentence": "She plays the piano very ________.",
     "options": [
       "well",
       "good"
@@ -20,6 +20,28 @@
     "correct": "well",
     "explanation": "Use 'well' to describe the action (how she plays).",
     "image": "https://loremflickr.com/800/600/plays?lock=1"
+  },
+  {
+    "rule": "Well vs Good",
+    "sentence": "He speaks English ________.",
+    "options": [
+      "well",
+      "good"
+    ],
+    "correct": "well",
+    "explanation": "He speaks (action) well (adverb). 'Good' would describe his character, not his speech skills.",
+    "image": "https://loremflickr.com/800/600/speaking?lock=57"
+  },
+  {
+    "rule": "Well vs Good",
+    "sentence": "How are you? I am ________.",
+    "options": [
+      "well",
+      "good"
+    ],
+    "correct": "well",
+    "explanation": "When referring to health, 'well' is the correct adjective. 'I am good' technically means you are a virtuous person.",
+    "image": "https://loremflickr.com/800/600/happy?lock=58"
   },
   {
     "rule": "To vs Too vs Two",
@@ -47,7 +69,7 @@
   },
   {
     "rule": "Their vs There vs They're",
-    "sentence": " is no reason to be upset.",
+    "sentence": "________ is no reason to be upset.",
     "options": [
       "Their",
       "There",
@@ -588,7 +610,7 @@
       "hanged / hung"
     ],
     "correct": "hung / hanged",
-    "explanation": "Objects are 'hung.' People are 'hanged' (executed). Unless you're a curtain, avoid being hanged.",
+    "explanation": "Objects are 'hung' (like a picture). People are 'hanged' (in history books). The pirate was hanged, but his flag was hung.",
     "image": "https://loremflickr.com/800/600/curtains?lock=52"
   },
   {
@@ -615,14 +637,14 @@
   },
   {
     "rule": "The Oxford Comma",
-    "sentence": "I invited the strippers, ________.",
+    "sentence": "I had a breakfast of ________.",
     "options": [
-      "JFK and Stalin",
-      "JFK, and Stalin"
+      "toast, eggs and orange juice",
+      "toast, eggs, and orange juice"
     ],
-    "correct": "JFK, and Stalin",
-    "explanation": "Without the Oxford comma, it sounds like JFK and Stalin ARE the strippers. A truly terrifying image.",
-    "image": "https://loremflickr.com/800/600/invited?lock=55"
+    "correct": "toast, eggs, and orange juice",
+    "explanation": "Use the Oxford comma to keep things clear. Otherwise, your toast might be made of eggs and orange juice!",
+    "image": "https://loremflickr.com/800/600/breakfast?lock=55"
   },
   {
     "rule": "Possessive Apostrophes",

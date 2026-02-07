@@ -6,23 +6,52 @@ import FeedbackSheet from './FeedbackSheet';
 import correctSound from '../assets/sounds/correct.wav';
 import incorrectSound from '../assets/sounds/incorrect.wav';
 
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800";
+const FALLBACK_IMAGE = "https://placehold.co/800x600/e2e8f0/475569?text=Grammar+Quiz";
 
-export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete, playClick }) {
+export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete, playClick, playCorrect, currentStreak }) {
     const [feedbackState, setFeedbackState] = useState({ show: false, correct: false });
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [imgSrc, setImgSrc] = useState(questionData.image);
     const [showStreak, setShowStreak] = useState(false);
+    const [showEncouragement, setShowEncouragement] = useState(null);
+    const [timeLeft, setTimeLeft] = useState(10);
 
-    // Calculate current streak
-    const currentStreak = React.useMemo(() => {
-        let streak = 0;
-        for (let i = answerHistory.length - 1; i >= 0; i--) {
-            if (answerHistory[i]) streak++;
-            else break;
+    const [sarcasticMessage, setSarcasticMessage] = useState(null);
+
+    // Sarcastic Replies for Incorrect Answers
+    const sarcasticReplies = [
+        "Oof. That happened.",
+        "Swing and a miss!",
+        "Did you even read the question?",
+        "Grammar is hard. Apparantly.",
+        "My cat could guess better.",
+        "Are you guessing?",
+        "Try again, but with feeling.",
+        "Close! But mostly wrong.",
+        "I'm judging you silently.",
+        "English is tough, huh?"
+    ];
+
+    // Timer Logic
+    React.useEffect(() => {
+        if (feedbackState.show) return;
+
+        if (timeLeft === 0) {
+            setFeedbackState({ show: true, correct: false });
+            setSelectedAnswer("TIMEOUT");
+            setSarcasticMessage("Time's up! Speed reading isn't your thing?");
+            const audio = new Audio(incorrectSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error(e));
+            return;
         }
-        return streak;
-    }, [answerHistory]);
+
+        const timerId = setInterval(() => {
+            setTimeLeft(prev => prev - 1);
+        }, 1000);
+
+        return () => clearInterval(timerId);
+    }, [timeLeft, feedbackState.show]);
 
     // Trigger animation on 5/10/15 etc
     React.useEffect(() => {
@@ -31,6 +60,22 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
             const timer = setTimeout(() => setShowStreak(false), 3000);
             return () => clearTimeout(timer);
         }
+
+        // Encouragement Logic
+        if (currentStreak > 1 && !feedbackState.show) {
+            const messages = [
+                "That's it!",
+                "You are doing it!!",
+                "You are on your way to mastery!",
+                "Keep it up!",
+                "Unstoppable!"
+            ];
+            if (currentStreak % 3 === 0) {
+                const msg = messages[Math.floor(Math.random() * messages.length)];
+                setShowEncouragement(msg);
+                setTimeout(() => setShowEncouragement(null), 2000);
+            }
+        }
     }, [currentStreak]);
 
     // Reset state when question changes
@@ -38,6 +83,8 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         setFeedbackState({ show: false, correct: false });
         setSelectedAnswer(null);
         setImgSrc(questionData.image);
+        setTimeLeft(10);
+        setSarcasticMessage(null);
     }, [questionData]);
 
     const playSound = (isCorrect) => {
@@ -58,144 +105,193 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
 
         setSelectedAnswer(answer);
         setFeedbackState({ show: true, correct: isCorrect });
+
+        if (!isCorrect && answer !== "SKIP") {
+            const randomSarcasm = sarcasticReplies[Math.floor(Math.random() * sarcasticReplies.length)];
+            setSarcasticMessage(randomSarcasm);
+        } else if (answer === "SKIP") {
+            setSarcasticMessage("Coward's way out? Okay.");
+        }
     };
 
     const handleRetry = () => {
         setFeedbackState({ show: false, correct: false });
         setSelectedAnswer(null);
+        setSarcasticMessage(null);
     };
 
     const handleNext = () => {
         onComplete(feedbackState.correct);
     };
 
-    // Split sentence to highlight the blank or selected answer
-    const sentenceParts = questionData.sentence.split('________');
-
     return (
-        <div className="bg-pattern min-h-screen flex flex-col w-full text-slate-900 dark:text-slate-100">
+        <div className="bg-pattern min-h-screen flex flex-col w-full text-slate-900 dark:text-slate-100 overflow-hidden">
 
-            {/* Header */}
-            <header className="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
-                <div className="flex items-center justify-between max-w-md mx-auto">
+            {/* Encouragement Overlay */}
+            {showEncouragement && (
+                <div className="absolute top-20 left-0 right-0 z-50 flex justify-center pointer-events-none animate-in fade-in slide-in-from-top-4 duration-300">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-1.5 rounded-full font-bold text-base shadow-lg transform -rotate-1 border-2 border-white/50">
+                        {showEncouragement} <Flame className="inline w-4 h-4 ml-1 fill-white stroke-none" />
+                    </div>
+                </div>
+            )}
+
+            {/* Header - Compact */}
+            <header className="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 pt-2 pb-1 shadow-sm">
+                <div className="flex items-center justify-between max-w-md mx-auto h-10">
                     <button
                         onClick={onBack}
-                        className="w-10 h-10 flex items-center justify-start text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                        className="w-8 h-8 flex items-center justify-start text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
                     >
-                        <ChevronLeft size={24} />
+                        <ChevronLeft size={20} />
                     </button>
-                    <h1 className="text-lg font-bold tracking-tight">Grammar Quiz</h1>
-                    <button className="w-10 h-10 flex items-center justify-end text-primary">
-                        <Settings size={24} />
+                    <h1 className="text-base font-bold tracking-tight opacity-80">Grammar Quiz</h1>
+                    <button className="w-8 h-8 flex items-center justify-end text-primary opacity-0 pointer-events-none">
+                        <Settings size={20} />
                     </button>
                 </div>
 
-                {/* Progress Bar */}
-                <div className="max-w-md mx-auto mt-4 px-2">
-                    <div className="flex justify-between items-end mb-2">
-                        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{questionData.rule}</span>
-                        <span className="text-sm font-bold text-primary">{questionIndex + 1} / {totalQuestions}</span>
+                {/* Progress Bar - Compact */}
+                <div className="max-w-md mx-auto mt-1 px-1">
+                    <div className="flex justify-between items-end mb-1">
+                        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider truncate max-w-[150px]">{questionData.rule}</span>
+                        <div className="flex items-center gap-2">
+                            {/* Timer */}
+                            <div className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-colors flex items-center gap-1 ${timeLeft <= 3 ? 'text-red-500 bg-red-100 animate-pulse' : 'text-slate-500 bg-slate-100'}`}>
+                                <span>⏱</span> {timeLeft}s
+                            </div>
+
+                            {currentStreak > 2 && (
+                                <span className="text-[10px] font-bold text-orange-500 animate-pulse flex items-center gap-1">
+                                    <Flame size={10} fill="currentColor" /> {currentStreak}
+                                </span>
+                            )}
+                            <span className="text-[10px] font-bold text-slate-400">{questionIndex + 1} / {totalQuestions}</span>
+                        </div>
                     </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                    <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
                         <div
-                            className="bg-primary h-full rounded-full transition-all duration-500"
+                            className="bg-primary h-full rounded-full transition-all duration-500 ease-out"
                             style={{ width: `${((questionIndex + 1) / totalQuestions) * 100}%` }}
                         ></div>
                     </div>
                 </div>
             </header>
 
-            <main className="flex-1 flex flex-col px-6 py-8 max-w-md mx-auto w-full">
-                {/* Question Header */}
-                <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold mb-2">{questionData.rule}</h2>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">Tap the word that correctly fills the gap.</p>
-                </div>
+            <main className="flex-1 flex flex-col px-3 py-2 max-w-md mx-auto w-full relative z-0 justify-center">
 
-                {/* Question Card */}
-                <div className="bg-white dark:bg-slate-900 rounded-xl ios-shadow p-8 mb-10 border border-slate-100 dark:border-slate-800">
-                    <div className="flex flex-col items-center text-center space-y-6">
-                        <div className="w-full h-40 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center overflow-hidden relative">
-                            <img
-                                key={questionData.image} // Force re-render on new question
-                                src={imgSrc}
-                                alt={questionData.rule}
-                                onError={() => setImgSrc(FALLBACK_IMAGE)}
-                                className="w-full h-full object-cover opacity-90 transition-opacity duration-300"
-                            />
-                        </div>
-                        <p className="text-xl font-medium leading-relaxed">
-                            {sentenceParts[0]}
-                            <span className={`inline-block border-b-2 mx-1 font-bold ${selectedAnswer ? 'text-primary border-primary' : 'w-16 border-slate-300'}`}>
-                                {selectedAnswer || ""}
-                            </span>
-                            {sentenceParts[1]}
+                {/* Image Area - Reduced height */}
+                <div className="bg-white dark:bg-slate-900 rounded-xl ios-shadow p-3 mb-3 border border-slate-100 dark:border-slate-800 relative overflow-hidden shrink-0">
+                    <div className="w-full h-32 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center overflow-hidden relative shadow-inner mb-3">
+                        <img
+                            key={questionData.image}
+                            src={imgSrc}
+                            alt={questionData.rule}
+                            onError={() => setImgSrc(FALLBACK_IMAGE)}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    {/* Sentence - Compact Text */}
+                    <div className="flex flex-col items-center text-center">
+                        <h2 className="text-lg font-bold mb-1 text-slate-800 dark:text-white hidden">{questionData.rule}</h2>
+                        <p className="text-lg font-medium leading-snug px-1">
+                            {(() => {
+                                const parts = questionData.sentence.split('________');
+                                const answerParts = selectedAnswer
+                                    ? selectedAnswer.split('/').map(s => s.trim())
+                                    : Array(parts.length - 1).fill("");
+
+                                return parts.map((part, index) => (
+                                    <React.Fragment key={index}>
+                                        {part}
+                                        {index < parts.length - 1 && (
+                                            <span className={`inline-block border-b-2 mx-1 font-bold transition-colors duration-300 ${selectedAnswer ? 'text-primary border-primary' : 'min-w-[2.5rem] border-slate-300 text-transparent'}`}>
+                                                {answerParts[index] || "____"}
+                                            </span>
+                                        )}
+                                    </React.Fragment>
+                                ));
+                            })()}
                         </p>
                     </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="grid grid-cols-1 gap-4 mb-8">
+                {/* Sarcastic Message on Wrong Answer (Inline) */}
+                {sarcasticMessage && (
+                    <div className="text-center mb-2 animate-in slide-in-from-bottom-2 fade-in">
+                        <span className="text-sm font-bold text-red-500 italic bg-red-50 px-3 py-1 rounded-full">{sarcasticMessage}</span>
+                    </div>
+                )}
+
+
+                {/* Action Buttons - Compact Grid */}
+                <div className="grid grid-cols-1 gap-2 mb-2 w-full">
                     {questionData.options.map((option, idx) => (
                         <button
                             key={idx}
                             onClick={() => handleAnswer(option)}
-                            className={`w-full h-16 rounded-xl font-bold text-xl flex items-center justify-center gap-2 group relative overflow-hidden active:translate-y-[2px] transition-all duration-100 ${selectedAnswer === option
-                                ? (option === questionData.correct ? 'bg-green-500 text-white border-green-600' : 'bg-red-500 text-white border-red-600')
-                                : 'btn-secondary bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-200 dark:border-slate-700'
-                                }`}
+                            disabled={!!selectedAnswer}
+                            className={`w-full h-12 rounded-lg font-bold text-base flex items-center justify-center gap-2 group relative overflow-hidden active:scale-[0.98] transition-all duration-200 ${selectedAnswer === option
+                                ? (option === questionData.correct ? 'bg-green-500 text-white border-green-600 shadow-sm' : 'bg-red-500 text-white border-red-600 shadow-sm')
+                                : (selectedAnswer === "TIMEOUT" && option === questionData.correct
+                                    ? 'bg-green-100 text-green-700 border-2 border-green-300'
+                                    : 'btn-secondary bg-white dark:bg-slate-800 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50')
+                                } ${!!selectedAnswer && selectedAnswer !== option && option !== questionData.correct ? 'opacity-50 grayscale' : ''}`}
                         >
-                            <span className="truncate">{option}</span>
-                            {idx === 0 && <CheckCircle className="absolute right-6 opacity-0 group-hover:opacity-20 transition-opacity" />}
-                            {idx !== 0 && <HelpCircle className="absolute right-6 opacity-0 group-hover:opacity-20 transition-opacity text-slate-400" />}
+                            <span className="truncate px-4">{option}</span>
+                            {selectedAnswer === option && option === questionData.correct && (
+                                <CheckCircle className="absolute right-4 w-4 h-4 animate-in zoom-in spin-in-90 duration-300" />
+                            )}
+                            {selectedAnswer === option && option !== questionData.correct && (
+                                <X className="absolute right-4 w-4 h-4 animate-in zoom-in duration-300" />
+                            )}
                         </button>
                     ))}
                 </div>
 
-                {/* Footer Utilities & Tally */}
-                <div className="mt-auto flex flex-col gap-4 px-2 pb-6">
-                    {/* Visual Tally */}
-                    <div className="flex justify-between items-end px-2 h-32">
-                        {/* Green Stacks (Left) */}
-                        <div className="flex gap-2 overflow-x-auto max-w-[40%] scrollbar-hide py-1">
+                {/* Footer Utilities & Tally - Compact */}
+                <div className="mt-auto flex flex-col gap-1 px-1 pb-2 shrink-0">
+                    <div className="flex justify-between items-end h-16 relative">
+                        {/* Green Stacks */}
+                        <div className="flex gap-1 overflow-x-auto max-w-[42%] scrollbar-hide py-1 pl-1 mask-linear-fade-right">
                             {Array.from({ length: Math.ceil(answerHistory.filter(Boolean).length / 5) || 1 }).map((_, stackIdx) => (
-                                <div key={stackIdx} className="flex flex-col-reverse gap-1 min-w-[24px]">
+                                <div key={stackIdx} className="flex flex-col-reverse gap-0.5 min-w-[16px]">
                                     {answerHistory.filter(Boolean).slice(stackIdx * 5, (stackIdx + 1) * 5).map((_, i) => (
-                                        <div key={i} className="w-6 h-6 rounded-full bg-green-100 border-2 border-green-500 flex items-center justify-center shrink-0">
-                                            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                                        <div key={i} className="w-4 h-4 rounded bg-green-100 border border-green-400 flex items-center justify-center shrink-0 shadow-sm animate-in zoom-in duration-300">
+                                            <div className="w-1 h-1 rounded-full bg-green-500"></div>
                                         </div>
                                     ))}
                                 </div>
                             ))}
                         </div>
 
-                        {/* Skip Button (Center) */}
-                        <div className="flex-1 flex items-center justify-center shrink-0 mx-2 mb-10">
-                            <button className="flex items-center gap-2 text-slate-500 dark:text-slate-400 font-semibold text-sm hover:text-primary transition-colors whitespace-nowrap">
-                                <SkipForward size={20} />
+                        {/* Skip Button */}
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+                            <button
+                                onClick={() => handleAnswer("SKIP")}
+                                disabled={!!selectedAnswer}
+                                className={`flex flex-col items-center gap-0.5 text-[10px] font-bold text-slate-400 hover:text-slate-600 transition-colors ${!!selectedAnswer ? 'opacity-0' : 'opacity-100'}`}
+                            >
+                                <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center bg-white shadow-sm">
+                                    <SkipForward size={14} />
+                                </div>
                                 SKIP
                             </button>
                         </div>
 
-                        {/* Red Stacks (Right) */}
-                        <div className="flex gap-2 overflow-x-auto max-w-[40%] scrollbar-hide py-1 justify-end flex-row-reverse">
+                        {/* Red Stacks */}
+                        <div className="flex gap-1 overflow-x-auto max-w-[42%] scrollbar-hide py-1 pr-1 justify-end flex-row-reverse mask-linear-fade-left">
                             {Array.from({ length: Math.ceil(answerHistory.filter(x => !x).length / 5) || 1 }).map((_, stackIdx) => (
-                                <div key={stackIdx} className="flex flex-col-reverse gap-1 min-w-[24px]">
+                                <div key={stackIdx} className="flex flex-col-reverse gap-0.5 min-w-[16px]">
                                     {answerHistory.filter(x => !x).slice(stackIdx * 5, (stackIdx + 1) * 5).map((_, i) => (
-                                        <div key={i} className="w-6 h-6 rounded-full bg-red-100 border-2 border-red-500 flex items-center justify-center shrink-0 relative">
-                                            <X size={14} className="text-red-600 stroke-[3]" />
+                                        <div key={i} className="w-4 h-4 rounded bg-red-100 border border-red-400 flex items-center justify-center shrink-0 relative shadow-sm animate-in zoom-in duration-300">
+                                            <X size={10} className="text-red-600" />
                                         </div>
                                     ))}
                                 </div>
                             ))}
                         </div>
-                    </div>
-
-
-                    <div className="flex items-center justify-end">
-                        <button className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center ios-shadow transition-transform active:scale-95">
-                            <Lightbulb className="fill-current" size={24} />
-                        </button>
                     </div>
                 </div>
             </main>

@@ -52,6 +52,22 @@ export default function ResultScreen({ score, total, onRestart, playClick }) {
                         <RotateCcw size={20} />
                         Try Again
                     </button>
+
+                    {/* Donation Section */}
+                    <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 w-full animate-fade-in">
+                        <p className="text-xs text-slate-400 mb-3 uppercase tracking-wider font-semibold">Support the Developer and Make English Grammar Great Again!</p>
+                        <div className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700">
+                            <img
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=0x109e87DfA42086D2BB09eEC03E4ed03Ada588E3e"
+                                alt="Ethereum Donation QR"
+                                className="w-32 h-32 mx-auto rounded-lg mb-3 mix-blend-multiply dark:mix-blend-normal"
+                            />
+                            <p className="text-[10px] text-slate-400 font-mono break-all text-center select-all cursor-pointer hover:text-primary transition-colors" onClick={() => navigator.clipboard.writeText('0x109e87DfA42086D2BB09eEC03E4ed03Ada588E3e')}>
+                                0x109e87DfA42086D2BB09eEC03E4ed03Ada588E3e
+                            </p>
+                            <p className="text-xs text-slate-500 mt-2">ETH Donation</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
