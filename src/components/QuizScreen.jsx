@@ -18,6 +18,18 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
 
     const [sarcasticMessage, setSarcasticMessage] = useState(null);
 
+    const positiveFeedbacks = [
+        "Incredible!", "Excellent!", "Fantastic!", "Superb!", "Amazing!",
+        "Magnificent!", "Outstanding!", "Brilliant!", "Splendid!", "Marvelous!",
+        "Stupendous!", "Terrific!", "Phenomenal!", "Exceptional!", "Wonderful!",
+        "First-rate!", "Impressive!", "Bravo!", "Unstoppable!", "Masterful!",
+        "Legendary!", "Correct!", "Spot on!", "Genius!", "Perfect!",
+        "A+!", "Top notch!", "Flawless!", "Admirable!", "Sensational!",
+        "Exquisite!", "Keep going!", "You're a pro!", "Grammar Guru!", "Elite!", "Whiz!"
+    ];
+
+    const [randomPositive, setRandomPositive] = useState("Incredible!");
+
     // Timer Logic
     React.useEffect(() => {
         if (feedbackState.show) return;
@@ -129,6 +141,8 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
             const pool = isSupporter ? [...sarcasticReplies, ...eliteSarcasticReplies] : sarcasticReplies;
             const message = questionData.sarcastic_comment || pool[Math.floor(Math.random() * pool.length)];
             setSarcasticMessage(message);
+        } else if (isCorrect) {
+            setRandomPositive(positiveFeedbacks[Math.floor(Math.random() * positiveFeedbacks.length)]);
         } else if (answer === "SKIP") {
             setSarcasticMessage(isSupporter ? "Elite runners don't skip. But here we are." : "Coward's way out? Okay.");
         }
@@ -143,6 +157,26 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
     const handleNext = () => {
         onComplete(feedbackState.correct, timeLeft);
     };
+
+    // Word Card Component for Arsenal Questions
+    const WordCard = ({ word, pron, usage, definition }) => (
+        <div className="linen-paper rounded-2xl p-6 mt-4 mb-6 border-2 border-[#e5e0d0] relative overflow-hidden animate-in zoom-in-95 duration-500">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 opacity-30"></div>
+            <div className="flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                    <span className="text-2xl font-black text-slate-800 tracking-tight">{word}</span>
+                    <span className="text-xs font-serif italic text-slate-500">{pron}</span>
+                </div>
+                <div className="h-px bg-slate-200/50 w-full"></div>
+                <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-amber-600 mb-1 block">Usage Context</span>
+                    <p className="text-sm font-serif italic text-slate-700 leading-relaxed">
+                        "{usage}"
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <div className="bg-pattern min-h-screen flex flex-col w-full text-slate-900 dark:text-slate-100 overflow-hidden">
@@ -323,11 +357,19 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                                     </div>
                                     <div className="flex-1">
                                         <h4 className="text-lg font-black text-slate-900 dark:text-white mb-1">
-                                            {feedbackState.correct ? 'Incredible!' : (selectedAnswer === "TIMEOUT" ? "Time Out!" : 'Not Quite')}
+                                            {feedbackState.correct ? randomPositive : (selectedAnswer === "TIMEOUT" ? "Time Out!" : 'Not Quite')}
                                         </h4>
                                         <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
                                             {questionData.explanation || (feedbackState.correct ? "Spot on! You mastered this rule." : "Study the rule above and try next time.")}
                                         </p>
+
+                                        {feedbackState.correct && questionData.category === "The Arsenal" && (
+                                            <WordCard
+                                                word={questionData.correct}
+                                                pron={questionData.pronunciation}
+                                                usage={questionData.usage}
+                                            />
+                                        )}
                                         <button
                                             onClick={handleNext}
                                             className={`w-full h-14 rounded-xl font-bold text-lg text-white transition-all transform active:scale-95 shadow-lg ${feedbackState.correct ? 'bg-green-500 shadow-green-200' : 'bg-red-500 shadow-red-200'

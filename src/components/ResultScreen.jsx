@@ -1,17 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RotateCcw, Trophy, Share2, Crown, Flame, Zap, Coffee, ExternalLink, Heart } from 'lucide-react';
+import fanfareSound from '../assets/sounds/fanfare.wav';
 
-export default function ResultScreen({ score, total, totalTimeRemaining, topScores = [], onUpdateLeaderboard, onRestart, playClick, onZen }) {
+export default function ResultScreen({ score, total, totalTimeRemaining, topScores = [], onUpdateLeaderboard, onRestart, playClick, onZen, isSupporter, setIsSupporter }) {
     const percentage = Math.round((score / total) * 100);
     const avgTimeRemaining = total > 0 ? (totalTimeRemaining / total).toFixed(1) : "0.0";
 
-    // Check supporter status
-    const [isSupporter, setIsSupporter] = useState(() => localStorage.getItem('grammarQuiz_isSupporter') === 'true');
-
     // Ensure we only save the score once per mount
     const hasSavedRef = useRef(false);
+    const hasPlayedFanfareRef = useRef(false);
 
     useEffect(() => {
+        if (score === total && !hasPlayedFanfareRef.current) {
+            const audio = new Audio(fanfareSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Fanfare play failed", e));
+            hasPlayedFanfareRef.current = true;
+        }
+
         if (hasSavedRef.current) return;
         hasSavedRef.current = true;
 
@@ -26,8 +32,10 @@ export default function ResultScreen({ score, total, totalTimeRemaining, topScor
     }, [score, totalTimeRemaining, onUpdateLeaderboard]);
 
     const handleSupportSuccess = () => {
-        setIsSupporter(true);
-        localStorage.setItem('grammarQuiz_isSupporter', 'true');
+        if (setIsSupporter) {
+            setIsSupporter(true);
+            localStorage.setItem('grammarQuiz_isSupporter', 'true');
+        }
     };
 
     return (

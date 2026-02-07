@@ -9,7 +9,8 @@
     "correct": "good",
     "sarcastic_comment": "Describing the job? Use 'good.' Unless you think you did a 'well' job, in which case you might need more than just grammar help.",
     "explanation": "'Good' is an adjective (describes the job). 'Well' is usually an adverb (describes how you did something).",
-    "image": "https://loremflickr.com/800/600/presentation?lock=0"
+    "image": "https://loremflickr.com/800/600/presentation?lock=0",
+    "category": "The Foundation"
   },
   {
     "rule": "Well vs Good",
@@ -21,7 +22,8 @@
     "correct": "well",
     "sarcastic_comment": "Action needs an adverb. She plays well. If she played 'good,' she'd be a superhero, not a pianist.",
     "explanation": "Use 'well' to describe the action (how she plays).",
-    "image": "https://loremflickr.com/800/600/plays?lock=1"
+    "image": "https://loremflickr.com/800/600/plays?lock=1",
+    "category": "The Foundation"
   },
   {
     "rule": "Well vs Good",
@@ -33,7 +35,8 @@
     "correct": "well",
     "sarcastic_comment": "He speaks (action) well (adverb). Saying he speaks 'good' is like saying he speaks 'purple'—it just doesn't fit the verb.",
     "explanation": "He speaks (action) well (adverb). 'Good' would describe his character, not his speech skills.",
-    "image": "https://loremflickr.com/800/600/speaking?lock=57"
+    "image": "https://loremflickr.com/800/600/speaking?lock=57",
+    "category": "The Foundation"
   },
   {
     "rule": "Well vs Good",
@@ -44,7 +47,8 @@
     ],
     "correct": "well",
     "explanation": "When referring to health, 'well' is the correct adjective. 'I am good' technically means you are a virtuous person.",
-    "image": "https://loremflickr.com/800/600/happy?lock=58"
+    "image": "https://loremflickr.com/800/600/happy?lock=58",
+    "category": "The Foundation"
   },
   {
     "rule": "To vs Too vs Two",
@@ -57,7 +61,8 @@
     "correct": "too",
     "sarcastic_comment": "Too many 'o's? Too much cold? Yes. One 'o' is just a destination.",
     "explanation": "Use 'too' when you mean 'excessively' or 'also'.",
-    "image": "https://loremflickr.com/800/600/outside?lock=2"
+    "image": "https://loremflickr.com/800/600/outside?lock=2",
+    "category": "The Foundation"
   },
   {
     "rule": "To vs Too vs Two",
@@ -69,7 +74,8 @@
     ],
     "correct": "to",
     "explanation": "Use 'to' for direction or as part of a verb.",
-    "image": "https://loremflickr.com/800/600/going?lock=3"
+    "image": "https://loremflickr.com/800/600/going?lock=3",
+    "category": "The Foundation"
   },
   {
     "rule": "Their vs There vs They're",
@@ -82,7 +88,8 @@
     "correct": "There",
     "sarcastic_comment": "Location, location, location. 'There' is a place. 'Their' is people. 'They're' is a contraction. Do I have to draw a map?",
     "explanation": "Use 'There' for a location or to state that something exists.",
-    "image": "https://loremflickr.com/800/600/reason?lock=4"
+    "image": "https://loremflickr.com/800/600/reason?lock=4",
+    "category": "The Foundation"
   },
   {
     "rule": "Their vs There vs They're",
@@ -94,7 +101,8 @@
     ],
     "correct": "Their",
     "explanation": "Use 'Their' to show possession (it belongs to them).",
-    "image": "https://loremflickr.com/800/600/responsibility?lock=5"
+    "image": "https://loremflickr.com/800/600/responsibility?lock=5",
+    "category": "The Foundation"
   },
   {
     "rule": "Who vs Whom",
@@ -106,7 +114,8 @@
     "correct": "whom",
     "sarcastic_comment": "If you can answer with 'him,' use 'whom.' To him? To whom. It's the M at the end. Use it.",
     "explanation": "Use 'whom' after a preposition like 'to' or 'for'. (Tip: Answer with 'him').",
-    "image": "https://loremflickr.com/800/600/address?lock=6"
+    "image": "https://loremflickr.com/800/600/address?lock=6",
+    "category": "The Foundation"
   },
   {
     "rule": "Affect vs Effect",
@@ -117,7 +126,8 @@
     ],
     "correct": "affect",
     "explanation": "Use 'affect' as a verb (the action of changing something).",
-    "image": "https://loremflickr.com/800/600/sleep?lock=7"
+    "image": "https://loremflickr.com/800/600/sleep?lock=7",
+    "category": "The Foundation"
   },
   {
     "rule": "Affect vs Effect",
@@ -128,7 +138,8 @@
     ],
     "correct": "effect",
     "explanation": "Use 'effect' as a noun (the result of a change).",
-    "image": "https://loremflickr.com/800/600/lower?lock=8"
+    "image": "https://loremflickr.com/800/600/lower?lock=8",
+    "category": "The Foundation"
   },
   {
     "rule": "Compliment vs Complement",
@@ -139,7 +150,8 @@
     ],
     "correct": "complement",
     "explanation": "'Complement' means to complete or enhance.",
-    "image": "https://loremflickr.com/800/600/silver?lock=9"
+    "image": "https://loremflickr.com/800/600/silver?lock=9",
+    "category": "The Foundation"
   },
   {
     "rule": "Lose vs Loose",
@@ -150,7 +162,8 @@
     ],
     "correct": "lose",
     "explanation": "'Lose' is a verb meaning to misplace.",
-    "image": "https://loremflickr.com/800/600/careful?lock=10"
+    "image": "https://loremflickr.com/800/600/careful?lock=10",
+    "category": "The Foundation"
   },
   {
     "rule": "Advice vs Advise",
@@ -161,7 +174,8 @@
     ],
     "correct": "advice",
     "explanation": "'Advice' is the noun (the thing you receive).",
-    "image": "https://loremflickr.com/800/600/Advice?lock=11"
+    "image": "https://loremflickr.com/800/600/Advice?lock=11",
+    "category": "The Foundation"
   },
   {
     "rule": "Allusion vs Illusion",
@@ -172,7 +186,8 @@
     ],
     "correct": "illusion",
     "explanation": "An 'illusion' is a deceptive appearance or trick.",
-    "image": "https://loremflickr.com/800/600/magician?lock=12"
+    "image": "https://loremflickr.com/800/600/magician?lock=12",
+    "category": "The Foundation"
   },
   {
     "rule": "Allusion vs Illusion",
@@ -183,7 +198,8 @@
     ],
     "correct": "allusion",
     "explanation": "An 'allusion' is an indirect reference to something.",
-    "image": "https://loremflickr.com/800/600/Shakespeare?lock=13"
+    "image": "https://loremflickr.com/800/600/Shakespeare?lock=13",
+    "category": "The Foundation"
   },
   {
     "rule": "Discreet vs Discrete",
@@ -194,7 +210,8 @@
     ],
     "correct": "discrete",
     "explanation": "'Discrete' means separate or distinct.",
-    "image": "https://loremflickr.com/800/600/broken?lock=14"
+    "image": "https://loremflickr.com/800/600/broken?lock=14",
+    "category": "The Foundation"
   },
   {
     "rule": "Discreet vs Discrete",
@@ -205,7 +222,8 @@
     ],
     "correct": "discreet",
     "explanation": "'Discreet' means careful or cautious in speech/action.",
-    "image": "https://loremflickr.com/800/600/Please?lock=15"
+    "image": "https://loremflickr.com/800/600/Please?lock=15",
+    "category": "The Foundation"
   },
   {
     "rule": "Elicit vs Illicit",
@@ -216,7 +234,8 @@
     ],
     "correct": "elicit",
     "explanation": "'Elicit' means to draw out or provoke.",
-    "image": "https://loremflickr.com/800/600/detective?lock=16"
+    "image": "https://loremflickr.com/800/600/detective?lock=16",
+    "category": "The Foundation"
   },
   {
     "rule": "Emigrate vs Immigrate",
@@ -227,7 +246,8 @@
     ],
     "correct": "emigrate",
     "explanation": "'Emigrate' means to leave your own country (Exit).",
-    "image": "https://loremflickr.com/800/600/Ireland?lock=17"
+    "image": "https://loremflickr.com/800/600/Ireland?lock=17",
+    "category": "The Foundation"
   },
   {
     "rule": "Emigrate vs Immigrate",
@@ -238,7 +258,8 @@
     ],
     "correct": "immigrate",
     "explanation": "'Immigrate' means to come into a new country (In).",
-    "image": "https://loremflickr.com/800/600/people?lock=18"
+    "image": "https://loremflickr.com/800/600/people?lock=18",
+    "category": "The Foundation"
   },
   {
     "rule": "Ensure vs Insure",
@@ -249,7 +270,8 @@
     ],
     "correct": "ensure",
     "explanation": "'Ensure' means to make certain.",
-    "image": "https://loremflickr.com/800/600/Check?lock=19"
+    "image": "https://loremflickr.com/800/600/Check?lock=19",
+    "category": "The Foundation"
   },
   {
     "rule": "Ensure vs Insure",
@@ -260,7 +282,8 @@
     ],
     "correct": "insure",
     "explanation": "'Insure' refers to financial insurance policies.",
-    "image": "https://loremflickr.com/800/600/house?lock=20"
+    "image": "https://loremflickr.com/800/600/house?lock=20",
+    "category": "The Foundation"
   },
   {
     "rule": "Lay vs Lie",
@@ -271,7 +294,8 @@
     ],
     "correct": "lie",
     "explanation": "You 'lie' yourself down. (No object).",
-    "image": "https://loremflickr.com/800/600/going?lock=21"
+    "image": "https://loremflickr.com/800/600/going?lock=21",
+    "category": "The Foundation"
   },
   {
     "rule": "Lay vs Lie",
@@ -282,7 +306,8 @@
     ],
     "correct": "lay",
     "explanation": "You 'lay' an object down.",
-    "image": "https://loremflickr.com/800/600/Please?lock=22"
+    "image": "https://loremflickr.com/800/600/Please?lock=22",
+    "category": "The Foundation"
   },
   {
     "rule": "Principal vs Principle",
@@ -293,7 +318,8 @@
     ],
     "correct": "principal",
     "explanation": "'Principal' means main or primary.",
-    "image": "https://loremflickr.com/800/600/reason?lock=23"
+    "image": "https://loremflickr.com/800/600/reason?lock=23",
+    "category": "The Foundation"
   },
   {
     "rule": "Peak vs Peek vs Pique",
@@ -305,7 +331,8 @@
     ],
     "correct": "peak",
     "explanation": "'Peak' is the top of a mountain.",
-    "image": "https://loremflickr.com/800/600/mountain?lock=24"
+    "image": "https://loremflickr.com/800/600/mountain?lock=24",
+    "category": "The Foundation"
   },
   {
     "rule": "Peak vs Peek vs Pique",
@@ -317,7 +344,8 @@
     ],
     "correct": "peek",
     "explanation": "'Peek' means to take a quick look.",
-    "image": "https://loremflickr.com/800/600/presents?lock=25"
+    "image": "https://loremflickr.com/800/600/presents?lock=25",
+    "category": "The Foundation"
   },
   {
     "rule": "Peak vs Peek vs Pique",
@@ -329,7 +357,8 @@
     ],
     "correct": "pique",
     "explanation": "'Pique' means to excite or stimulate.",
-    "image": "https://loremflickr.com/800/600/mystery?lock=26"
+    "image": "https://loremflickr.com/800/600/mystery?lock=26",
+    "category": "The Foundation"
   },
   {
     "rule": "Sight vs Site vs Cite",
@@ -341,7 +370,8 @@
     ],
     "correct": "site",
     "explanation": "'Site' is a location.",
-    "image": "https://loremflickr.com/800/600/construction?lock=27"
+    "image": "https://loremflickr.com/800/600/construction?lock=27",
+    "category": "The Foundation"
   },
   {
     "rule": "Sight vs Site vs Cite",
@@ -353,7 +383,8 @@
     ],
     "correct": "cite",
     "explanation": "'Cite' means to quote or reference.",
-    "image": "https://loremflickr.com/800/600/Please?lock=28"
+    "image": "https://loremflickr.com/800/600/Please?lock=28",
+    "category": "The Foundation"
   },
   {
     "rule": "Stationary vs Stationery",
@@ -364,7 +395,8 @@
     ],
     "correct": "stationary",
     "explanation": "'Stationary' means not moving.",
-    "image": "https://loremflickr.com/800/600/Stationary?lock=29"
+    "image": "https://loremflickr.com/800/600/Stationary?lock=29",
+    "category": "The Foundation"
   },
   {
     "rule": "Than vs Then",
@@ -375,7 +407,8 @@
     ],
     "correct": "than",
     "explanation": "'Than' is used for comparisons.",
-    "image": "https://loremflickr.com/800/600/taller?lock=30"
+    "image": "https://loremflickr.com/800/600/taller?lock=30",
+    "category": "The Foundation"
   },
   {
     "rule": "Than vs Then",
@@ -386,7 +419,8 @@
     ],
     "correct": "then",
     "explanation": "'Then' refers to time or a sequence of events.",
-    "image": "https://loremflickr.com/800/600/dinner?lock=31"
+    "image": "https://loremflickr.com/800/600/dinner?lock=31",
+    "category": "The Foundation"
   },
   {
     "rule": "Passed vs Past",
@@ -397,7 +431,8 @@
     ],
     "correct": "past",
     "explanation": "'Past' refers to a place or a time.",
-    "image": "https://loremflickr.com/800/600/drove?lock=32"
+    "image": "https://loremflickr.com/800/600/drove?lock=32",
+    "category": "The Foundation"
   },
   {
     "rule": "Passed vs Past",
@@ -408,7 +443,8 @@
     ],
     "correct": "passed",
     "explanation": "'Passed' is the past tense of the verb 'to pass'.",
-    "image": "https://loremflickr.com/800/600/teammate?lock=33"
+    "image": "https://loremflickr.com/800/600/teammate?lock=33",
+    "category": "The Foundation"
   },
   {
     "rule": "Brake vs Break",
@@ -419,7 +455,8 @@
     ],
     "correct": "brake",
     "explanation": "'Brake' is the device used to stop a vehicle.",
-    "image": "https://loremflickr.com/800/600/slowly?lock=34"
+    "image": "https://loremflickr.com/800/600/slowly?lock=34",
+    "category": "The Foundation"
   },
   {
     "rule": "Brake vs Break",
@@ -430,7 +467,8 @@
     ],
     "correct": "break",
     "explanation": "'Break' means to smash or fracture.",
-    "image": "https://loremflickr.com/800/600/careful?lock=35"
+    "image": "https://loremflickr.com/800/600/careful?lock=35",
+    "category": "The Foundation"
   },
   {
     "rule": "Canvas vs Canvass",
@@ -441,7 +479,8 @@
     ],
     "correct": "canvas",
     "explanation": "'Canvas' is a heavy cloth used for painting or tents.",
-    "image": "https://loremflickr.com/800/600/artist?lock=36"
+    "image": "https://loremflickr.com/800/600/artist?lock=36",
+    "category": "The Foundation"
   },
   {
     "rule": "Canvas vs Canvass",
@@ -452,7 +491,8 @@
     ],
     "correct": "canvass",
     "explanation": "'Canvass' means to survey or seek support.",
-    "image": "https://loremflickr.com/800/600/politician?lock=37"
+    "image": "https://loremflickr.com/800/600/politician?lock=37",
+    "category": "The Foundation"
   },
   {
     "rule": "Council vs Counsel",
@@ -463,7 +503,8 @@
     ],
     "correct": "council",
     "explanation": "A 'council' is a group of people who manage or advise.",
-    "image": "https://loremflickr.com/800/600/discuss?lock=38"
+    "image": "https://loremflickr.com/800/600/discuss?lock=38",
+    "category": "The Foundation"
   },
   {
     "rule": "Council vs Counsel",
@@ -474,7 +515,8 @@
     ],
     "correct": "counsel",
     "explanation": "'Counsel' refers to advice or the act of giving it.",
-    "image": "https://loremflickr.com/800/600/therapist?lock=39"
+    "image": "https://loremflickr.com/800/600/therapist?lock=39",
+    "category": "The Foundation"
   },
   {
     "rule": "I vs Me",
@@ -485,7 +527,8 @@
     ],
     "correct": "me",
     "explanation": "Tip: Remove 'Sarah'. You wouldn't say 'The manager invited I.' You'd say 'The manager invited me.'",
-    "image": "https://loremflickr.com/800/600/manager?lock=40"
+    "image": "https://loremflickr.com/800/600/manager?lock=40",
+    "category": "The Foundation"
   },
   {
     "rule": "I vs Me",
@@ -496,7 +539,8 @@
     ],
     "correct": "me",
     "explanation": "After a preposition like 'between', always use the object pronoun 'me'.",
-    "image": "https://loremflickr.com/800/600/Between?lock=41"
+    "image": "https://loremflickr.com/800/600/Between?lock=41",
+    "category": "The Foundation"
   },
   {
     "rule": "Tortuous vs Torturous",
@@ -507,7 +551,8 @@
     ],
     "correct": "tortuous",
     "explanation": "'Tortuous' means full of twists and turns. 'Torturous' means involving great pain.",
-    "image": "https://loremflickr.com/800/600/mountain?lock=42"
+    "image": "https://loremflickr.com/800/600/mountain?lock=42",
+    "category": "The Foundation"
   },
   {
     "rule": "Enervate vs Energize",
@@ -518,7 +563,8 @@
     ],
     "correct": "enervate",
     "explanation": "'Enervate' means to drain of energy or weaken. It is often confused with its opposite!",
-    "image": "https://loremflickr.com/800/600/humidity?lock=43"
+    "image": "https://loremflickr.com/800/600/humidity?lock=43",
+    "category": "The Foundation"
   },
   {
     "rule": "Complacent vs Complaisant",
@@ -529,7 +575,8 @@
     ],
     "correct": "complacent",
     "explanation": "'Complacent' means self-satisfied or smug. 'Complaisant' means willing to please others.",
-    "image": "https://loremflickr.com/800/600/professional?lock=44"
+    "image": "https://loremflickr.com/800/600/professional?lock=44",
+    "category": "The Foundation"
   },
   {
     "rule": "Flaunt vs Flout",
@@ -540,7 +587,8 @@
     ],
     "correct": "flout",
     "explanation": "'Flout' means to openly disregard a rule. 'Flaunt' means to show off ostentatiously.",
-    "image": "https://loremflickr.com/800/600/rebel?lock=45"
+    "image": "https://loremflickr.com/800/600/rebel?lock=45",
+    "category": "The Foundation"
   },
   {
     "rule": "Amoral vs Immoral",
@@ -551,7 +599,8 @@
     ],
     "correct": "amoral",
     "explanation": "'Amoral' means having no moral sense at all. 'Immoral' means knowing right but doing wrong.",
-    "image": "https://loremflickr.com/800/600/Nature?lock=46"
+    "image": "https://loremflickr.com/800/600/Nature?lock=46",
+    "category": "The Foundation"
   },
   {
     "rule": "Disinterested vs Uninterested",
@@ -562,7 +611,8 @@
     ],
     "correct": "disinterested",
     "explanation": "'Disinterested' means unbiased or impartial. 'Uninterested' simply means bored.",
-    "image": "https://loremflickr.com/800/600/party?lock=47"
+    "image": "https://loremflickr.com/800/600/party?lock=47",
+    "category": "The Foundation"
   },
   {
     "rule": "Appraise vs Apprise",
@@ -573,7 +623,8 @@
     ],
     "correct": "apprise",
     "explanation": "'Apprise' means to inform. 'Appraise' means to assess the value or quality of something.",
-    "image": "https://loremflickr.com/800/600/Please?lock=48"
+    "image": "https://loremflickr.com/800/600/Please?lock=48",
+    "category": "The Foundation"
   },
   {
     "rule": "Loath vs Loathe",
@@ -584,7 +635,8 @@
     ],
     "correct": "loath",
     "explanation": "'Loath' (no 'e') is an adjective meaning reluctant. 'Loathe' is a verb meaning to hate.",
-    "image": "https://loremflickr.com/800/600/spend?lock=49"
+    "image": "https://loremflickr.com/800/600/spend?lock=49",
+    "category": "The Foundation"
   },
   {
     "rule": "Sensual vs Sensuous",
@@ -595,7 +647,8 @@
     ],
     "correct": "sensuous",
     "explanation": "'Sensuous' relates to the five senses (art/music). 'Sensual' usually relates to physical appetites.",
-    "image": "https://loremflickr.com/800/600/orchestra?lock=50"
+    "image": "https://loremflickr.com/800/600/orchestra?lock=50",
+    "category": "The Foundation"
   },
   {
     "rule": "Ingenious vs Ingenuous",
@@ -606,7 +659,8 @@
     ],
     "correct": "ingenious",
     "explanation": "'Ingenious' means clever or brilliant. 'Ingenuous' means innocent or naive.",
-    "image": "https://loremflickr.com/800/600/saved?lock=51"
+    "image": "https://loremflickr.com/800/600/saved?lock=51",
+    "category": "The Foundation"
   },
   {
     "rule": "Hanged vs Hung",
@@ -617,7 +671,8 @@
     ],
     "correct": "hung / hanged",
     "explanation": "Objects are 'hung' (like a picture). People are 'hanged' (in history books). The pirate was hanged, but his flag was hung.",
-    "image": "https://loremflickr.com/800/600/curtains?lock=52"
+    "image": "https://loremflickr.com/800/600/curtains?lock=52",
+    "category": "The Foundation"
   },
   {
     "rule": "Lighted vs Lit",
@@ -628,7 +683,8 @@
     ],
     "correct": "lit / lit",
     "explanation": "Both are actually correct, but 'lit' is the standard move in modern English. 'Lighted' sounds like you're writing a 19th-century novel.",
-    "image": "https://loremflickr.com/800/600/match?lock=53"
+    "image": "https://loremflickr.com/800/600/match?lock=53",
+    "category": "The Foundation"
   },
   {
     "rule": "The Deadly Comma",
@@ -640,7 +696,8 @@
     "correct": "Let's eat, Grandpa!",
     "explanation": "Punctuation saves lives. This classic example shows how a missing comma can turn a polite invitation into a gruesome suggestion. In grammar circles, this is known as the 'vocative comma'—the comma used to address someone directly. Without it, 'Grandpa' shifts from the person being spoken to, to the thing being eaten.",
     "image": "https://loremflickr.com/800/600/Choose?lock=54",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Oxford Comma",
@@ -651,7 +708,8 @@
     ],
     "correct": "toast, eggs, and orange juice",
     "explanation": "Use the Oxford comma to keep things clear. Otherwise, your toast might be made of eggs and orange juice!",
-    "image": "https://loremflickr.com/800/600/breakfast?lock=55"
+    "image": "https://loremflickr.com/800/600/breakfast?lock=55",
+    "category": "The Foundation"
   },
   {
     "rule": "Possessive Apostrophes",
@@ -662,7 +720,8 @@
     ],
     "correct": "boys'",
     "explanation": "Multiple boys own the room, so the apostrophe goes after the 's'. Without it, it's just a room full of boys.",
-    "image": "https://loremflickr.com/800/600/locker?lock=56"
+    "image": "https://loremflickr.com/800/600/locker?lock=56",
+    "category": "The Foundation"
   },
   {
     "rule": "The Spartan 'If'",
@@ -675,7 +734,8 @@
     "sarcastic_comment": "Brevity is power. You're talking too much; they only needed one word.",
     "explanation": "Philip II of Macedon sent a terrifying message to Sparta: 'If I bring my army into your land, I will destroy your farms, slay your people, and raze your city.' The Spartans famously replied with just one word: 'If.' Philip never invaded. This 'Laconic' style (from Laconia, Sparta) became legendary for its brevity and punch.",
     "image": "https://loremflickr.com/800/600/sparta?lock=101",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Hanged vs Hung",
@@ -687,7 +747,8 @@
     "correct": "hung / hanged",
     "sarcastic_comment": "Unless you're planning an execution, use 'hung.' Don't make things awkward.",
     "explanation": "Objects are 'hung.' Humans are 'hanged' (executed).",
-    "image": "https://loremflickr.com/800/600/chimney?lock=102"
+    "image": "https://loremflickr.com/800/600/chimney?lock=102",
+    "category": "The Foundation"
   },
   {
     "rule": "NASA's Hyphen",
@@ -700,7 +761,8 @@
     "sarcastic_comment": "Boom. $150 million gone because you skipped a dash. NASA is hiring, but maybe stay away.",
     "explanation": "In 1962, the Mariner 1 spacecraft veered off course and was destroyed just 293 seconds after launch. The culprit? A single missing 'overbar' (a hyphen-like symbol) in the handwritten guidance equations. This tiny punctuation error caused the rocket to miscalculate its velocity, leading to a $150 million explosion—one of the most expensive typos in human history.",
     "image": "https://loremflickr.com/800/600/rocket?lock=103",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "I vs Me",
@@ -711,7 +773,8 @@
     ],
     "correct": "me",
     "explanation": "Tip: Remove 'Kanya'. You wouldn't say 'The CEO invited I.' You'd say 'invited me.'",
-    "image": "https://loremflickr.com/800/600/gala?lock=105"
+    "image": "https://loremflickr.com/800/600/gala?lock=105",
+    "category": "The Foundation"
   },
   {
     "rule": "Tortuous vs Torturous",
@@ -722,7 +785,8 @@
     ],
     "correct": "tortuous",
     "explanation": "'Tortuous' means full of twists. 'Torturous' means involving pain.",
-    "image": "https://loremflickr.com/800/600/turns?lock=106"
+    "image": "https://loremflickr.com/800/600/turns?lock=106",
+    "category": "The Foundation"
   },
   {
     "rule": "Enervate vs Energize",
@@ -733,7 +797,8 @@
     ],
     "correct": "enervate",
     "explanation": "'Enervate' means to drain of energy. It's the most common trap for smart people!",
-    "image": "https://loremflickr.com/800/600/desert?lock=107"
+    "image": "https://loremflickr.com/800/600/desert?lock=107",
+    "category": "The Foundation"
   },
   {
     "rule": "The Oxford Comma",
@@ -746,7 +811,8 @@
     "sarcastic_comment": "Without that comma, you're claiming God is one of your parents. Ambitious!",
     "explanation": "This is likely the most famous example of the Oxford Comma's necessity. It reportedly comes from a real book dedication where the lack of a final comma made it sound like the author's parents were a famous philosopher and a deity. Without that tiny mark, the list 'Ayn Rand and God' becomes an appositive, describing who the parents are, rather than listing three separate entities.",
     "image": "https://loremflickr.com/800/600/parents?lock=108",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Million Dollar Comma",
@@ -759,7 +825,8 @@
     "sarcastic_comment": "One comma, two million dollars. I hope you're better with your taxes than your grammar.",
     "explanation": "This is one of the costliest clerical errors in U.S. history. In the Tariff Act of 1872, a clerk accidentally typed 'Fruit, Plants' instead of 'Fruit-plants'. This tiny comma meant that all imported FRUIT suddenly became tax-free, rather than just the plants. Before the error was fixed a year later, the government lost an estimated $2 million in revenue—equivalent to over $40 million today.",
     "image": "https://loremflickr.com/800/600/fruit?lock=109",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Disinterested vs Uninterested",
@@ -770,7 +837,8 @@
     ],
     "correct": "disinterested",
     "explanation": "'Disinterested' means unbiased. 'Uninterested' means bored.",
-    "image": "https://loremflickr.com/800/600/court?lock=110"
+    "image": "https://loremflickr.com/800/600/court?lock=110",
+    "category": "The Foundation"
   },
   {
     "rule": "Loath vs Loathe",
@@ -781,7 +849,8 @@
     ],
     "correct": "loath",
     "explanation": "'Loath' (no 'e') means reluctant. 'Loathe' is the verb meaning to hate.",
-    "image": "https://loremflickr.com/800/600/mistake?lock=111"
+    "image": "https://loremflickr.com/800/600/mistake?lock=111",
+    "category": "The Foundation"
   },
   {
     "rule": "A lot vs Alot",
@@ -793,7 +862,8 @@
     "correct": "a lot",
     "sarcastic_comment": "There is no such word as 'alot.' Unless you are talking about the mythical 'Alot' monster, use two words.",
     "explanation": "'A lot' is always two words. Always.",
-    "image": "https://loremflickr.com/800/600/lot?lock=120"
+    "image": "https://loremflickr.com/800/600/lot?lock=120",
+    "category": "The Foundation"
   },
   {
     "rule": "Should have vs Should of",
@@ -805,7 +875,8 @@
     "correct": "should have",
     "sarcastic_comment": "'Should of' is a phonetic hallucination. It's 'should have' or 'should've.' Don't trust your ears.",
     "explanation": "Because 'should've' sounds like 'should of,' people write it incorrectly. It's always 'have'.",
-    "image": "https://loremflickr.com/800/600/face?lock=121"
+    "image": "https://loremflickr.com/800/600/face?lock=121",
+    "category": "The Foundation"
   },
   {
     "rule": "Could care less",
@@ -817,7 +888,8 @@
     "correct": "couldn't",
     "sarcastic_comment": "If you 'could care less,' that means you care! If you don't care at all, you 'could NOT care less.'",
     "explanation": "This is a logic trap. 'Couldn't care less' is the only version that means you don't care.",
-    "image": "https://loremflickr.com/800/600/logic?lock=122"
+    "image": "https://loremflickr.com/800/600/logic?lock=122",
+    "category": "The Foundation"
   },
   {
     "rule": "Peak vs Peek vs Pique",
@@ -829,7 +901,8 @@
     "correct": "peak / piqued / peek",
     "sarcastic_comment": "Peak is the top; peek is a look; pique is to stimulate. Stop confusing your p-words.",
     "explanation": "Pique (French origin) is for interest. Peak is for height. Peek is for eyes.",
-    "image": "https://loremflickr.com/800/600/mountain?lock=123"
+    "image": "https://loremflickr.com/800/600/mountain?lock=123",
+    "category": "The Foundation"
   },
   {
     "rule": "Loose vs Lose",
@@ -841,7 +914,8 @@
     "correct": "loose / lose",
     "sarcastic_comment": "'Lose' has one 'o' because it lost the other one. 'Loose' has two because it's baggy.",
     "explanation": "Loose rhymes with goose. Lose rhymes with snooze.",
-    "image": "https://loremflickr.com/800/600/belt?lock=124"
+    "image": "https://loremflickr.com/800/600/belt?lock=124",
+    "category": "The Foundation"
   },
   {
     "rule": "Stationary vs Stationery",
@@ -853,7 +927,8 @@
     "correct": "stationary / stationery",
     "sarcastic_comment": "StationEry is for Letters and Envelopes (think 'E'). StationAry is for pArked cArs (think 'A').",
     "explanation": "A=At rest. E=Envelopes.",
-    "image": "https://loremflickr.com/800/600/letter?lock=125"
+    "image": "https://loremflickr.com/800/600/letter?lock=125",
+    "category": "The Foundation"
   },
   {
     "rule": "Well vs Good",
@@ -865,7 +940,8 @@
     "correct": "good",
     "sarcastic_comment": "Describe the effort? Use 'good.' Describe how you worked? Use 'well.' Don't make me explain this again.",
     "explanation": "'Good' is an adjective. It modifies the noun 'effort.'",
-    "image": "https://loremflickr.com/800/600/effort?lock=130"
+    "image": "https://loremflickr.com/800/600/effort?lock=130",
+    "category": "The Foundation"
   },
   {
     "rule": "To vs Too vs Two",
@@ -878,7 +954,8 @@
     "correct": "two",
     "sarcastic_comment": "Unless you are visiting 'to' eyes, use the number.",
     "explanation": "'Two' is the number 2.",
-    "image": "https://loremflickr.com/800/600/eyes?lock=131"
+    "image": "https://loremflickr.com/800/600/eyes?lock=131",
+    "category": "The Foundation"
   },
   {
     "rule": "Their vs There vs They're",
@@ -891,7 +968,8 @@
     "correct": "They're",
     "sarcastic_comment": "They ARE coming. They're. It's a contraction. Use your brain.",
     "explanation": "They're = They are.",
-    "image": "https://loremflickr.com/800/600/dinner?lock=132"
+    "image": "https://loremflickr.com/800/600/dinner?lock=132",
+    "category": "The Foundation"
   },
   {
     "rule": "Who vs Whom",
@@ -903,7 +981,8 @@
     "correct": "Who",
     "sarcastic_comment": "If the answer is 'he,' use 'who.' If the answer is 'him,' use 'whom.' He is going. Who is going. simple.",
     "explanation": "'Who' is the subject pronoun. 'Whom' is the object pronoun.",
-    "image": "https://loremflickr.com/800/600/party?lock=133"
+    "image": "https://loremflickr.com/800/600/party?lock=133",
+    "category": "The Foundation"
   },
   {
     "rule": "Compliment vs Complement",
@@ -915,7 +994,8 @@
     "correct": "compliment",
     "sarcastic_comment": "I Compliment people with 'I'. A Complement Completes with 'E'.",
     "explanation": "A compliment is a polite expression of praise.",
-    "image": "https://loremflickr.com/800/600/haircut?lock=134"
+    "image": "https://loremflickr.com/800/600/haircut?lock=134",
+    "category": "The Foundation"
   },
   {
     "rule": "Lose vs Loose",
@@ -927,7 +1007,8 @@
     "correct": "loose",
     "sarcastic_comment": "If it rhymes with 'moose,' use 'loose.' If you're crying because you can't find it, use 'lose.'",
     "explanation": "'Loose' is an adjective meaning not tight.",
-    "image": "https://loremflickr.com/800/600/knot?lock=135"
+    "image": "https://loremflickr.com/800/600/knot?lock=135",
+    "category": "The Foundation"
   },
   {
     "rule": "Advice vs Advise",
@@ -939,7 +1020,8 @@
     "correct": "advise",
     "sarcastic_comment": "Advise is the verb (it has a 'z' sound). Advice is the noun (it has an 's' sound).",
     "explanation": "'Advise' is the action of giving advice.",
-    "image": "https://loremflickr.com/800/600/wait?lock=136"
+    "image": "https://loremflickr.com/800/600/wait?lock=136",
+    "category": "The Foundation"
   },
   {
     "rule": "Elicit vs Illicit",
@@ -951,7 +1033,8 @@
     "correct": "illicit",
     "sarcastic_comment": "Illicit starts with 'I' like 'Illegal'. Elicit starts with 'E' like 'Extract'.",
     "explanation": "'Illicit' means forbidden by law, rules, or custom.",
-    "image": "https://loremflickr.com/800/600/trade?lock=137"
+    "image": "https://loremflickr.com/800/600/trade?lock=137",
+    "category": "The Foundation"
   },
   {
     "rule": "Principal vs Principle",
@@ -963,7 +1046,8 @@
     "correct": "principle",
     "sarcastic_comment": "The PrincipAL is your PAL. A PrincipLE is a ruLE.",
     "explanation": "A principle is a fundamental truth or proposition.",
-    "image": "https://loremflickr.com/800/600/truth?lock=138"
+    "image": "https://loremflickr.com/800/600/truth?lock=138",
+    "category": "The Foundation"
   },
   {
     "rule": "Sight vs Site vs Cite",
@@ -976,7 +1060,8 @@
     "correct": "sight",
     "sarcastic_comment": "You use your eyes for a SIGHT. You go to a location (SITE).",
     "explanation": "'Sight' refers to something seen or the faculty of seeing.",
-    "image": "https://loremflickr.com/800/600/sunrise?lock=139"
+    "image": "https://loremflickr.com/800/600/sunrise?lock=139",
+    "category": "The Foundation"
   },
   {
     "rule": "Stationary vs Stationery",
@@ -988,7 +1073,8 @@
     "correct": "stationery",
     "sarcastic_comment": "StationEry is for Envelopes. StationAry is for pArked cars. Are you sending a car or an envelope?",
     "explanation": "'Stationery' refers to writing materials.",
-    "image": "https://loremflickr.com/800/600/wedding?lock=140"
+    "image": "https://loremflickr.com/800/600/wedding?lock=140",
+    "category": "The Foundation"
   },
   {
     "rule": "I vs Me",
@@ -1000,7 +1086,8 @@
     "correct": "I",
     "sarcastic_comment": "Take Sarah out. Would you say 'Me am going'? No. Use 'I'.",
     "explanation": "Use 'I' when you are the subject of the sentence.",
-    "image": "https://loremflickr.com/800/600/concert?lock=141"
+    "image": "https://loremflickr.com/800/600/concert?lock=141",
+    "category": "The Foundation"
   },
   {
     "rule": "Tortuous vs Torturous",
@@ -1012,7 +1099,8 @@
     "correct": "torturous",
     "sarcastic_comment": "Torturous involves torture (pain). Tortuous involves turns (curves). This wait is painful, hopefully not curvy.",
     "explanation": "'Torturous' means characterized by or involving physical or mental pain.",
-    "image": "https://loremflickr.com/800/600/sun?lock=142"
+    "image": "https://loremflickr.com/800/600/sun?lock=142",
+    "category": "The Foundation"
   },
   {
     "rule": "Enervate vs Energize",
@@ -1024,7 +1112,8 @@
     "correct": "energize",
     "sarcastic_comment": "If you want to feel weak, enervate. If you want to feel like a superhero, energize.",
     "explanation": "'Energize' means to give vitality and enthusiasm to.",
-    "image": "https://loremflickr.com/800/600/shower?lock=143"
+    "image": "https://loremflickr.com/800/600/shower?lock=143",
+    "category": "The Foundation"
   },
   {
     "rule": "Complacent vs Complaisant",
@@ -1036,7 +1125,8 @@
     "correct": "complaisant",
     "sarcastic_comment": "Complacent means you're lazy and smug. Complaisant means you're eager to please. The butler isn't lazy.",
     "explanation": "'Complaisant' means willing to please others; obliging.",
-    "image": "https://loremflickr.com/800/600/butler?lock=144"
+    "image": "https://loremflickr.com/800/600/butler?lock=144",
+    "category": "The Foundation"
   },
   {
     "rule": "Flaunt vs Flout",
@@ -1048,7 +1138,8 @@
     "correct": "flaunt",
     "sarcastic_comment": "You flaunt (show off) your assets. You flout (disregard) the rules.",
     "explanation": "'Flaunt' means to display (something) ostentatiously, especially in order to provoke envy or admiration.",
-    "image": "https://loremflickr.com/800/600/gym?lock=145"
+    "image": "https://loremflickr.com/800/600/gym?lock=145",
+    "category": "The Foundation"
   },
   {
     "rule": "Amoral vs Immoral",
@@ -1060,7 +1151,8 @@
     "correct": "immoral",
     "sarcastic_comment": "Amoral means you don't even know what right and wrong are. Immoral means you know, and you're just a bad person.",
     "explanation": "'Immoral' means not conforming to accepted standards of morality.",
-    "image": "https://loremflickr.com/800/600/stealing?lock=146"
+    "image": "https://loremflickr.com/800/600/stealing?lock=146",
+    "category": "The Foundation"
   },
   {
     "rule": "Disinterested vs Uninterested",
@@ -1072,7 +1164,8 @@
     "correct": "uninterested",
     "sarcastic_comment": "Uninterested means you're bored. Disinterested means you're a fair and impartial judge. Don't be a judge, just listen.",
     "explanation": "'Uninterested' means not interested in or concerned about something.",
-    "image": "https://loremflickr.com/800/600/bored?lock=147"
+    "image": "https://loremflickr.com/800/600/bored?lock=147",
+    "category": "The Foundation"
   },
   {
     "rule": "Appraise vs Apprise",
@@ -1084,7 +1177,8 @@
     "correct": "appraise",
     "sarcastic_comment": "ApprIse means Inform. ApprAise means Assess. Assess the vase, please.",
     "explanation": "'Appraise' means to assess the value or quality of.",
-    "image": "https://loremflickr.com/800/600/vase?lock=148"
+    "image": "https://loremflickr.com/800/600/vase?lock=148",
+    "category": "The Foundation"
   },
   {
     "rule": "Loath vs Loathe",
@@ -1096,7 +1190,8 @@
     "correct": "loathe",
     "sarcastic_comment": "Loath (no 'e') is an adjective (reluctant). Loathe (with 'e') is a verb (hate). You HATE the early wake-up. Add the 'e'.",
     "explanation": "'Loathe' is a verb meaning to feel intense dislike or disgust for.",
-    "image": "https://loremflickr.com/800/600/sleepy?lock=149"
+    "image": "https://loremflickr.com/800/600/sleepy?lock=149",
+    "category": "The Foundation"
   },
   {
     "rule": "Sensual vs Sensuous",
@@ -1108,7 +1203,8 @@
     "correct": "sensual",
     "sarcastic_comment": "Sensuous involves the senses (like art). Sensual involves physical/body gratifications. A massage is definitely physical.",
     "explanation": "'Sensual' relates to or involves gratification of the senses and physical appetites.",
-    "image": "https://loremflickr.com/800/600/massage?lock=150"
+    "image": "https://loremflickr.com/800/600/massage?lock=150",
+    "category": "The Foundation"
   },
   {
     "rule": "Ingenious vs Ingenuous",
@@ -1120,7 +1216,8 @@
     "correct": "ingenuous",
     "sarcastic_comment": "Ingenious is for geniuses. Ingenuous is for innocent, naive people. She's not a genius, she's just cute.",
     "explanation": "'Ingenuous' means innocent and unsuspecting.",
-    "image": "https://loremflickr.com/800/600/smile?lock=151"
+    "image": "https://loremflickr.com/800/600/smile?lock=151",
+    "category": "The Foundation"
   },
   {
     "rule": "Who vs Whom",
@@ -1132,7 +1229,8 @@
     "correct": "whom",
     "sarcastic_comment": "Deliver it to 'him'? Then use 'whom.' Deliver it to 'he'? No, you're not that person.",
     "explanation": "Use 'whom' as the object of a preposition (in this case, 'to').",
-    "image": "https://loremflickr.com/800/600/package?lock=160"
+    "image": "https://loremflickr.com/800/600/package?lock=160",
+    "category": "The Foundation"
   },
   {
     "rule": "Affect vs Effect",
@@ -1144,7 +1242,8 @@
     "correct": "effect",
     "sarcastic_comment": "A result? Effect. To change something? Affect. The storm left a result.",
     "explanation": "Effect is typically the noun referring to the result of an action.",
-    "image": "https://loremflickr.com/800/600/storm?lock=161"
+    "image": "https://loremflickr.com/800/600/storm?lock=161",
+    "category": "The Foundation"
   },
   {
     "rule": "Compliment vs Complement",
@@ -1156,7 +1255,8 @@
     "correct": "complement",
     "sarcastic_comment": "They go together! They complete each other! Like 'E' and 'E'.",
     "explanation": "'Complement' means to add to something in a way that enhances or improves it.",
-    "image": "https://loremflickr.com/800/600/steak?lock=162"
+    "image": "https://loremflickr.com/800/600/steak?lock=162",
+    "category": "The Foundation"
   },
   {
     "rule": "Advice vs Advise",
@@ -1168,7 +1268,8 @@
     "correct": "advice",
     "sarcastic_comment": "I give advice (the thing). I advise people (the action). You want the thing.",
     "explanation": "'Advice' is the noun form.",
-    "image": "https://loremflickr.com/800/600/career?lock=163"
+    "image": "https://loremflickr.com/800/600/career?lock=163",
+    "category": "The Foundation"
   },
   {
     "rule": "Allusion vs Illusion",
@@ -1180,7 +1281,8 @@
     "correct": "allusion",
     "sarcastic_comment": "A reference is an ALLUSION. A trick of the eye is an ILLUSION.",
     "explanation": "An 'allusion' is an expression designed to call something to mind without mentioning it explicitly.",
-    "image": "https://loremflickr.com/800/600/poem?lock=164"
+    "image": "https://loremflickr.com/800/600/poem?lock=164",
+    "category": "The Foundation"
   },
   {
     "rule": "Discreet vs Discrete",
@@ -1192,7 +1294,8 @@
     "correct": "discreet",
     "discreet": "Be careful! E-E is for keepig it quiet. E-T-E is for separate units. You want the quiet one.",
     "explanation": "'Discreet' means careful and circumspect in one's speech or actions.",
-    "image": "https://loremflickr.com/800/600/exit?lock=165"
+    "image": "https://loremflickr.com/800/600/exit?lock=165",
+    "category": "The Foundation"
   },
   {
     "rule": "Elicit vs Illicit",
@@ -1204,7 +1307,8 @@
     "correct": "elicit",
     "sarcastic_comment": "Extract a response (E). Don't start a crime (I).",
     "explanation": "'Elicit' means to evoke or draw out (a reaction, answer, or fact) from someone.",
-    "image": "https://loremflickr.com/800/600/teacher?lock=166"
+    "image": "https://loremflickr.com/800/600/teacher?lock=166",
+    "category": "The Foundation"
   },
   {
     "rule": "Emigrate vs Immigrate",
@@ -1216,7 +1320,8 @@
     "correct": "immigrate",
     "sarcastic_comment": "Immigrate = In (moving into). Emigrate = Exit (moving out). They moved IN to Canada.",
     "explanation": "'Immigrate' means to come to live permanently in a foreign country.",
-    "image": "https://loremflickr.com/800/600/canada?lock=167"
+    "image": "https://loremflickr.com/800/600/canada?lock=167",
+    "category": "The Foundation"
   },
   {
     "rule": "Ensure vs Insure",
@@ -1228,7 +1333,8 @@
     "correct": "ensure",
     "sarcastic_comment": "Make sure? Ensure. Pay a company monthly for safety? Insure.",
     "explanation": "'Ensure' means to make certain that something will occur or be the case.",
-    "image": "https://loremflickr.com/800/600/tires?lock=168"
+    "image": "https://loremflickr.com/800/600/tires?lock=168",
+    "category": "The Foundation"
   },
   {
     "rule": "Lay vs Lie",
@@ -1240,7 +1346,8 @@
     "correct": "lie",
     "sarcastic_comment": "The dog is doing it himself? Lie. The dog is placing an egg? No. Only chickens lay things.",
     "explanation": "Use 'lie' for the action of reclining yourself or an animal reclining itself.",
-    "image": "https://loremflickr.com/800/600/dog?lock=169"
+    "image": "https://loremflickr.com/800/600/dog?lock=169",
+    "category": "The Foundation"
   },
   {
     "rule": "Principal vs Principle",
@@ -1252,7 +1359,8 @@
     "correct": "principal",
     "sarcastic_comment": "Is he your PAL? Yes? Principal. Is it a rule? No? Then it's the pal.",
     "explanation": "'Principal' is the person with the highest authority or most important position in an organization.",
-    "image": "https://loremflickr.com/800/600/authority?lock=170"
+    "image": "https://loremflickr.com/800/600/authority?lock=170",
+    "category": "The Foundation"
   },
   {
     "rule": "Than vs Then",
@@ -1264,7 +1372,8 @@
     "correct": "than",
     "sarcastic_comment": "Comparing two things? Use 'than.' Chronology? Use 'then.'",
     "explanation": "'Than' is a conjunction used in comparisons.",
-    "image": "https://loremflickr.com/800/600/beach?lock=171"
+    "image": "https://loremflickr.com/800/600/beach?lock=171",
+    "category": "The Foundation"
   },
   {
     "rule": "Passed vs Past",
@@ -1276,7 +1385,8 @@
     "correct": "passed",
     "sarcastic_comment": "It's a verb! He PASS-ED you. Action. Verb form.",
     "explanation": "'Passed' is the past tense of 'to pass'.",
-    "image": "https://loremflickr.com/800/600/narrow?lock=172"
+    "image": "https://loremflickr.com/800/600/narrow?lock=172",
+    "category": "The Foundation"
   },
   {
     "rule": "Brake vs Break",
@@ -1288,7 +1398,8 @@
     "correct": "break",
     "sarcastic_comment": "A pause? Break. Stopping the car? Brake.",
     "explanation": "A 'break' is a pause in work or activity.",
-    "image": "https://loremflickr.com/800/600/study?lock=173"
+    "image": "https://loremflickr.com/800/600/study?lock=173",
+    "category": "The Foundation"
   },
   {
     "rule": "Canvas vs Canvass",
@@ -1300,7 +1411,8 @@
     "correct": "canvas",
     "sarcastic_comment": "Cloth? One 'S'. Searching for votes? Two 'S's.",
     "explanation": "'Canvas' is a strong, coarse unbleached cloth.",
-    "image": "https://loremflickr.com/800/600/tent?lock=174"
+    "image": "https://loremflickr.com/800/600/tent?lock=174",
+    "category": "The Foundation"
   },
   {
     "rule": "Council vs Counsel",
@@ -1312,7 +1424,8 @@
     "correct": "council",
     "sarcastic_comment": "A group? Council. Advice? Counsel.",
     "explanation": "A 'council' is an advisory, deliberative, or administrative body of people.",
-    "image": "https://loremflickr.com/800/600/dance?lock=175"
+    "image": "https://loremflickr.com/800/600/dance?lock=175",
+    "category": "The Foundation"
   },
   {
     "rule": "Complacent vs Complaisant",
@@ -1324,7 +1437,8 @@
     "correct": "complacent",
     "sarcastic_comment": "Smug and lazy? Complacent. Eager to help? Complaisant. Don't be the lazy one.",
     "explanation": "'Complacent' means showing smug or uncritical satisfaction with oneself or one's achievements.",
-    "image": "https://loremflickr.com/800/600/mistakes?lock=176"
+    "image": "https://loremflickr.com/800/600/mistakes?lock=176",
+    "category": "The Foundation"
   },
   {
     "rule": "Flaunt vs Flout",
@@ -1336,7 +1450,8 @@
     "correct": "flout",
     "sarcastic_comment": "Disregard a rule? Flout. Show off a watch? Flaunt.",
     "explanation": "'Flout' means to openly disregard (a rule, law, or convention).",
-    "image": "https://loremflickr.com/800/600/thrill?lock=177"
+    "image": "https://loremflickr.com/800/600/thrill?lock=177",
+    "category": "The Foundation"
   },
   {
     "rule": "Amoral vs Immoral",
@@ -1348,7 +1463,8 @@
     "correct": "amoral",
     "sarcastic_comment": "Completely lacking a moral sense? Amoral. Violating a known moral code? Immoral. Computers don't have codes; they have bits.",
     "explanation": "'Amoral' means lacking a moral sense; unconcerned with the rightness or wrongness of something.",
-    "image": "https://loremflickr.com/800/600/machine?lock=178"
+    "image": "https://loremflickr.com/800/600/machine?lock=178",
+    "category": "The Foundation"
   },
   {
     "rule": "Appraise vs Apprise",
@@ -1360,7 +1476,8 @@
     "correct": "apprise",
     "sarcastic_comment": "Inform? Apprise. Value? Appraise. Inform them!",
     "explanation": "'Apprise' means to inform or tell someone.",
-    "image": "https://loremflickr.com/800/600/upcoming?lock=179"
+    "image": "https://loremflickr.com/800/600/upcoming?lock=179",
+    "category": "The Foundation"
   },
   {
     "rule": "Sensual vs Sensuous",
@@ -1372,7 +1489,8 @@
     "correct": "sensuous",
     "sarcastic_comment": "Aesthetically pleasing to the senses? Sensuous. Physically erotic? Sensual. Let's stick with the aesthetic texture here.",
     "explanation": "'Sensuous' means relating to or affecting the senses rather than the intellect.",
-    "image": "https://loremflickr.com/800/600/velvet?lock=180"
+    "image": "https://loremflickr.com/800/600/velvet?lock=180",
+    "category": "The Foundation"
   },
   {
     "rule": "Ingenious vs Ingenuous",
@@ -1384,7 +1502,8 @@
     "correct": "ingenious",
     "sarcastic_comment": "Genius? Ingenious. Naive? Ingenuous.",
     "explanation": "'Ingenious' means clever, original, and inventive.",
-    "image": "https://loremflickr.com/800/600/genius?lock=181"
+    "image": "https://loremflickr.com/800/600/genius?lock=181",
+    "category": "The Foundation"
   },
   {
     "rule": "Who vs Whom",
@@ -1396,7 +1515,8 @@
     "correct": "who",
     "sarcastic_comment": "Is he a 'he' or a 'him'? He won. So it's 'who.' This isn't rocket science, but NASA-level punctuation errors exist, so stay sharp.",
     "explanation": "'Who' is the subject of the verb 'won'.",
-    "image": "https://loremflickr.com/800/600/race?lock=190"
+    "image": "https://loremflickr.com/800/600/race?lock=190",
+    "category": "The Foundation"
   },
   {
     "rule": "Affect vs Effect",
@@ -1408,7 +1528,8 @@
     "correct": "affect",
     "sarcastic_comment": "Action! Change! Verb! Affect. Unless you're trying to 'effect' a change, which you're not. Use the 'A'.",
     "explanation": "'Affect' is the verb meaning to influence.",
-    "image": "https://loremflickr.com/800/600/emotions?lock=191"
+    "image": "https://loremflickr.com/800/600/emotions?lock=191",
+    "category": "The Foundation"
   },
   {
     "rule": "Compliment vs Complement",
@@ -1420,7 +1541,8 @@
     "correct": "complement",
     "sarcastic_comment": "They complete each other. The tie doesn't have a mouth to give a compliment.",
     "explanation": "'Complement' means to complete or enhance.",
-    "image": "https://loremflickr.com/800/600/tie?lock=192"
+    "image": "https://loremflickr.com/800/600/tie?lock=192",
+    "category": "The Foundation"
   },
   {
     "rule": "Lose vs Loose",
@@ -1432,7 +1554,8 @@
     "correct": "lose",
     "sarcastic_comment": "You lost an 'O', and you lost your keys. One 'O' for the loser.",
     "explanation": "'Lose' is the verb meaning to misplace.",
-    "image": "https://loremflickr.com/800/600/keys?lock=193"
+    "image": "https://loremflickr.com/800/600/keys?lock=193",
+    "category": "The Foundation"
   },
   {
     "rule": "Their vs There vs They're",
@@ -1445,7 +1568,8 @@
     "correct": "Their",
     "sarcastic_comment": "The toys belong to them. Possession needs 'Their.' Keep your eyes on the prize.",
     "explanation": "'Their' is the possessive pronoun.",
-    "image": "https://loremflickr.com/800/600/toys?lock=194"
+    "image": "https://loremflickr.com/800/600/toys?lock=194",
+    "category": "The Foundation"
   },
   {
     "rule": "Its vs It's",
@@ -1457,7 +1581,8 @@
     "correct": "its",
     "sarcastic_comment": "Is it 'it is tail'? No. That would be weird. Possession has no apostrophe for 'its'.",
     "explanation": "Its = Belonging to it. It's = It is.",
-    "image": "https://loremflickr.com/800/600/tail?lock=195"
+    "image": "https://loremflickr.com/800/600/tail?lock=195",
+    "category": "The Foundation"
   },
   {
     "rule": "Its vs It's",
@@ -1469,7 +1594,8 @@
     "correct": "It's",
     "sarcastic_comment": "It IS raining. Contraction. Use the apostrophe or Grandpa gets it.",
     "explanation": "It's = It is.",
-    "image": "https://loremflickr.com/800/600/rain?lock=196"
+    "image": "https://loremflickr.com/800/600/rain?lock=196",
+    "category": "The Foundation"
   },
   {
     "rule": "Your vs You're",
@@ -1481,7 +1607,8 @@
     "correct": "You're",
     "sarcastic_comment": "You ARE going. Contraction. Please, for the love of all that is holy.",
     "explanation": "You're = You are.",
-    "image": "https://loremflickr.com/800/600/surprise?lock=197"
+    "image": "https://loremflickr.com/800/600/surprise?lock=197",
+    "category": "The Foundation"
   },
   {
     "rule": "Your vs You're",
@@ -1493,7 +1620,8 @@
     "correct": "your",
     "sarcastic_comment": "Does the car belong to you? Yes. Possession. 'Your.' No apostrophe needed.",
     "explanation": "Your = Belonging to you.",
-    "image": "https://loremflickr.com/800/600/driveway?lock=198"
+    "image": "https://loremflickr.com/800/600/driveway?lock=198",
+    "category": "The Foundation"
   },
   {
     "rule": "Whose vs Who's",
@@ -1505,7 +1633,8 @@
     "correct": "Whose",
     "sarcastic_comment": "Who IS cell phone? No. Possession. Whose.",
     "explanation": "Whose = Belonging to whom.",
-    "image": "https://loremflickr.com/800/600/ringing?lock=199"
+    "image": "https://loremflickr.com/800/600/ringing?lock=199",
+    "category": "The Foundation"
   },
   {
     "rule": "Whose vs Who's",
@@ -1517,7 +1646,8 @@
     "correct": "Who's",
     "sarcastic_comment": "Who IS going? Contraction. Use the apostrophe.",
     "explanation": "Who's = Who is.",
-    "image": "https://loremflickr.com/800/600/mess?lock=200"
+    "image": "https://loremflickr.com/800/600/mess?lock=200",
+    "category": "The Foundation"
   },
   {
     "rule": "Accept vs Except",
@@ -1529,7 +1659,8 @@
     "correct": "accept",
     "sarcastic_comment": "A=Accept/Agree. E=Exclude. You're agreeing to the apology.",
     "explanation": "Accept = To receive. Except = Excluding.",
-    "image": "https://loremflickr.com/800/600/apology?lock=201"
+    "image": "https://loremflickr.com/800/600/apology?lock=201",
+    "category": "The Foundation"
   },
   {
     "rule": "Accept vs Except",
@@ -1541,7 +1672,8 @@
     "correct": "except",
     "sarcastic_comment": "Excluding him? Except. Start with E.",
     "explanation": "Except = Excluding.",
-    "image": "https://loremflickr.com/800/600/unhappy?lock=202"
+    "image": "https://loremflickr.com/800/600/unhappy?lock=202",
+    "category": "The Foundation"
   },
   {
     "rule": "Beside vs Besides",
@@ -1553,7 +1685,8 @@
     "correct": "beside",
     "sarcastic_comment": "Next to? Beside. In addition to? Besides. You want him next to you, not in addition to you.",
     "explanation": "Beside = Next to.",
-    "image": "https://loremflickr.com/800/600/bench?lock=203"
+    "image": "https://loremflickr.com/800/600/bench?lock=203",
+    "category": "The Foundation"
   },
   {
     "rule": "Beside vs Besides",
@@ -1565,7 +1698,8 @@
     "correct": "Besides",
     "sarcastic_comment": "In addition to? Plus? Extra S for besides.",
     "explanation": "Besides = In addition to.",
-    "image": "https://loremflickr.com/800/600/pilot?lock=204"
+    "image": "https://loremflickr.com/800/600/pilot?lock=204",
+    "category": "The Foundation"
   },
   {
     "rule": "Farther vs Further",
@@ -1577,7 +1711,8 @@
     "correct": "farther",
     "sarcastic_comment": "Physical distance? Farther (has the word 'far'). Metaphorical? Further. This is a real walk.",
     "explanation": "Farther = Physical distance. Further = Metaphorical distance/addition.",
-    "image": "https://loremflickr.com/800/600/trail?lock=205"
+    "image": "https://loremflickr.com/800/600/trail?lock=205",
+    "category": "The Foundation"
   },
   {
     "rule": "Farther vs Further",
@@ -1589,7 +1724,8 @@
     "correct": "further",
     "sarcastic_comment": "Are we walking into the meeting? No. It's metaphorical. Further.",
     "explanation": "Further = Metaphorical distance or depth.",
-    "image": "https://loremflickr.com/800/600/meeting?lock=206"
+    "image": "https://loremflickr.com/800/600/meeting?lock=206",
+    "category": "The Foundation"
   },
   {
     "rule": "Less vs Fewer",
@@ -1601,7 +1737,8 @@
     "correct": "fewer",
     "sarcastic_comment": "Can you count the students? Yes. (Unless you're very bad at math). Then use 'fewer.'",
     "explanation": "Fewer is for countable items. Less is for uncountable mass.",
-    "image": "https://loremflickr.com/800/600/class?lock=207"
+    "image": "https://loremflickr.com/800/600/class?lock=207",
+    "category": "The Foundation"
   },
   {
     "rule": "Less vs Fewer",
@@ -1613,7 +1750,8 @@
     "correct": "less",
     "sarcastic_comment": "Can you count 'time'? No, you count minutes. So use 'less' for the general concept of time.",
     "explanation": "Less is for uncountable quantities (like time, water, or money).",
-    "image": "https://loremflickr.com/800/600/time?lock=208"
+    "image": "https://loremflickr.com/800/600/time?lock=208",
+    "category": "The Foundation"
   },
   {
     "rule": "The 'Thorn' in Ye Olde",
@@ -1626,7 +1764,8 @@
     "sarcastic_comment": "You're not a medieval peasant. It's 'The.' Stop trying to sound fancy.",
     "explanation": "The 'Y' in 'Ye Olde' is actually a dead letter called a 'Thorn' (þ). Early printing presses from Europe didn't have this character, so printers substituted it with a 'Y' because it looked somewhat similar in certain fonts. So, while it's written as 'Ye,' it was always meant to be pronounced as 'The.'",
     "image": "https://loremflickr.com/800/600/medieval?lock=150",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Origin of O.K.",
@@ -1639,7 +1778,8 @@
     "sarcastic_comment": "O.K.? More like O.K.-ish. It's 'Oll Korrect,' a 19th-century joke that survived for 150 years.",
     "explanation": "In 1839, a Bureau of Statistics report used 'O.K.' as a joke for 'Oll Korrect'. It became legendary during Martin Van Buren's campaign and stuck as one of the most used words globally.",
     "image": "https://loremflickr.com/800/600/ok?lock=151",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Word 'Robot'",
@@ -1652,7 +1792,8 @@
     "sarcastic_comment": "Robots aren't just gadgets; they're literal 'forced laborers.' Remember that when they take over.",
     "explanation": "The term 'Robot' was first used in the 1920 play 'R.U.R.' by Karel Čapek. It was coined by his brother, Josef, from the Czech word 'robota,' which historically meant the forced labor of serfs.",
     "image": "https://loremflickr.com/800/600/robot?lock=152",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The 'Clew' to the Labyrinth",
@@ -1665,7 +1806,8 @@
     "sarcastic_comment": "Follow the thread. Literally. That's where 'clue' comes from.",
     "explanation": "In Greek mythology, Theseus used a 'clew' (a ball of thread/yarn) to find his way out of the Minotaur's Labyrinth. Over centuries, 'clew' became 'clue' and shifted from literal string to information.",
     "image": "https://loremflickr.com/800/600/labyrinth?lock=153",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Silly History",
@@ -1678,7 +1820,8 @@
     "sarcastic_comment": "You're so silly. Wait, stop smiling. In the modern sense, not the holy one.",
     "explanation": "The word 'silly' (originally 'sælig') once meant 'blessed' or 'pious.' Over time, its meaning shifted to 'innocent,' then 'weak,' and finally to 'foolish.'",
     "image": "https://loremflickr.com/800/600/angel?lock=154",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Interrobang",
@@ -1691,7 +1834,8 @@
     "sarcastic_comment": "Interrobang. It sounds like a bad 80s action movie, but it's the punctuation mark of our digital age.",
     "explanation": "Proposed in 1962, the interrobang (‽) combines 'interrogatio' (question) and 'bang' (exclamation). It's the ultimate 'What?!' mark.",
     "image": "https://loremflickr.com/800/600/surprise?lock=155",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Goodbye's Secret",
@@ -1704,7 +1848,8 @@
     "sarcastic_comment": "Goodbye! I'm literally blessing you as I leave. You're welcome.",
     "explanation": "The word 'Goodbye' appeared in the late 16th century as a contraction of 'God be with ye.' Over centuries it slurred into its current form.",
     "image": "https://loremflickr.com/800/600/church?lock=156",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Pants History",
@@ -1717,7 +1862,8 @@
     "sarcastic_comment": "Fancy Italian comedy? No, just your trousers. Put them on one leg at a time.",
     "explanation": "The word 'pants' is a shortening of 'pantaloons,' which comes from 'Pantaleone,' a thin, greedy, and foolish old man character in Italian 'Commedia dell'arte.' He wore tight-fitting trousers that became so popular they took his name.",
     "image": "https://loremflickr.com/800/600/pants?lock=157",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Etymology of Sarcasm",
@@ -1730,7 +1876,8 @@
     "sarcastic_comment": "I'm not being mean; I'm just practicing ancient Greek 'flesh-tearing.' It's culture.",
     "explanation": "The word 'sarcasm' comes from the Greek 'sarkazein,' which literally means 'to tear flesh like a dog.' It implies a bitter, cutting remark that's intended to hurt. Now you know why it feels so good.",
     "image": "https://loremflickr.com/800/600/dog?lock=158",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Viking 'They'",
@@ -1743,7 +1890,8 @@
     "sarcastic_comment": "Thank a Viking. They invaded, they pillaged, and they gave us plural pronouns. Fair trade?",
     "explanation": "In Old English, the words for 'they' sounded very similar to 'he' and 'her,' causing massive confusion. When the Vikings invaded Britain, they brought their own pronouns ('þeir,' 'þeira,' 'þeim'). English speakers liked them so much they kept them to avoid the pronoun headaches.",
     "image": "https://loremflickr.com/800/600/viking?lock=159",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "A Sneezing Blessing",
@@ -1756,7 +1904,8 @@
     "sarcastic_comment": "Bless you! No, seriously, it was for the plague. Stay away.",
     "explanation": "In 590 AD, during a plague outbreak in Rome, Pope Gregory I ordered unceasing prayer and light-hearted blessings for those who sneezed, as sneezing was often an early symptom of the plague. It was quite literally a prayer for survival.",
     "image": "https://loremflickr.com/800/600/health?lock=160",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "Oscar Wilde's Last Words",
@@ -1765,7 +1914,8 @@
     "correct": "",
     "explanation": "Oscar Wilde spent his final days in a cheap Paris hotel, broken in health and spirit after his imprisonment in England. Even on his deathbed in November 1900, his legendary wit remained sharp. Looking at the gaudy, peeling wallpaper of the Hôtel d'Alsace, he reportedly remarked: 'My wallpaper and I are fighting a duel to the death. One or other of us has to go.' He died on November 30, with the wallpaper, unfortunately, outlasting him.",
     "image": "https://loremflickr.com/800/600/wallpaper?lock=112",
-    "isLegendary": true
+    "isLegendary": true,
+    "category": "The Vault"
   },
   {
     "rule": "The Subjunctive Mood (Elite)",
@@ -1778,7 +1928,8 @@
     "sarcastic_comment": "Subjunctive mood, darling. Were, not was. Try to keep up.",
     "explanation": "In hypothetical or contrary-to-fact statements (subjunctive mood), 'were' is used for all subjects, even 'I'.",
     "image": "https://loremflickr.com/800/600/scholar?lock=301",
-    "isElite": true
+    "isElite": true,
+    "category": "The Arsenal"
   },
   {
     "rule": "Who vs. Whom (Elite)",
@@ -1791,7 +1942,8 @@
     "sarcastic_comment": "It's the object of the preposition. Use 'whom'. It's basic etiquette, really.",
     "explanation": "Use 'whom' as the object of a verb or preposition. A quick trick: if you can answer with 'him', use 'whom'.",
     "image": "https://loremflickr.com/800/600/letter?lock=302",
-    "isElite": true
+    "isElite": true,
+    "category": "The Arsenal"
   },
   {
     "rule": "Dangling Participles (Elite)",
@@ -1804,6 +1956,1639 @@
     "sarcastic_comment": "Unless the trees were walking, you have a dangling participle. Fix it.",
     "explanation": "A participle phrase at the beginning of a sentence must describe the subject that immediately follows. If the trees aren't walking, they can't be the subject.",
     "image": "https://loremflickr.com/800/600/walking?lock=303",
-    "isElite": true
+    "isElite": true,
+    "category": "The Arsenal"
+  },
+  {
+    "rule": "Power Word: Eloquent",
+    "sentence": "She delivered an ________ speech that moved the audience to tears.",
+    "options": [
+      "Incorrect Option 2",
+      "Eloquent",
+      "Incorrect Option 1"
+    ],
+    "correct": "Eloquent",
+    "explanation": "Fluent or persuasive in speaking or writing.",
+    "sarcastic_comment": "Vocabulary is power. Eloquent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=300",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɛləkwənt/",
+    "usage": "She delivered an eloquent speech that moved the audience to tears."
+  },
+  {
+    "rule": "Power Word: Perspicacious",
+    "sentence": "His ________ observations allowed him to see the flaw in the plan.",
+    "options": [
+      "Perspicacious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Perspicacious",
+    "explanation": "Having a ready insight into and understanding of things.",
+    "sarcastic_comment": "Vocabulary is power. Perspicacious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=301",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˌpəːspɪˈkeɪʃəs/",
+    "usage": "His perspicacious observations allowed him to see the flaw in the plan."
+  },
+  {
+    "rule": "Power Word: Ubiquitous",
+    "sentence": "Mobile phones are ________ in modern society.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Ubiquitous"
+    ],
+    "correct": "Ubiquitous",
+    "explanation": "Present, appearing, or found everywhere.",
+    "sarcastic_comment": "Vocabulary is power. Ubiquitous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=302",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/juːˈbɪkwɪtəs/",
+    "usage": "Mobile phones are ubiquitous in modern society."
+  },
+  {
+    "rule": "Power Word: Ephemeral",
+    "sentence": "The beauty of a sunset is ________, lasting only a few minutes.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Ephemeral"
+    ],
+    "correct": "Ephemeral",
+    "explanation": "Lasting for a very short time.",
+    "sarcastic_comment": "Vocabulary is power. Ephemeral means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=303",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪˈfɛmərəl/",
+    "usage": "The beauty of a sunset is ephemeral, lasting only a few minutes."
+  },
+  {
+    "rule": "Power Word: Meticulous",
+    "sentence": "He was ________ about keeping his records in perfect order.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Meticulous"
+    ],
+    "correct": "Meticulous",
+    "explanation": "Showing great attention to detail; very careful and precise.",
+    "sarcastic_comment": "Vocabulary is power. Meticulous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=304",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/mɪˈtɪkjʊləs/",
+    "usage": "He was meticulous about keeping his records in perfect order."
+  },
+  {
+    "rule": "Power Word: Anachronism",
+    "sentence": "Seeing a character check their smartphone in a medieval movie is a glaring ________.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Anachronism"
+    ],
+    "correct": "Anachronism",
+    "explanation": "A thing belonging or appropriate to a period other than that in which it exists.",
+    "sarcastic_comment": "Vocabulary is power. Anachronism means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=305",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/əˈnakrəˌnɪz(ə)m/",
+    "usage": "Seeing a character check their smartphone in a medieval movie is a glaring anachronism."
+  },
+  {
+    "rule": "Power Word: Benevolent",
+    "sentence": "The ________ billionaire donated millions to create a new park.",
+    "options": [
+      "Benevolent",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Benevolent",
+    "explanation": "Well meaning and kindly.",
+    "sarcastic_comment": "Vocabulary is power. Benevolent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=306",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/bəˈnɛvələnt/",
+    "usage": "The benevolent billionaire donated millions to create a new park."
+  },
+  {
+    "rule": "Power Word: Capricious",
+    "sentence": "The weather in this region is ________, changing from sun to rain in minutes.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Capricious"
+    ],
+    "correct": "Capricious",
+    "explanation": "Given to sudden and unaccountable changes of mood or behavior.",
+    "sarcastic_comment": "Vocabulary is power. Capricious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=307",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/kəˈprɪʃəs/",
+    "usage": "The weather in this region is capricious, changing from sun to rain in minutes."
+  },
+  {
+    "rule": "Power Word: Dichotomy",
+    "sentence": "There is a clear ________ between the city's rich and poor neighborhoods.",
+    "options": [
+      "Incorrect Option 1",
+      "Dichotomy",
+      "Incorrect Option 2"
+    ],
+    "correct": "Dichotomy",
+    "explanation": "A division or contrast between two things that are or are represented as being opposed or entirely different.",
+    "sarcastic_comment": "Vocabulary is power. Dichotomy means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=308",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/dʌɪˈkɒtəmi/",
+    "usage": "There is a clear dichotomy between the city's rich and poor neighborhoods."
+  },
+  {
+    "rule": "Power Word: Enervate",
+    "sentence": "The intense heat of the desert can ________ even the most seasoned traveler.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Enervate"
+    ],
+    "correct": "Enervate",
+    "explanation": "Cause (someone) to feel drained of energy or vitality; weaken.",
+    "sarcastic_comment": "Vocabulary is power. Enervate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=309",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɛnəveɪt/",
+    "usage": "The intense heat of the desert can enervate even the most seasoned traveler."
+  },
+  {
+    "rule": "Power Word: Fastidious",
+    "sentence": "She was so ________ about cleanliness that she washed her hands every hour.",
+    "options": [
+      "Fastidious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Fastidious",
+    "explanation": "Very attentive to and concerned about accuracy and detail.",
+    "sarcastic_comment": "Vocabulary is power. Fastidious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=310",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/faˈstɪdɪəs/",
+    "usage": "She was so fastidious about cleanliness that she washed her hands every hour."
+  },
+  {
+    "rule": "Power Word: Garrulous",
+    "sentence": "A ________ neighbor can be delightful, unless you're in a hurry.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Garrulous"
+    ],
+    "correct": "Garrulous",
+    "explanation": "Excessively talkative, especially on trivial matters.",
+    "sarcastic_comment": "Vocabulary is power. Garrulous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=311",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɡarələs/",
+    "usage": "A garrulous neighbor can be delightful, unless you're in a hurry."
+  },
+  {
+    "rule": "Power Word: Hedonist",
+    "sentence": "He was a committed ________, spending all his money on fine wine and travel.",
+    "options": [
+      "Incorrect Option 1",
+      "Incorrect Option 2",
+      "Hedonist"
+    ],
+    "correct": "Hedonist",
+    "explanation": "A person who believes that the pursuit of pleasure is the most important thing in life.",
+    "sarcastic_comment": "Vocabulary is power. Hedonist means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=312",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈhiːd(ə)nɪst/",
+    "usage": "He was a committed hedonist, spending all his money on fine wine and travel."
+  },
+  {
+    "rule": "Power Word: Impetuous",
+    "sentence": "Her ________ decision to quit her job surprised everyone.",
+    "options": [
+      "Impetuous",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Impetuous",
+    "explanation": "Acting or done quickly and without thought or care.",
+    "sarcastic_comment": "Vocabulary is power. Impetuous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=313",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪmˈpɛtʃʊəs/",
+    "usage": "Her impetuous decision to quit her job surprised everyone."
+  },
+  {
+    "rule": "Power Word: Juxtapose",
+    "sentence": "The exhibit ________s modern art with ancient sculptures.",
+    "options": [
+      "Juxtapose",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Juxtapose",
+    "explanation": "Place or deal with close together for contrasting effect.",
+    "sarcastic_comment": "Vocabulary is power. Juxtapose means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=314",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˌdʒʌkstəˈpəʊz/",
+    "usage": "The exhibit juxtaposes modern art with ancient sculptures."
+  },
+  {
+    "rule": "Power Word: Laconic",
+    "sentence": "His ________ reply of 'No' ended the conversation immediately.",
+    "options": [
+      "Laconic",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Laconic",
+    "explanation": "Using very few words.",
+    "sarcastic_comment": "Vocabulary is power. Laconic means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=315",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ləˈkɒnɪk/",
+    "usage": "His laconic reply of 'No' ended the conversation immediately."
+  },
+  {
+    "rule": "Power Word: Magnanimous",
+    "sentence": "He was ________ in victory, praising his opponent's hard work.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Magnanimous"
+    ],
+    "correct": "Magnanimous",
+    "explanation": "Generous or forgiving, especially towards a rival or less powerful person.",
+    "sarcastic_comment": "Vocabulary is power. Magnanimous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=316",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/maɡˈnanɪməs/",
+    "usage": "He was magnanimous in victory, praising his opponent's hard work."
+  },
+  {
+    "rule": "Power Word: Nefarious",
+    "sentence": "The villain's ________ plot involved hacking the city's power grid.",
+    "options": [
+      "Nefarious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Nefarious",
+    "explanation": "Wicked or criminal.",
+    "sarcastic_comment": "Vocabulary is power. Nefarious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=317",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/nɪˈfɛːrɪəs/",
+    "usage": "The villain's nefarious plot involved hacking the city's power grid."
+  },
+  {
+    "rule": "Power Word: Obsequious",
+    "sentence": "The waiters were almost ________ in their efforts to please the royal guests.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Obsequious"
+    ],
+    "correct": "Obsequious",
+    "explanation": "Obedient or attentive to an excessive or servile degree.",
+    "sarcastic_comment": "Vocabulary is power. Obsequious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=318",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/əbˈsiːkwɪəs/",
+    "usage": "The waiters were almost obsequious in their efforts to please the royal guests."
+  },
+  {
+    "rule": "Power Word: Paradigm",
+    "sentence": "The shift to renewable energy represents a new ________ in economic development.",
+    "options": [
+      "Paradigm",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Paradigm",
+    "explanation": "A typical example or pattern of something; a model.",
+    "sarcastic_comment": "Vocabulary is power. Paradigm means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=319",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈparədʌɪm/",
+    "usage": "The shift to renewable energy represents a new paradigm in economic development."
+  },
+  {
+    "rule": "Power Word: Quintessential",
+    "sentence": "He is the ________ English gentleman, always polite and well-dressed.",
+    "options": [
+      "Quintessential",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Quintessential",
+    "explanation": "Representing the most perfect or typical example of a quality or class.",
+    "sarcastic_comment": "Vocabulary is power. Quintessential means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=320",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˌkwɪntɪˈsɛnʃ(ə)l/",
+    "usage": "He is the quintessential English gentleman, always polite and well-dressed."
+  },
+  {
+    "rule": "Power Word: Reticent",
+    "sentence": "She was ________ about sharing her personal life with colleagues.",
+    "options": [
+      "Reticent",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Reticent",
+    "explanation": "Not revealing one's thoughts or feelings readily.",
+    "sarcastic_comment": "Vocabulary is power. Reticent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=321",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈrɛtɪs(ə)nt/",
+    "usage": "She was reticent about sharing her personal life with colleagues."
+  },
+  {
+    "rule": "Power Word: Sycophant",
+    "sentence": "The CEO was surrounded by ________s who never disagreed with him.",
+    "options": [
+      "Incorrect Option 1",
+      "Incorrect Option 2",
+      "Sycophant"
+    ],
+    "correct": "Sycophant",
+    "explanation": "A person who acts obsequiously towards someone important in order to gain advantage.",
+    "sarcastic_comment": "Vocabulary is power. Sycophant means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=322",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈsɪkəfant/",
+    "usage": "The CEO was surrounded by sycophants who never disagreed with him."
+  },
+  {
+    "rule": "Power Word: Taciturn",
+    "sentence": "He was a ________ man, preferring the company of his books to people.",
+    "options": [
+      "Incorrect Option 1",
+      "Incorrect Option 2",
+      "Taciturn"
+    ],
+    "correct": "Taciturn",
+    "explanation": "Reserved or uncommunicative in speech; saying little.",
+    "sarcastic_comment": "Vocabulary is power. Taciturn means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=323",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈtasɪtəːn/",
+    "usage": "He was a taciturn man, preferring the company of his books to people."
+  },
+  {
+    "rule": "Power Word: Venerate",
+    "sentence": "The community continues to ________ the elders for their wisdom.",
+    "options": [
+      "Incorrect Option 2",
+      "Venerate",
+      "Incorrect Option 1"
+    ],
+    "correct": "Venerate",
+    "explanation": "Regard with great respect; revere.",
+    "sarcastic_comment": "Vocabulary is power. Venerate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=324",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈvɛnəreɪt/",
+    "usage": "The community continues to venerate the elders for their wisdom."
+  },
+  {
+    "rule": "Power Word: Wary",
+    "sentence": "Be ________ of strangers offering free gifts on the street.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Wary"
+    ],
+    "correct": "Wary",
+    "explanation": "Feeling or showing caution about possible dangers or problems.",
+    "sarcastic_comment": "Vocabulary is power. Wary means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=325",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈwɛːri/",
+    "usage": "Be wary of strangers offering free gifts on the street."
+  },
+  {
+    "rule": "Power Word: Zealot",
+    "sentence": "He became an environmental ________, living completely off the grid.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Zealot"
+    ],
+    "correct": "Zealot",
+    "explanation": "A person who is fanatical and uncompromising in pursuit of their religious, political, or other ideals.",
+    "sarcastic_comment": "Vocabulary is power. Zealot means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=326",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈzɛlət/",
+    "usage": "He became an environmental zealot, living completely off the grid."
+  },
+  {
+    "rule": "Power Word: Abstain",
+    "sentence": "He chose to ________ from voting in the local elections.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Abstain"
+    ],
+    "correct": "Abstain",
+    "explanation": "Restrain oneself from doing or enjoying something.",
+    "sarcastic_comment": "Vocabulary is power. Abstain means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=327",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/əbˈsteɪn/",
+    "usage": "He chose to abstain from voting in the local elections."
+  },
+  {
+    "rule": "Power Word: Candid",
+    "sentence": "I was ________ about the risks involved in the new project.",
+    "options": [
+      "Candid",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Candid",
+    "explanation": "Truthful and straightforward; frank.",
+    "sarcastic_comment": "Vocabulary is power. Candid means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=328",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈkandɪd/",
+    "usage": "I was candid about the risks involved in the new project."
+  },
+  {
+    "rule": "Power Word: Dogmatic",
+    "sentence": "The professor was so ________ that he refused to listen to any opposing views.",
+    "options": [
+      "Dogmatic",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Dogmatic",
+    "explanation": "Inclined to lay down principles as undeniably true.",
+    "sarcastic_comment": "Vocabulary is power. Dogmatic means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=329",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/dɒɡˈmatɪk/",
+    "usage": "The professor was so dogmatic that he refused to listen to any opposing views."
+  },
+  {
+    "rule": "Power Word: Efficacy",
+    "sentence": "Scientists are testing the ________ of the new vaccine.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Efficacy"
+    ],
+    "correct": "Efficacy",
+    "explanation": "The ability to produce a desired or intended result.",
+    "sarcastic_comment": "Vocabulary is power. Efficacy means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=330",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɛfɪkəsi/",
+    "usage": "Scientists are testing the efficacy of the new vaccine."
+  },
+  {
+    "rule": "Power Word: Frugal",
+    "sentence": "He led a ________ life, saving most of his earnings for retirement.",
+    "options": [
+      "Frugal",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Frugal",
+    "explanation": "Sparing or economical with regard to money or food.",
+    "sarcastic_comment": "Vocabulary is power. Frugal means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=331",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈfruːɡ(ə)l/",
+    "usage": "He led a frugal life, saving most of his earnings for retirement."
+  },
+  {
+    "rule": "Power Word: Guile",
+    "sentence": "He used his ________ to convince the investors that his plan was foolproof.",
+    "options": [
+      "Incorrect Option 2",
+      "Guile",
+      "Incorrect Option 1"
+    ],
+    "correct": "Guile",
+    "explanation": "Sly or cunning intelligence.",
+    "sarcastic_comment": "Vocabulary is power. Guile means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=332",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɡʌɪl/",
+    "usage": "He used his guile to convince the investors that his plan was foolproof."
+  },
+  {
+    "rule": "Power Word: Haughty",
+    "sentence": "The ________ supervisor looked down on anyone with less experience.",
+    "options": [
+      "Incorrect Option 2",
+      "Haughty",
+      "Incorrect Option 1"
+    ],
+    "correct": "Haughty",
+    "explanation": "Arrogantly superior and disdainful.",
+    "sarcastic_comment": "Vocabulary is power. Haughty means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=333",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈhɔːti/",
+    "usage": "The haughty supervisor looked down on anyone with less experience."
+  },
+  {
+    "rule": "Power Word: Immutable",
+    "sentence": "The laws of physics are ________.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Immutable"
+    ],
+    "correct": "Immutable",
+    "explanation": "Unchanging over time or unable to be changed.",
+    "sarcastic_comment": "Vocabulary is power. Immutable means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=334",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪˈmjuːtəb(ə)l/",
+    "usage": "The laws of physics are immutable."
+  },
+  {
+    "rule": "Power Word: Inherent",
+    "sentence": "There are ________ risks in any stock market investment.",
+    "options": [
+      "Inherent",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Inherent",
+    "explanation": "Existing in something as a permanent, essential, or characteristic attribute.",
+    "sarcastic_comment": "Vocabulary is power. Inherent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=335",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪnˈhɪər(ə)nt/",
+    "usage": "There are inherent risks in any stock market investment."
+  },
+  {
+    "rule": "Power Word: Lethargic",
+    "sentence": "The heavy meal made everyone feel ________ and ready for a nap.",
+    "options": [
+      "Lethargic",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Lethargic",
+    "explanation": "Affected by lethargy; sluggish and apathetic.",
+    "sarcastic_comment": "Vocabulary is power. Lethargic means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=336",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ləˈθɑːdʒɪk/",
+    "usage": "The heavy meal made everyone feel lethargic and ready for a nap."
+  },
+  {
+    "rule": "Power Word: Mitigate",
+    "sentence": "The company took steps to ________ the impact of the data breach.",
+    "options": [
+      "Incorrect Option 1",
+      "Mitigate",
+      "Incorrect Option 2"
+    ],
+    "correct": "Mitigate",
+    "explanation": "Make less severe, serious, or painful.",
+    "sarcastic_comment": "Vocabulary is power. Mitigate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=337",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈmɪtɪɡeɪt/",
+    "usage": "The company took steps to mitigate the impact of the data breach."
+  },
+  {
+    "rule": "Power Word: Nonchalant",
+    "sentence": "She gave a ________ shrug when asked about her award.",
+    "options": [
+      "Nonchalant",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Nonchalant",
+    "explanation": "Feeling or appearing casually calm and relaxed.",
+    "sarcastic_comment": "Vocabulary is power. Nonchalant means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=338",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈnɒnʃ(ə)lənt/",
+    "usage": "She gave a nonchalant shrug when asked about her award."
+  },
+  {
+    "rule": "Power Word: Opulent",
+    "sentence": "The ________ ballroom was decorated with gold leaf and crystal chandeliers.",
+    "options": [
+      "Opulent",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Opulent",
+    "explanation": "Ostentatiously rich and luxurious or lavish.",
+    "sarcastic_comment": "Vocabulary is power. Opulent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=339",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɒpjʊlənt/",
+    "usage": "The opulent ballroom was decorated with gold leaf and crystal chandeliers."
+  },
+  {
+    "rule": "Power Word: Perfidious",
+    "sentence": "The king was betrayed by his ________ advisor.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Perfidious"
+    ],
+    "correct": "Perfidious",
+    "explanation": "Deceitful and untrustworthy.",
+    "sarcastic_comment": "Vocabulary is power. Perfidious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=340",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/pəˈfɪdɪəs/",
+    "usage": "The king was betrayed by his perfidious advisor."
+  },
+  {
+    "rule": "Power Word: Pragmatic",
+    "sentence": "She took a ________ approach to solving the budget crisis.",
+    "options": [
+      "Incorrect Option 2",
+      "Pragmatic",
+      "Incorrect Option 1"
+    ],
+    "correct": "Pragmatic",
+    "explanation": "Dealing with things sensibly and realistically.",
+    "sarcastic_comment": "Vocabulary is power. Pragmatic means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=341",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/praɡˈmatɪk/",
+    "usage": "She took a pragmatic approach to solving the budget crisis."
+  },
+  {
+    "rule": "Power Word: Quixotic",
+    "sentence": "His ________ quest to ending world hunger in a week was admirable but impossible.",
+    "options": [
+      "Incorrect Option 2",
+      "Quixotic",
+      "Incorrect Option 1"
+    ],
+    "correct": "Quixotic",
+    "explanation": "Exceedingly idealistic; unrealistic and impractical.",
+    "sarcastic_comment": "Vocabulary is power. Quixotic means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=342",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/kwɪkˈsɒtɪk/",
+    "usage": "His quixotic quest to ending world hunger in a week was admirable but impossible."
+  },
+  {
+    "rule": "Power Word: Reclusive",
+    "sentence": "The ________ author rarely left his home or granted interviews.",
+    "options": [
+      "Reclusive",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Reclusive",
+    "explanation": "Avoiding the company of other people; solitary.",
+    "sarcastic_comment": "Vocabulary is power. Reclusive means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=343",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/rɪˈkluːsɪv/",
+    "usage": "The reclusive author rarely left his home or granted interviews."
+  },
+  {
+    "rule": "Power Word: Sanguine",
+    "sentence": "He remains ________ about the company's future despite the setbacks.",
+    "options": [
+      "Sanguine",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Sanguine",
+    "explanation": "Optimistic or positive, especially in an apparently bad or difficult situation.",
+    "sarcastic_comment": "Vocabulary is power. Sanguine means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=344",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈsaŋɡwɪn/",
+    "usage": "He remains sanguine about the company's future despite the setbacks."
+  },
+  {
+    "rule": "Power Word: Transient",
+    "sentence": "The city has a large ________ population of students and tourists.",
+    "options": [
+      "Incorrect Option 2",
+      "Transient",
+      "Incorrect Option 1"
+    ],
+    "correct": "Transient",
+    "explanation": "Lasting only for a short time; impermanent.",
+    "sarcastic_comment": "Vocabulary is power. Transient means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=345",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈtranzɪənt/",
+    "usage": "The city has a large transient population of students and tourists."
+  },
+  {
+    "rule": "Power Word: Venerable",
+    "sentence": "The ________ institution has been operating for over two centuries.",
+    "options": [
+      "Venerable",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Venerable",
+    "explanation": "Accorded a great deal of respect, especially because of age, wisdom, or character.",
+    "sarcastic_comment": "Vocabulary is power. Venerable means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=346",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈvɛn(ə)rəb(ə)l/",
+    "usage": "The venerable institution has been operating for over two centuries."
+  },
+  {
+    "rule": "Power Word: Alacrity",
+    "sentence": "She accepted the job offer with ________, excited to start immediately.",
+    "options": [
+      "Incorrect Option 1",
+      "Alacrity",
+      "Incorrect Option 2"
+    ],
+    "correct": "Alacrity",
+    "explanation": "Brisk and cheerful readiness.",
+    "sarcastic_comment": "Vocabulary is power. Alacrity means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=347",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/əˈlakrɪti/",
+    "usage": "She accepted the job offer with alacrity, excited to start immediately."
+  },
+  {
+    "rule": "Power Word: Burgeon",
+    "sentence": "The startup's user base began to ________ after the marketing campaign.",
+    "options": [
+      "Burgeon",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Burgeon",
+    "explanation": "Begin to grow or increase rapidly; flourish.",
+    "sarcastic_comment": "Vocabulary is power. Burgeon means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=348",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈbəːdʒ(ə)n/",
+    "usage": "The startup's user base began to burgeon after the marketing campaign."
+  },
+  {
+    "rule": "Power Word: Cacophony",
+    "sentence": "The classroom was a ________ of shouting children and moving chairs.",
+    "options": [
+      "Cacophony",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Cacophony",
+    "explanation": "A harsh, discordant mixture of sounds.",
+    "sarcastic_comment": "Vocabulary is power. Cacophony means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=349",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/kəˈkɒfəni/",
+    "usage": "The classroom was a cacophony of shouting children and moving chairs."
+  },
+  {
+    "rule": "Power Word: Demagogue",
+    "sentence": "The ________ used fear and prejudice to win the election.",
+    "options": [
+      "Incorrect Option 2",
+      "Demagogue",
+      "Incorrect Option 1"
+    ],
+    "correct": "Demagogue",
+    "explanation": "A political leader who seeks support by appealing to popular desires and prejudices.",
+    "sarcastic_comment": "Vocabulary is power. Demagogue means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=350",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈdɛməɡɒɡ/",
+    "usage": "The demagogue used fear and prejudice to win the election."
+  },
+  {
+    "rule": "Power Word: Facetious",
+    "sentence": "He made a ________ remark about the boss's new tie.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Facetious"
+    ],
+    "correct": "Facetious",
+    "explanation": "Treating serious issues with deliberately inappropriate humor.",
+    "sarcastic_comment": "Vocabulary is power. Facetious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=351",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/fəˈsiːʃəs/",
+    "usage": "He made a facetious remark about the boss's new tie."
+  },
+  {
+    "rule": "Power Word: Hubris",
+    "sentence": "The CEO's ________ eventually led to the company's downfall.",
+    "options": [
+      "Hubris",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Hubris",
+    "explanation": "Excessive pride or self-confidence.",
+    "sarcastic_comment": "Vocabulary is power. Hubris means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=352",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈhjuːbrɪs/",
+    "usage": "The CEO's hubris eventually led to the company's downfall."
+  },
+  {
+    "rule": "Power Word: Inevitable",
+    "sentence": "Death and taxes are the only ________ things in life.",
+    "options": [
+      "Inevitable",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Inevitable",
+    "explanation": "Certain to happen; unavoidable.",
+    "sarcastic_comment": "Vocabulary is power. Inevitable means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=353",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪnˈɛvɪtəb(ə)l/",
+    "usage": "Death and taxes are the only inevitable things in life."
+  },
+  {
+    "rule": "Power Word: Jubilant",
+    "sentence": "The crowd was ________ after the team won the championship.",
+    "options": [
+      "Jubilant",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Jubilant",
+    "explanation": "Feeling or expressing great happiness and triumph.",
+    "sarcastic_comment": "Vocabulary is power. Jubilant means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=354",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈdʒuːbɪlənt/",
+    "usage": "The crowd was jubilant after the team won the championship."
+  },
+  {
+    "rule": "Power Word: Luminous",
+    "sentence": "The watch has ________ hands that glow in the dark.",
+    "options": [
+      "Luminous",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Luminous",
+    "explanation": "Full of or shedding light; bright or shining, especially in the dark.",
+    "sarcastic_comment": "Vocabulary is power. Luminous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=355",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈluːmɪnəs/",
+    "usage": "The watch has luminous hands that glow in the dark."
+  },
+  {
+    "rule": "Power Word: Melancholy",
+    "sentence": "The rainy weather put him in a ________ mood.",
+    "options": [
+      "Melancholy",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Melancholy",
+    "explanation": "A feeling of pensive sadness, typically with no obvious cause.",
+    "sarcastic_comment": "Vocabulary is power. Melancholy means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=356",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈmɛləŋkəli/",
+    "usage": "The rainy weather put him in a melancholy mood."
+  },
+  {
+    "rule": "Power Word: Ominous",
+    "sentence": "The dark clouds were an ________ sign of the storm to come.",
+    "options": [
+      "Incorrect Option 1",
+      "Ominous",
+      "Incorrect Option 2"
+    ],
+    "correct": "Ominous",
+    "explanation": "Giving the impression that something bad or unpleasant is going to happen.",
+    "sarcastic_comment": "Vocabulary is power. Ominous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=357",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɒmɪnəs/",
+    "usage": "The dark clouds were an ominous sign of the storm to come."
+  },
+  {
+    "rule": "Power Word: Placid",
+    "sentence": "The lake was ________ and still in the early morning light.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Placid"
+    ],
+    "correct": "Placid",
+    "explanation": "Not easily upset or excited; calm and peaceful.",
+    "sarcastic_comment": "Vocabulary is power. Placid means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=358",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈplasɪd/",
+    "usage": "The lake was placid and still in the early morning light."
+  },
+  {
+    "rule": "Power Word: Querulous",
+    "sentence": "The ________ patient complained about everything from the food to the bedsheets.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Querulous"
+    ],
+    "correct": "Querulous",
+    "explanation": "Complaining in a petulant or whining manner.",
+    "sarcastic_comment": "Vocabulary is power. Querulous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=359",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈkwɛrʊləs/",
+    "usage": "The querulous patient complained about everything from the food to the bedsheets."
+  },
+  {
+    "rule": "Power Word: Rancorous",
+    "sentence": "The divorce was long and ________, leaving both parties bitter.",
+    "options": [
+      "Rancorous",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Rancorous",
+    "explanation": "Characterized by bitterness or resentment.",
+    "sarcastic_comment": "Vocabulary is power. Rancorous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=360",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈraŋk(ə)rəs/",
+    "usage": "The divorce was long and rancorous, leaving both parties bitter."
+  },
+  {
+    "rule": "Power Word: Surreptitious",
+    "sentence": "He cast a ________ glance at his watch during the meeting.",
+    "options": [
+      "Surreptitious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Surreptitious",
+    "explanation": "Kept secret, especially because it would not be approved of.",
+    "sarcastic_comment": "Vocabulary is power. Surreptitious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=361",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˌsʌrəpˈtɪʃəs/",
+    "usage": "He cast a surreptitious glance at his watch during the meeting."
+  },
+  {
+    "rule": "Power Word: Tenacious",
+    "sentence": "She was ________ in her pursuit of the truth, never giving up.",
+    "options": [
+      "Tenacious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Tenacious",
+    "explanation": "Tending to keep a firm hold of something; clinging or adhering closely.",
+    "sarcastic_comment": "Vocabulary is power. Tenacious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=362",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/tɪˈneɪʃəs/",
+    "usage": "She was tenacious in her pursuit of the truth, never giving up."
+  },
+  {
+    "rule": "Power Word: Vacillate",
+    "sentence": "I ________ between wanting to go out and wanting to stay home.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Vacillate"
+    ],
+    "correct": "Vacillate",
+    "explanation": "Alternate or waver between different opinions or actions; be indecisive.",
+    "sarcastic_comment": "Vocabulary is power. Vacillate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=363",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈvasɪleɪt/",
+    "usage": "I vacillate between wanting to go out and wanting to stay home."
+  },
+  {
+    "rule": "Power Word: Wistful",
+    "sentence": "He gave a ________ look at the old house where he grew up.",
+    "options": [
+      "Wistful",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Wistful",
+    "explanation": "Having or showing a feeling of vague or regretful longing.",
+    "sarcastic_comment": "Vocabulary is power. Wistful means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=364",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈwɪstfʊl/",
+    "usage": "He gave a wistful look at the old house where he grew up."
+  },
+  {
+    "rule": "Power Word: Aesthete",
+    "sentence": "An ________ spends their time visiting galleries and studying design.",
+    "options": [
+      "Aesthete",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Aesthete",
+    "explanation": "A person who has or affects to have a special appreciation of art and beautiful things.",
+    "sarcastic_comment": "Vocabulary is power. Aesthete means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=365",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈiːsθiːt/",
+    "usage": "An aesthete spends their time visiting galleries and studying design."
+  },
+  {
+    "rule": "Power Word: Belligerent",
+    "sentence": "The customer became ________ when he was told the item was out of stock.",
+    "options": [
+      "Belligerent",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Belligerent",
+    "explanation": "Hostile and aggressive.",
+    "sarcastic_comment": "Vocabulary is power. Belligerent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=366",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/bəˈlɪdʒ(ə)r(ə)nt/",
+    "usage": "The customer became belligerent when he was told the item was out of stock."
+  },
+  {
+    "rule": "Power Word: Capitulate",
+    "sentence": "The rebels eventually had to ________ to the government forces.",
+    "options": [
+      "Capitulate",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Capitulate",
+    "explanation": "Cease to resist an opponent; surrender.",
+    "sarcastic_comment": "Vocabulary is power. Capitulate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=367",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/kəˈpɪtʃʊleɪt/",
+    "usage": "The rebels eventually had to capitulate to the government forces."
+  },
+  {
+    "rule": "Power Word: Dissident",
+    "sentence": "The ________ was arrested for speaking out against the regime.",
+    "options": [
+      "Incorrect Option 1",
+      "Dissident",
+      "Incorrect Option 2"
+    ],
+    "correct": "Dissident",
+    "explanation": "A person who opposes official policy, especially that of an authoritarian state.",
+    "sarcastic_comment": "Vocabulary is power. Dissident means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=368",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈdɪsɪd(ə)nt/",
+    "usage": "The dissident was arrested for speaking out against the regime."
+  },
+  {
+    "rule": "Power Word: Enigma",
+    "sentence": "His disappearance remains an ________ that investigators cannot solve.",
+    "options": [
+      "Enigma",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Enigma",
+    "explanation": "A person or thing that is mysterious, puzzling, or difficult to understand.",
+    "sarcastic_comment": "Vocabulary is power. Enigma means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=369",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪˈnɪɡmə/",
+    "usage": "His disappearance remains an enigma that investigators cannot solve."
+  },
+  {
+    "rule": "Power Word: Fortuitous",
+    "sentence": "Their meeting in Paris was entirely ________, as neither knew the other was there.",
+    "options": [
+      "Fortuitous",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Fortuitous",
+    "explanation": "Happening by a lucky chance; fortunate.",
+    "sarcastic_comment": "Vocabulary is power. Fortuitous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=370",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/fɔːˈtjuːɪtəs/",
+    "usage": "Their meeting in Paris was entirely fortuitous, as neither knew the other was there."
+  },
+  {
+    "rule": "Power Word: Gregarious",
+    "sentence": "She is a ________ person who loves hosting large dinner parties.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Gregarious"
+    ],
+    "correct": "Gregarious",
+    "explanation": "Fond of company; sociable.",
+    "sarcastic_comment": "Vocabulary is power. Gregarious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=371",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɡrɪˈɡɛːrɪəs/",
+    "usage": "She is a gregarious person who loves hosting large dinner parties."
+  },
+  {
+    "rule": "Power Word: Imminent",
+    "sentence": "The dark sky suggested that a storm was ________.",
+    "options": [
+      "Imminent",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Imminent",
+    "explanation": "About to happen.",
+    "sarcastic_comment": "Vocabulary is power. Imminent means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=372",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈɪmɪnənt/",
+    "usage": "The dark sky suggested that a storm was imminent."
+  },
+  {
+    "rule": "Power Word: Judicious",
+    "sentence": "He made a ________ choice by investing in a diversified portfolio.",
+    "options": [
+      "Judicious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Judicious",
+    "explanation": "Having, showing, or done with good judgment or sense.",
+    "sarcastic_comment": "Vocabulary is power. Judicious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=373",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/dʒuːˈdɪʃəs/",
+    "usage": "He made a judicious choice by investing in a diversified portfolio."
+  },
+  {
+    "rule": "Power Word: Kindle",
+    "sentence": "The teacher's enthusiasm helped ________ a passion for science in her students.",
+    "options": [
+      "Kindle",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Kindle",
+    "explanation": "Light or set on fire; inspire (an emotion or feeling).",
+    "sarcastic_comment": "Vocabulary is power. Kindle means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=374",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈkɪnd(ə)l/",
+    "usage": "The teacher's enthusiasm helped kindle a passion for science in her students."
+  },
+  {
+    "rule": "Power Word: Nostalgia",
+    "sentence": "Hearing the old song filled her with ________ for her childhood.",
+    "options": [
+      "Nostalgia",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Nostalgia",
+    "explanation": "A sentimental longing or wistful affection for the past.",
+    "sarcastic_comment": "Vocabulary is power. Nostalgia means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=375",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/nɒˈstaldʒə/",
+    "usage": "Hearing the old song filled her with nostalgia for her childhood."
+  },
+  {
+    "rule": "Power Word: Ostentatious",
+    "sentence": "He bought an ________ sports car to show off his wealth.",
+    "options": [
+      "Ostentatious",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Ostentatious",
+    "explanation": "Characterized by vulgar or pretentious display; designed to impress.",
+    "sarcastic_comment": "Vocabulary is power. Ostentatious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=376",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˌɒstɛnˈteɪʃəs/",
+    "usage": "He bought an ostentatious sports car to show off his wealth."
+  },
+  {
+    "rule": "Power Word: Pervasive",
+    "sentence": "The smell of fresh coffee was ________ throughout the house.",
+    "options": [
+      "Pervasive",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Pervasive",
+    "explanation": "Spreading widely throughout an area or a group of people.",
+    "sarcastic_comment": "Vocabulary is power. Pervasive means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=377",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/pəˈveɪsɪv/",
+    "usage": "The smell of fresh coffee was pervasive throughout the house."
+  },
+  {
+    "rule": "Power Word: Quell",
+    "sentence": "The police were called to ________ the riot.",
+    "options": [
+      "Quell",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Quell",
+    "explanation": "Put an end to (a rebellion or other disorder), typically by the use of force.",
+    "sarcastic_comment": "Vocabulary is power. Quell means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=378",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/kwɛl/",
+    "usage": "The police were called to quell the riot."
+  },
+  {
+    "rule": "Power Word: Spurious",
+    "sentence": "The lawyer dismissed the witness's testimony as ________.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Spurious"
+    ],
+    "correct": "Spurious",
+    "explanation": "Not being what it purports to be; false or fake.",
+    "sarcastic_comment": "Vocabulary is power. Spurious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=379",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈspjʊərɪəs/",
+    "usage": "The lawyer dismissed the witness's testimony as spurious."
+  },
+  {
+    "rule": "Power Word: Trepidation",
+    "sentence": "She felt a sense of ________ as she entered the dark forest.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Trepidation"
+    ],
+    "correct": "Trepidation",
+    "explanation": "A feeling of fear or agitation about something that may happen.",
+    "sarcastic_comment": "Vocabulary is power. Trepidation means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=380",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˌtrɛpɪˈdeɪʃ(ə)n/",
+    "usage": "She felt a sense of trepidation as she entered the dark forest."
+  },
+  {
+    "rule": "Power Word: Abhor",
+    "sentence": "I ________ any form of cruelty to animals.",
+    "options": [
+      "Incorrect Option 1",
+      "Abhor",
+      "Incorrect Option 2"
+    ],
+    "correct": "Abhor",
+    "explanation": "Regard with disgust and hatred.",
+    "sarcastic_comment": "Vocabulary is power. Abhor means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=381",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/əbˈhɔː/",
+    "usage": "I abhor any form of cruelty to animals."
+  },
+  {
+    "rule": "Power Word: Banal",
+    "sentence": "The movie was filled with ________ dialogue and predictable plot twists.",
+    "options": [
+      "Banal",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Banal",
+    "explanation": "So lacking in originality as to be obvious and boring.",
+    "sarcastic_comment": "Vocabulary is power. Banal means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=382",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/bəˈnɑːl/",
+    "usage": "The movie was filled with banal dialogue and predictable plot twists."
+  },
+  {
+    "rule": "Power Word: Castigate",
+    "sentence": "The manager ________d the employee for missing the deadline.",
+    "options": [
+      "Incorrect Option 2",
+      "Castigate",
+      "Incorrect Option 1"
+    ],
+    "correct": "Castigate",
+    "explanation": "Reprimand (someone) severely.",
+    "sarcastic_comment": "Vocabulary is power. Castigate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=383",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈkastɪɡeɪt/",
+    "usage": "The manager castigated the employee for missing the deadline."
+  },
+  {
+    "rule": "Power Word: Debilitate",
+    "sentence": "The chronic illness began to ________ her over several months.",
+    "options": [
+      "Debilitate",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Debilitate",
+    "explanation": "Make (someone) weak and infirm.",
+    "sarcastic_comment": "Vocabulary is power. Debilitate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=384",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/dɪˈbɪlɪteɪt/",
+    "usage": "The chronic illness began to debilitate her over several months."
+  },
+  {
+    "rule": "Power Word: Exacerbate",
+    "sentence": "Citing old arguments will only ________ the current conflict.",
+    "options": [
+      "Incorrect Option 1",
+      "Exacerbate",
+      "Incorrect Option 2"
+    ],
+    "correct": "Exacerbate",
+    "explanation": "Make (a problem, bad situation, or negative feeling) worse.",
+    "sarcastic_comment": "Vocabulary is power. Exacerbate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=385",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɪɡˈzasəbeɪt/",
+    "usage": "Citing old arguments will only exacerbate the current conflict."
+  },
+  {
+    "rule": "Power Word: Flippant",
+    "sentence": "His ________ attitude towards the safety rules was very concerning.",
+    "options": [
+      "Flippant",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Flippant",
+    "explanation": "Not showing a serious or respectful attitude.",
+    "sarcastic_comment": "Vocabulary is power. Flippant means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=386",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈflɪp(ə)nt/",
+    "usage": "His flippant attitude towards the safety rules was very concerning."
+  },
+  {
+    "rule": "Power Word: Gratuitous",
+    "sentence": "The movie was criticized for its ________ violence.",
+    "options": [
+      "Gratuitous",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Gratuitous",
+    "explanation": "Uncalled for; lacking good reason; unwarranted.",
+    "sarcastic_comment": "Vocabulary is power. Gratuitous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=387",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ɡrəˈtjuːɪtəs/",
+    "usage": "The movie was criticized for its gratuitous violence."
+  },
+  {
+    "rule": "Power Word: Iconoclast",
+    "sentence": "The young artist was an ________, challenging every established rule of painting.",
+    "options": [
+      "Incorrect Option 2",
+      "Incorrect Option 1",
+      "Iconoclast"
+    ],
+    "correct": "Iconoclast",
+    "explanation": "A person who attacks cherished beliefs or institutions.",
+    "sarcastic_comment": "Vocabulary is power. Iconoclast means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=388",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ʌɪˈkɒnəklast/",
+    "usage": "The young artist was an iconoclast, challenging every established rule of painting."
+  },
+  {
+    "rule": "Power Word: Languid",
+    "sentence": "We spent a ________ afternoon lounging on the beach.",
+    "options": [
+      "Languid",
+      "Incorrect Option 2",
+      "Incorrect Option 1"
+    ],
+    "correct": "Languid",
+    "explanation": "Displaying or having a disinclination for physical exertion or effort; slow and relaxed.",
+    "sarcastic_comment": "Vocabulary is power. Languid means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=389",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈlaŋɡwɪd/",
+    "usage": "We spent a languid afternoon lounging on the beach."
+  },
+  {
+    "rule": "Power Word: Malleable",
+    "sentence": "Silver is a ________ metal that can be hammered into thin sheets.",
+    "options": [
+      "Incorrect Option 2",
+      "Malleable",
+      "Incorrect Option 1"
+    ],
+    "correct": "Malleable",
+    "explanation": "Able to be hammered or pressed permanently out of shape without breaking or cracking.",
+    "sarcastic_comment": "Vocabulary is power. Malleable means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=390",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/ˈmalɪəb(ə)l/",
+    "usage": "Silver is a malleable metal that can be hammered into thin sheets."
+  },
+  {
+    "rule": "Power Word: Obscure",
+    "sentence": "The meaning of the poem was ________ and difficult to grasp.",
+    "options": [
+      "Obscure",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Obscure",
+    "explanation": "Not discovered or known about; uncertain.",
+    "sarcastic_comment": "Vocabulary is power. Obscure means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=391",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/əbˈskjʊə/",
+    "usage": "The meaning of the poem was obscure and difficult to grasp."
+  },
+  {
+    "rule": "Power Word: Placate",
+    "sentence": "The manager tried to ________ the angry customer with a full refund.",
+    "options": [
+      "Incorrect Option 1",
+      "Placate",
+      "Incorrect Option 2"
+    ],
+    "correct": "Placate",
+    "explanation": "Make (someone) less angry or hostile.",
+    "sarcastic_comment": "Vocabulary is power. Placate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=392",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/pləˈkeɪt/",
+    "usage": "The manager tried to placate the angry customer with a full refund."
+  },
+  {
+    "rule": "Power Word: Repudiate",
+    "sentence": "The candidate ________d the false claims made by his opponent.",
+    "options": [
+      "Repudiate",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Repudiate",
+    "explanation": "Refuse to accept or be associated with.",
+    "sarcastic_comment": "Vocabulary is power. Repudiate means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=393",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/rɪˈpjuːdɪeɪt/",
+    "usage": "The candidate repudiated the false claims made by his opponent."
+  },
+  {
+    "rule": "Power Word: Superfluous",
+    "sentence": "The extra adjectives in the sentence were ________ and distracting.",
+    "options": [
+      "Incorrect Option 1",
+      "Incorrect Option 2",
+      "Superfluous"
+    ],
+    "correct": "Superfluous",
+    "explanation": "Unnecessary, especially through being more than enough.",
+    "sarcastic_comment": "Vocabulary is power. Superfluous means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=394",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/suːˈpəːflʊəs/",
+    "usage": "The extra adjectives in the sentence were superfluous and distracting."
+  },
+  {
+    "rule": "Power Word: Voracious",
+    "sentence": "She is a ________ reader, finishing three books every week.",
+    "options": [
+      "Voracious",
+      "Incorrect Option 1",
+      "Incorrect Option 2"
+    ],
+    "correct": "Voracious",
+    "explanation": "Wanting or devouring great quantities of food or information.",
+    "sarcastic_comment": "Vocabulary is power. Voracious means exactly that.",
+    "image": "https://loremflickr.com/800/600/knowledge?lock=395",
+    "isArsenal": true,
+    "category": "The Arsenal",
+    "pronunciation": "/vəˈreɪʃəs/",
+    "usage": "She is a voracious reader, finishing three books every week."
   }
 ]

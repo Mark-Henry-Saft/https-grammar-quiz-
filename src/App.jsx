@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import StartScreen from './components/StartScreen';
 import QuizScreen from './components/QuizScreen';
@@ -6,6 +5,7 @@ import ResultScreen from './components/ResultScreen';
 import ZenScreen from './components/ZenScreen';
 import grammarData from './grammar_data.json';
 import CheckpointScreen from './components/CheckpointScreen';
+import { Heart } from 'lucide-react';
 
 import clickSound from './assets/sounds/click.mp3';
 import musicSound from './assets/sounds/music.mp3';
@@ -21,8 +21,9 @@ function App() {
     const [answerHistory, setAnswerHistory] = useState([]);
     const [currentStreak, setCurrentStreak] = useState(0);
     const [isDailyMode, setIsDailyMode] = useState(false);
-
     const [startTime, setStartTime] = useState(null);
+    const [totalTimeRemaining, setTotalTimeRemaining] = useState(0);
+    const [isSupporter, setIsSupporter] = useState(() => localStorage.getItem('grammarQuiz_isSupporter') === 'true');
 
     // Leaderboard State
     const [topScores, setTopScores] = useState(() => {
@@ -74,16 +75,10 @@ function App() {
         const bgMusic = document.getElementById('bg-music');
         if (bgMusic) {
             bgMusic.volume = 0.1;
-
-            // Dynamic Intensity based on streak (cap at 1.5x speed)
-            // 0 streak = 1.0, 5 streak = 1.1, 10 streak = 1.2
             const speed = 1 + Math.min(currentStreak, 20) * 0.02;
             bgMusic.playbackRate = speed;
-
             if (isMuted) {
                 bgMusic.pause();
-            } else {
-                // Autoplay handled by startMusic
             }
         }
     }, [isMuted, currentStreak]);
@@ -97,21 +92,19 @@ function App() {
         }
     };
 
+    // Question Filtering
     const [legendaryFactoids, setLegendaryFactoids] = useState([]);
 
-    useEffect(() => {
-        const isSupporter = localStorage.getItem('grammarQuiz_isSupporter') === 'true';
-
-        // Filter: Elite questions are only for supporters
+    const getFilteredQuestions = (count = null) => {
         const standards = grammarData.filter(q => !q.isLegendary && (!q.isElite || isSupporter));
-        const legendaries = grammarData.filter(q => q.isLegendary);
-
         const shuffled = [...standards].sort(() => 0.5 - Math.random());
-        setQuestions(shuffled);
-        setLegendaryFactoids(legendaries);
-    }, []);
+        return count ? shuffled.slice(0, count) : shuffled;
+    };
 
-    const [totalTimeRemaining, setTotalTimeRemaining] = useState(0);
+    useEffect(() => {
+        setQuestions(getFilteredQuestions());
+        setLegendaryFactoids(grammarData.filter(q => q.isLegendary));
+    }, [isSupporter]);
 
     const handleStart = () => {
         playClick();
@@ -124,22 +117,17 @@ function App() {
         setAnswerHistory([]);
         setTotalTimeRemaining(0);
         setStartTime(Date.now());
-
-        const standards = grammarData.filter(q => !q.isLegendary);
-        const shuffled = [...standards].sort(() => 0.5 - Math.random());
-        setQuestions(shuffled);
+        setQuestions(getFilteredQuestions());
     };
 
     const handleDailyStart = () => {
         playClick();
         startMusic();
         const today = new Date().toDateString();
-
         if (dailyStats.lastPlayed === today) {
             alert("You've already completed today's challenge! Come back tomorrow.");
             return;
         }
-
         setIsDailyMode(true);
         setCurrentScreen('quiz');
         setScore(0);
@@ -148,10 +136,7 @@ function App() {
         setAnswerHistory([]);
         setTotalTimeRemaining(0);
         setStartTime(Date.now());
-
-        const standards = grammarData.filter(q => !q.isLegendary);
-        const shuffled = [...standards].sort(() => 0.5 - Math.random()).slice(0, 5);
-        setQuestions(shuffled);
+        setQuestions(getFilteredQuestions(5));
     };
 
     const handleQuizComplete = (isCorrect, timeRemaining = 0) => {
@@ -162,34 +147,26 @@ function App() {
         } else {
             setCurrentStreak(0);
         }
-
         setAnswerHistory(prev => [...prev, isCorrect]);
-
         const nextIndex = currentQuestionIndex + 1;
-
-        // Checkpoint logic: Show card every 10 questions
         if (nextIndex > 0 && nextIndex % 10 === 0 && nextIndex < questions.length) {
             setCurrentScreen('checkpoint');
-            return; // Controller waits for CheckpointScreen to calling "onContinue"
+            return;
         }
-
         if (nextIndex < questions.length) {
             setCurrentQuestionIndex(nextIndex);
         } else {
-            // Quiz Finished
             if (isDailyMode) {
                 const today = new Date().toDateString();
                 const yesterday = new Date();
                 yesterday.setDate(yesterday.getDate() - 1);
                 const yesterdayStr = yesterday.toDateString();
-
                 let newDailyStreak = dailyStats.streak;
                 if (dailyStats.lastPlayed === yesterdayStr) {
                     newDailyStreak += 1;
                 } else if (dailyStats.lastPlayed !== today) {
                     newDailyStreak = 1;
                 }
-
                 const newStats = { streak: newDailyStreak, lastPlayed: today };
                 setDailyStats(newStats);
                 localStorage.setItem('grammarQuiz_dailyStats', JSON.stringify(newStats));
@@ -216,7 +193,7 @@ function App() {
         <div className="antialiased font-display min-h-screen flex items-center justify-center p-4">
             <div className="snake-border w-full max-w-md">
                 <audio id="bg-music" loop src={musicSound} />
-                {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} topScores={topScores} isMuted={isMuted} onToggleMute={toggleMute} playClick={playClick} />}
+                {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} topScores={topScores} isMuted={isMuted} onToggleMute={toggleMute} playClick={playClick} isSupporter={isSupporter} />}
                 {currentScreen === 'quiz' && (
                     <QuizScreen
                         questionData={questions[currentQuestionIndex]}
@@ -241,6 +218,8 @@ function App() {
                         playClick={playClick}
                         onHome={() => setCurrentScreen('start')}
                         onZen={() => setCurrentScreen('zen')}
+                        isSupporter={isSupporter}
+                        setIsSupporter={setIsSupporter}
                     />
                 )}
                 {currentScreen === 'zen' && (
@@ -259,7 +238,18 @@ function App() {
                         }}
                     />
                 )}
-                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.5 (Legendary)</div>
+                <div className="fixed bottom-1 left-1 flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity">
+                    <div className="relative">
+                        <Heart
+                            size={14}
+                            className={`${dailyStats.streak >= 7 ? 'text-rose-500 fill-rose-500 animate-pulse drop-shadow-[0_0_5px_rgba(244,63,94,0.8)]' : 'text-slate-400'}`}
+                        />
+                        {dailyStats.streak >= 7 && (
+                            <div className="absolute inset-0 bg-rose-400 blur-sm rounded-full opacity-30 animate-ping"></div>
+                        )}
+                    </div>
+                </div>
+                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.6 (Arsenal)</div>
             </div>
         </div>
     );

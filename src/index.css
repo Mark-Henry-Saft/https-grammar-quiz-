@@ -89,3 +89,33 @@ body {
     --angle: 360deg;
   }
 }
+
+.linen-paper {
+  background-color: #fdfaf1;
+  background-image: url("https://www.transparenttextures.com/patterns/linen-paper.png");
+  border: 1px solid #e5e0d0;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    inset 0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+.linen-texture {
+  position: relative;
+}
+
+.linen-texture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background: repeating-linear-gradient(45deg,
+      #000,
+      #000 1px,
+      transparent 1px,
+      transparent 5px);
+}
