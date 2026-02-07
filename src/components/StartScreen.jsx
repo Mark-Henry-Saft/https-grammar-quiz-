@@ -1,8 +1,11 @@
 
 import React from 'react';
-import { Play } from 'lucide-react';
+import { Play, Calendar, Zap } from 'lucide-react';
 
-export default function StartScreen({ onStart }) {
+export default function StartScreen({ onStart, onDailyStart, dailyStats }) {
+    const today = new Date().toDateString();
+    const isDailyComplete = dailyStats?.lastPlayed === today;
+
     return (
         <div className="bg-pattern min-h-screen flex flex-col items-center justify-center p-6 text-center">
             <div className="bg-white dark:bg-slate-900 rounded-2xl ios-shadow p-8 max-w-sm w-full border border-slate-100 dark:border-slate-800">
@@ -13,13 +16,33 @@ export default function StartScreen({ onStart }) {
                 <p className="text-slate-500 dark:text-slate-400 mb-8 text-base leading-relaxed">
                     Unlock your potential as a master communicator. This quiz is designed to sharpen your skills, ensuring you always sound sharp, professional, and clear in every sentence you write or speak.
                 </p>
-                <button
-                    onClick={onStart}
-                    className="btn-tactile w-full h-16 bg-primary text-white rounded-2xl font-bold text-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/30"
-                >
-                    <Play size={24} className="fill-current" />
-                    Begin My Mastery
-                </button>
+
+                <div className="flex flex-col gap-3">
+                    <button
+                        onClick={onDailyStart}
+                        disabled={isDailyComplete}
+                        className={`w-full h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95 border-2 ${isDailyComplete
+                                ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
+                                : 'bg-white text-orange-500 border-orange-500 hover:bg-orange-50'
+                            }`}
+                    >
+                        <Calendar size={20} />
+                        {isDailyComplete ? 'Daily Challenge Complete' : 'Daily Challenge (5 Qs)'}
+                        {dailyStats?.streak > 0 && (
+                            <span className="ml-2 text-xs bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full flex items-center">
+                                <Zap size={10} className="mr-1 fill-current" /> {dailyStats.streak}
+                            </span>
+                        )}
+                    </button>
+
+                    <button
+                        onClick={onStart}
+                        className="btn-tactile w-full h-16 bg-primary text-white rounded-2xl font-bold text-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/30"
+                    >
+                        <Play size={24} className="fill-current" />
+                        Begin My Mastery
+                    </button>
+                </div>
             </div>
         </div>
     );

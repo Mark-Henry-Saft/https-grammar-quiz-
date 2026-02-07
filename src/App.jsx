@@ -11,6 +11,13 @@ function App() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [answerHistory, setAnswerHistory] = useState([]); // Array of true/false
+    const [isDailyMode, setIsDailyMode] = useState(false);
+
+    // Daily Challenge State
+    const [dailyStats, setDailyStats] = useState(() => {
+        const saved = localStorage.getItem('grammarQuiz_dailyStats');
+        return saved ? JSON.parse(saved) : { streak: 0, lastPlayed: null };
+    });
 
     useEffect(() => {
         // Randomize questions on mount
@@ -19,12 +26,33 @@ function App() {
     }, []);
 
     const handleStart = () => {
+        setIsDailyMode(false);
         setCurrentScreen('quiz');
         setScore(0);
         setCurrentQuestionIndex(0);
         setAnswerHistory([]);
         // Start with a fresh shuffle if needed, but on-mount is usually fine for a session
         const shuffled = [...grammarData].sort(() => 0.5 - Math.random());
+        setQuestions(shuffled);
+    };
+
+    const handleDailyStart = () => {
+        const today = new Date().toDateString();
+
+        // Check if already played today is handled in UI, but safety check here
+        if (dailyStats.lastPlayed === today) {
+            alert("You've already completed today's challenge! Come back tomorrow.");
+            return;
+        }
+
+        setIsDailyMode(true);
+        setCurrentScreen('quiz');
+        setScore(0);
+        setCurrentQuestionIndex(0);
+        setAnswerHistory([]);
+
+        // Select 5 random questions for daily challenge
+        const shuffled = [...grammarData].sort(() => 0.5 - Math.random()).slice(0, 5);
         setQuestions(shuffled);
     };
 
@@ -37,6 +65,28 @@ function App() {
         if (nextIndex < questions.length) {
             setCurrentQuestionIndex(nextIndex);
         } else {
+            // Quiz Finished
+            if (isDailyMode) {
+                const today = new Date().toDateString();
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayStr = yesterday.toDateString();
+
+                let newStreak = dailyStats.streak;
+                // If last played was yesterday, increment. If today, valid. Else reset.
+                // Actually, if we are here, we just finished.
+                // If lastPlayed was yesterday, streak++. If before yesterday, streak=1.
+
+                if (dailyStats.lastPlayed === yesterdayStr) {
+                    newStreak += 1;
+                } else if (dailyStats.lastPlayed !== today) {
+                    newStreak = 1;
+                }
+
+                const newStats = { streak: newStreak, lastPlayed: today };
+                setDailyStats(newStats);
+                localStorage.setItem('grammarQuiz_dailyStats', JSON.stringify(newStats));
+            }
             setCurrentScreen('result');
         }
     };
@@ -49,7 +99,7 @@ function App() {
 
     return (
         <div className="antialiased font-display">
-            {currentScreen === 'start' && <StartScreen onStart={handleStart} />}
+            {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} />}
             {currentScreen === 'quiz' && (
                 <QuizScreen
                     questionData={questions[currentQuestionIndex]}
