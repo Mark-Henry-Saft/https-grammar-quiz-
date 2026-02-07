@@ -249,7 +249,7 @@ function App() {
                         )}
                     </div>
                 </div>
-                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.6 (Arsenal)</div>
+                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.7 (Arsenal)</div>
             </div>
         </div>
     );
