@@ -1766,5 +1766,44 @@
     "explanation": "Oscar Wilde spent his final days in a cheap Paris hotel, broken in health and spirit after his imprisonment in England. Even on his deathbed in November 1900, his legendary wit remained sharp. Looking at the gaudy, peeling wallpaper of the Hôtel d'Alsace, he reportedly remarked: 'My wallpaper and I are fighting a duel to the death. One or other of us has to go.' He died on November 30, with the wallpaper, unfortunately, outlasting him.",
     "image": "https://loremflickr.com/800/600/wallpaper?lock=112",
     "isLegendary": true
+  },
+  {
+    "rule": "The Subjunctive Mood (Elite)",
+    "sentence": "If I ________ you, I would study harder.",
+    "options": [
+      "were",
+      "was"
+    ],
+    "correct": "were",
+    "sarcastic_comment": "Subjunctive mood, darling. Were, not was. Try to keep up.",
+    "explanation": "In hypothetical or contrary-to-fact statements (subjunctive mood), 'were' is used for all subjects, even 'I'.",
+    "image": "https://loremflickr.com/800/600/scholar?lock=301",
+    "isElite": true
+  },
+  {
+    "rule": "Who vs. Whom (Elite)",
+    "sentence": "To ________ should I address this letter?",
+    "options": [
+      "whom",
+      "who"
+    ],
+    "correct": "whom",
+    "sarcastic_comment": "It's the object of the preposition. Use 'whom'. It's basic etiquette, really.",
+    "explanation": "Use 'whom' as the object of a verb or preposition. A quick trick: if you can answer with 'him', use 'whom'.",
+    "image": "https://loremflickr.com/800/600/letter?lock=302",
+    "isElite": true
+  },
+  {
+    "rule": "Dangling Participles (Elite)",
+    "sentence": "Walking down the street, ________.",
+    "options": [
+      "the trees were beautiful",
+      "I saw the beautiful trees"
+    ],
+    "correct": "I saw the beautiful trees",
+    "sarcastic_comment": "Unless the trees were walking, you have a dangling participle. Fix it.",
+    "explanation": "A participle phrase at the beginning of a sentence must describe the subject that immediately follows. If the trees aren't walking, they can't be the subject.",
+    "image": "https://loremflickr.com/800/600/walking?lock=303",
+    "isElite": true
   }
 ]

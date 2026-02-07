@@ -100,7 +100,10 @@ function App() {
     const [legendaryFactoids, setLegendaryFactoids] = useState([]);
 
     useEffect(() => {
-        const standards = grammarData.filter(q => !q.isLegendary);
+        const isSupporter = localStorage.getItem('grammarQuiz_isSupporter') === 'true';
+
+        // Filter: Elite questions are only for supporters
+        const standards = grammarData.filter(q => !q.isLegendary && (!q.isElite || isSupporter));
         const legendaries = grammarData.filter(q => q.isLegendary);
 
         const shuffled = [...standards].sort(() => 0.5 - Math.random());

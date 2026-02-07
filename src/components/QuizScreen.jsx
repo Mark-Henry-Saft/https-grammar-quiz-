@@ -18,20 +18,6 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
 
     const [sarcasticMessage, setSarcasticMessage] = useState(null);
 
-    // Sarcastic Replies for Incorrect Answers
-    const sarcasticReplies = [
-        "Oof. That happened.",
-        "Swing and a miss!",
-        "Did you even read the question?",
-        "Grammar is hard. Apparantly.",
-        "My cat could guess better.",
-        "Are you guessing?",
-        "Try again, but with feeling.",
-        "Close! But mostly wrong.",
-        "I'm judging you silently.",
-        "English is tough, huh?"
-    ];
-
     // Timer Logic
     React.useEffect(() => {
         if (feedbackState.show) return;
@@ -87,6 +73,33 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         setSarcasticMessage(null);
     }, [questionData]);
 
+    const [isSupporter] = useState(() => localStorage.getItem('grammarQuiz_isSupporter') === 'true');
+
+    // Sarcastic Replies for Incorrect Answers
+    const sarcasticReplies = [
+        "Oof. That happened.",
+        "Swing and a miss!",
+        "Did you even read the question?",
+        "Grammar is hard. Apparantly.",
+        "My cat could guess better.",
+        "Are you guessing?",
+        "Try again, but with feeling.",
+        "Close! But mostly wrong.",
+        "I'm judging you silently.",
+        "English is tough, huh?"
+    ];
+
+    const eliteSarcasticReplies = [
+        "Is this a joke? Because I'm not laughing.",
+        "Wow. A supporter who can't spell. Historic.",
+        "I expected better from a Grand Grammarian.",
+        "Money can't buy grammar, apparently.",
+        "Is your keyboard broken, or just your brain?",
+        "You paid for this privilege. Enjoy the failure.",
+        "A true elite would have known that.",
+        "My disappointment is immeasurable."
+    ];
+
     const playSound = (isCorrect) => {
         let soundToPlay = incorrectNewSound;
         if (isCorrect) {
@@ -113,10 +126,11 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         setFeedbackState({ show: true, correct: isCorrect });
 
         if (!isCorrect && answer !== "SKIP") {
-            const message = questionData.sarcastic_comment || sarcasticReplies[Math.floor(Math.random() * sarcasticReplies.length)];
+            const pool = isSupporter ? [...sarcasticReplies, ...eliteSarcasticReplies] : sarcasticReplies;
+            const message = questionData.sarcastic_comment || pool[Math.floor(Math.random() * pool.length)];
             setSarcasticMessage(message);
         } else if (answer === "SKIP") {
-            setSarcasticMessage("Coward's way out? Okay.");
+            setSarcasticMessage(isSupporter ? "Elite runners don't skip. But here we are." : "Coward's way out? Okay.");
         }
     };
 
