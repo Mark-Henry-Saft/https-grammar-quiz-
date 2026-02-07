@@ -5,6 +5,7 @@ import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
 import ZenScreen from './components/ZenScreen';
 import grammarData from './grammar_data.json';
+import CheckpointScreen from './components/CheckpointScreen';
 
 import clickSound from './assets/sounds/click.mp3';
 import musicSound from './assets/sounds/music.mp3';
@@ -96,9 +97,15 @@ function App() {
         }
     };
 
+    const [legendaryFactoids, setLegendaryFactoids] = useState([]);
+
     useEffect(() => {
-        const shuffled = [...grammarData].sort(() => 0.5 - Math.random());
+        const standards = grammarData.filter(q => !q.isLegendary);
+        const legendaries = grammarData.filter(q => q.isLegendary);
+
+        const shuffled = [...standards].sort(() => 0.5 - Math.random());
         setQuestions(shuffled);
+        setLegendaryFactoids(legendaries);
     }, []);
 
     const [totalTimeRemaining, setTotalTimeRemaining] = useState(0);
@@ -114,7 +121,9 @@ function App() {
         setAnswerHistory([]);
         setTotalTimeRemaining(0);
         setStartTime(Date.now());
-        const shuffled = [...grammarData].sort(() => 0.5 - Math.random());
+
+        const standards = grammarData.filter(q => !q.isLegendary);
+        const shuffled = [...standards].sort(() => 0.5 - Math.random());
         setQuestions(shuffled);
     };
 
@@ -137,16 +146,12 @@ function App() {
         setTotalTimeRemaining(0);
         setStartTime(Date.now());
 
-        const shuffled = [...grammarData].sort(() => 0.5 - Math.random()).slice(0, 5);
+        const standards = grammarData.filter(q => !q.isLegendary);
+        const shuffled = [...standards].sort(() => 0.5 - Math.random()).slice(0, 5);
         setQuestions(shuffled);
     };
 
     const handleQuizComplete = (isCorrect, timeRemaining = 0) => {
-        // This is called AFTER the user clicks Next or Time runs out
-        // However, we want streak to update IMMEDATELY upon answering for music purposes.
-        // QuizScreen will handle the immediate feedback. 
-        // Here we just aggregate valid score for the end.
-
         if (isCorrect) {
             setScore(s => s + 1);
             setCurrentStreak(s => s + 1);
@@ -158,6 +163,13 @@ function App() {
         setAnswerHistory(prev => [...prev, isCorrect]);
 
         const nextIndex = currentQuestionIndex + 1;
+
+        // Checkpoint logic: Show card every 10 questions
+        if (nextIndex > 0 && nextIndex % 10 === 0 && nextIndex < questions.length) {
+            setCurrentScreen('checkpoint');
+            return; // Controller waits for CheckpointScreen to calling "onContinue"
+        }
+
         if (nextIndex < questions.length) {
             setCurrentQuestionIndex(nextIndex);
         } else {
@@ -230,6 +242,19 @@ function App() {
                 )}
                 {currentScreen === 'zen' && (
                     <ZenScreen onHome={handleRestart} playClick={playClick} />
+                )}
+                {currentScreen === 'checkpoint' && (
+                    <CheckpointScreen
+                        level={Math.floor((currentQuestionIndex + 1) / 10)}
+                        score={score}
+                        totalQuestions={currentQuestionIndex + 1}
+                        playClick={playClick}
+                        factoid={legendaryFactoids[Math.floor((currentQuestionIndex + 1) / 10) - 1] || legendaryFactoids[0]}
+                        onContinue={() => {
+                            setCurrentQuestionIndex(prev => prev + 1);
+                            setCurrentScreen('quiz');
+                        }}
+                    />
                 )}
                 <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.5 (Legendary)</div>
             </div>

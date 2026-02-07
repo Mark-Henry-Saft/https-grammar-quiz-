@@ -7,6 +7,7 @@
       "good"
     ],
     "correct": "good",
+    "sarcastic_comment": "Describing the job? Use 'good.' Unless you think you did a 'well' job, in which case you might need more than just grammar help.",
     "explanation": "'Good' is an adjective (describes the job). 'Well' is usually an adverb (describes how you did something).",
     "image": "https://loremflickr.com/800/600/presentation?lock=0"
   },
@@ -18,6 +19,7 @@
       "good"
     ],
     "correct": "well",
+    "sarcastic_comment": "Action needs an adverb. She plays well. If she played 'good,' she'd be a superhero, not a pianist.",
     "explanation": "Use 'well' to describe the action (how she plays).",
     "image": "https://loremflickr.com/800/600/plays?lock=1"
   },
@@ -29,6 +31,7 @@
       "good"
     ],
     "correct": "well",
+    "sarcastic_comment": "He speaks (action) well (adverb). Saying he speaks 'good' is like saying he speaks 'purple'—it just doesn't fit the verb.",
     "explanation": "He speaks (action) well (adverb). 'Good' would describe his character, not his speech skills.",
     "image": "https://loremflickr.com/800/600/speaking?lock=57"
   },
@@ -52,6 +55,7 @@
       "two"
     ],
     "correct": "too",
+    "sarcastic_comment": "Too many 'o's? Too much cold? Yes. One 'o' is just a destination.",
     "explanation": "Use 'too' when you mean 'excessively' or 'also'.",
     "image": "https://loremflickr.com/800/600/outside?lock=2"
   },
@@ -76,6 +80,7 @@
       "They're"
     ],
     "correct": "There",
+    "sarcastic_comment": "Location, location, location. 'There' is a place. 'Their' is people. 'They're' is a contraction. Do I have to draw a map?",
     "explanation": "Use 'There' for a location or to state that something exists.",
     "image": "https://loremflickr.com/800/600/reason?lock=4"
   },
@@ -99,6 +104,7 @@
       "whom"
     ],
     "correct": "whom",
+    "sarcastic_comment": "If you can answer with 'him,' use 'whom.' To him? To whom. It's the M at the end. Use it.",
     "explanation": "Use 'whom' after a preposition like 'to' or 'for'. (Tip: Answer with 'him').",
     "image": "https://loremflickr.com/800/600/address?lock=6"
   },
@@ -632,7 +638,7 @@
       "Let's eat Grandpa!"
     ],
     "correct": "Let's eat, Grandpa!",
-    "explanation": "Punctuation saves lives. Use a comma to address someone, or Grandpa becomes dinner.",
+    "explanation": "Punctuation saves lives. This classic example shows how a missing comma can turn a polite invitation into a gruesome suggestion. In grammar circles, this is known as the 'vocative comma'—the comma used to address someone directly. Without it, 'Grandpa' shifts from the person being spoken to, to the thing being eaten.",
     "image": "https://loremflickr.com/800/600/Choose?lock=54",
     "isLegendary": true
   },
@@ -667,7 +673,7 @@
     ],
     "correct": "If",
     "sarcastic_comment": "Brevity is power. You're talking too much; they only needed one word.",
-    "explanation": "This 'Laconic' reply (from Laconia, Sparta) caused Philip to abandon his invasion plans.",
+    "explanation": "Philip II of Macedon sent a terrifying message to Sparta: 'If I bring my army into your land, I will destroy your farms, slay your people, and raze your city.' The Spartans famously replied with just one word: 'If.' Philip never invaded. This 'Laconic' style (from Laconia, Sparta) became legendary for its brevity and punch.",
     "image": "https://loremflickr.com/800/600/sparta?lock=101",
     "isLegendary": true
   },
@@ -692,7 +698,7 @@
     ],
     "correct": "hyphen",
     "sarcastic_comment": "Boom. $150 million gone because you skipped a dash. NASA is hiring, but maybe stay away.",
-    "explanation": "A missing overbar (hyphen) in the guidance code caused the rocket to fail.",
+    "explanation": "In 1962, the Mariner 1 spacecraft veered off course and was destroyed just 293 seconds after launch. The culprit? A single missing 'overbar' (a hyphen-like symbol) in the handwritten guidance equations. This tiny punctuation error caused the rocket to miscalculate its velocity, leading to a $150 million explosion—one of the most expensive typos in human history.",
     "image": "https://loremflickr.com/800/600/rocket?lock=103",
     "isLegendary": true
   },
@@ -738,8 +744,9 @@
     ],
     "correct": "Ayn Rand, and God",
     "sarcastic_comment": "Without that comma, you're claiming God is one of your parents. Ambitious!",
-    "explanation": "The Oxford comma prevents list items from being misread as descriptions.",
-    "image": "https://loremflickr.com/800/600/parents?lock=108"
+    "explanation": "This is likely the most famous example of the Oxford Comma's necessity. It reportedly comes from a real book dedication where the lack of a final comma made it sound like the author's parents were a famous philosopher and a deity. Without that tiny mark, the list 'Ayn Rand and God' becomes an appositive, describing who the parents are, rather than listing three separate entities.",
+    "image": "https://loremflickr.com/800/600/parents?lock=108",
+    "isLegendary": true
   },
   {
     "rule": "The Million Dollar Comma",
@@ -750,7 +757,7 @@
     ],
     "correct": "all fruit",
     "sarcastic_comment": "One comma, two million dollars. I hope you're better with your taxes than your grammar.",
-    "explanation": "A comma between 'Fruit' and 'Plants' changed the legal tax status of imports.",
+    "explanation": "This is one of the costliest clerical errors in U.S. history. In the Tariff Act of 1872, a clerk accidentally typed 'Fruit, Plants' instead of 'Fruit-plants'. This tiny comma meant that all imported FRUIT suddenly became tax-free, rather than just the plants. Before the error was fixed a year later, the government lost an estimated $2 million in revenue—equivalent to over $40 million today.",
     "image": "https://loremflickr.com/800/600/fruit?lock=109",
     "isLegendary": true
   },
@@ -775,5 +782,846 @@
     "correct": "loath",
     "explanation": "'Loath' (no 'e') means reluctant. 'Loathe' is the verb meaning to hate.",
     "image": "https://loremflickr.com/800/600/mistake?lock=111"
+  },
+  {
+    "rule": "A lot vs Alot",
+    "sentence": "I like you ________, but I'm not sure if I love you yet.",
+    "options": [
+      "a lot",
+      "alot"
+    ],
+    "correct": "a lot",
+    "sarcastic_comment": "There is no such word as 'alot.' Unless you are talking about the mythical 'Alot' monster, use two words.",
+    "explanation": "'A lot' is always two words. Always.",
+    "image": "https://loremflickr.com/800/600/lot?lock=120"
+  },
+  {
+    "rule": "Should have vs Should of",
+    "sentence": "You ________ seen the look on his face when I won!",
+    "options": [
+      "should have",
+      "should of"
+    ],
+    "correct": "should have",
+    "sarcastic_comment": "'Should of' is a phonetic hallucination. It's 'should have' or 'should've.' Don't trust your ears.",
+    "explanation": "Because 'should've' sounds like 'should of,' people write it incorrectly. It's always 'have'.",
+    "image": "https://loremflickr.com/800/600/face?lock=121"
+  },
+  {
+    "rule": "Could care less",
+    "sentence": "If I say 'I ________ care less,' it means I actually care a little bit.",
+    "options": [
+      "could",
+      "couldn't"
+    ],
+    "correct": "couldn't",
+    "sarcastic_comment": "If you 'could care less,' that means you care! If you don't care at all, you 'could NOT care less.'",
+    "explanation": "This is a logic trap. 'Couldn't care less' is the only version that means you don't care.",
+    "image": "https://loremflickr.com/800/600/logic?lock=122"
+  },
+  {
+    "rule": "Peak vs Peek vs Pique",
+    "sentence": "That mountain ________ really ________ my interest; let's take a ________ at the map.",
+    "options": [
+      "peak / piqued / peek",
+      "peek / peaked / peak"
+    ],
+    "correct": "peak / piqued / peek",
+    "sarcastic_comment": "Peak is the top; peek is a look; pique is to stimulate. Stop confusing your p-words.",
+    "explanation": "Pique (French origin) is for interest. Peak is for height. Peek is for eyes.",
+    "image": "https://loremflickr.com/800/600/mountain?lock=123"
+  },
+  {
+    "rule": "Loose vs Lose",
+    "sentence": "If your belt is too ________, you might ________ your pants in public.",
+    "options": [
+      "loose / lose",
+      "lose / loose"
+    ],
+    "correct": "loose / lose",
+    "sarcastic_comment": "'Lose' has one 'o' because it lost the other one. 'Loose' has two because it's baggy.",
+    "explanation": "Loose rhymes with goose. Lose rhymes with snooze.",
+    "image": "https://loremflickr.com/800/600/belt?lock=124"
+  },
+  {
+    "rule": "Stationary vs Stationery",
+    "sentence": "I was ________ while writing the letter on my best ________.",
+    "options": [
+      "stationary / stationery",
+      "stationery / stationary"
+    ],
+    "correct": "stationary / stationery",
+    "sarcastic_comment": "StationEry is for Letters and Envelopes (think 'E'). StationAry is for pArked cArs (think 'A').",
+    "explanation": "A=At rest. E=Envelopes.",
+    "image": "https://loremflickr.com/800/600/letter?lock=125"
+  },
+  {
+    "rule": "Well vs Good",
+    "sentence": "That was a ________ effort on the project!",
+    "options": [
+      "well",
+      "good"
+    ],
+    "correct": "good",
+    "sarcastic_comment": "Describe the effort? Use 'good.' Describe how you worked? Use 'well.' Don't make me explain this again.",
+    "explanation": "'Good' is an adjective. It modifies the noun 'effort.'",
+    "image": "https://loremflickr.com/800/600/effort?lock=130"
+  },
+  {
+    "rule": "To vs Too vs Two",
+    "sentence": "I have ________ eyes and only one mouth.",
+    "options": [
+      "to",
+      "too",
+      "two"
+    ],
+    "correct": "two",
+    "sarcastic_comment": "Unless you are visiting 'to' eyes, use the number.",
+    "explanation": "'Two' is the number 2.",
+    "image": "https://loremflickr.com/800/600/eyes?lock=131"
+  },
+  {
+    "rule": "Their vs There vs They're",
+    "sentence": "________ coming over for dinner tonight.",
+    "options": [
+      "Their",
+      "There",
+      "They're"
+    ],
+    "correct": "They're",
+    "sarcastic_comment": "They ARE coming. They're. It's a contraction. Use your brain.",
+    "explanation": "They're = They are.",
+    "image": "https://loremflickr.com/800/600/dinner?lock=132"
+  },
+  {
+    "rule": "Who vs Whom",
+    "sentence": "________ is going to the party with you?",
+    "options": [
+      "Who",
+      "Whom"
+    ],
+    "correct": "Who",
+    "sarcastic_comment": "If the answer is 'he,' use 'who.' If the answer is 'him,' use 'whom.' He is going. Who is going. simple.",
+    "explanation": "'Who' is the subject pronoun. 'Whom' is the object pronoun.",
+    "image": "https://loremflickr.com/800/600/party?lock=133"
+  },
+  {
+    "rule": "Compliment vs Complement",
+    "sentence": "He gave her a nice ________ on her new haircut.",
+    "options": [
+      "compliment",
+      "complement"
+    ],
+    "correct": "compliment",
+    "sarcastic_comment": "I Compliment people with 'I'. A Complement Completes with 'E'.",
+    "explanation": "A compliment is a polite expression of praise.",
+    "image": "https://loremflickr.com/800/600/haircut?lock=134"
+  },
+  {
+    "rule": "Lose vs Loose",
+    "sentence": "This knot is far too ________; it will slip.",
+    "options": [
+      "lose",
+      "loose"
+    ],
+    "correct": "loose",
+    "sarcastic_comment": "If it rhymes with 'moose,' use 'loose.' If you're crying because you can't find it, use 'lose.'",
+    "explanation": "'Loose' is an adjective meaning not tight.",
+    "image": "https://loremflickr.com/800/600/knot?lock=135"
+  },
+  {
+    "rule": "Advice vs Advise",
+    "sentence": "I would ________ you to wait until morning.",
+    "options": [
+      "advice",
+      "advise"
+    ],
+    "correct": "advise",
+    "sarcastic_comment": "Advise is the verb (it has a 'z' sound). Advice is the noun (it has an 's' sound).",
+    "explanation": "'Advise' is the action of giving advice.",
+    "image": "https://loremflickr.com/800/600/wait?lock=136"
+  },
+  {
+    "rule": "Elicit vs Illicit",
+    "sentence": "The gang was involved in ________ trade across the border.",
+    "options": [
+      "elicit",
+      "illicit"
+    ],
+    "correct": "illicit",
+    "sarcastic_comment": "Illicit starts with 'I' like 'Illegal'. Elicit starts with 'E' like 'Extract'.",
+    "explanation": "'Illicit' means forbidden by law, rules, or custom.",
+    "image": "https://loremflickr.com/800/600/trade?lock=137"
+  },
+  {
+    "rule": "Principal vs Principle",
+    "sentence": "It's the ________ of the thing that matters to me.",
+    "options": [
+      "principal",
+      "principle"
+    ],
+    "correct": "principle",
+    "sarcastic_comment": "The PrincipAL is your PAL. A PrincipLE is a ruLE.",
+    "explanation": "A principle is a fundamental truth or proposition.",
+    "image": "https://loremflickr.com/800/600/truth?lock=138"
+  },
+  {
+    "rule": "Sight vs Site vs Cite",
+    "sentence": "The sunrise over the ocean was a beautiful ________.",
+    "options": [
+      "sight",
+      "site",
+      "cite"
+    ],
+    "correct": "sight",
+    "sarcastic_comment": "You use your eyes for a SIGHT. You go to a location (SITE).",
+    "explanation": "'Sight' refers to something seen or the faculty of seeing.",
+    "image": "https://loremflickr.com/800/600/sunrise?lock=139"
+  },
+  {
+    "rule": "Stationary vs Stationery",
+    "sentence": "She bought elegant ________ for her wedding invitations.",
+    "options": [
+      "stationary",
+      "stationery"
+    ],
+    "correct": "stationery",
+    "sarcastic_comment": "StationEry is for Envelopes. StationAry is for pArked cars. Are you sending a car or an envelope?",
+    "explanation": "'Stationery' refers to writing materials.",
+    "image": "https://loremflickr.com/800/600/wedding?lock=140"
+  },
+  {
+    "rule": "I vs Me",
+    "sentence": "Sarah and ________ are going to the concert tonight.",
+    "options": [
+      "I",
+      "me"
+    ],
+    "correct": "I",
+    "sarcastic_comment": "Take Sarah out. Would you say 'Me am going'? No. Use 'I'.",
+    "explanation": "Use 'I' when you are the subject of the sentence.",
+    "image": "https://loremflickr.com/800/600/concert?lock=141"
+  },
+  {
+    "rule": "Tortuous vs Torturous",
+    "sentence": "The long, hot wait in the sun was ________.",
+    "options": [
+      "tortuous",
+      "torturous"
+    ],
+    "correct": "torturous",
+    "sarcastic_comment": "Torturous involves torture (pain). Tortuous involves turns (curves). This wait is painful, hopefully not curvy.",
+    "explanation": "'Torturous' means characterized by or involving physical or mental pain.",
+    "image": "https://loremflickr.com/800/600/sun?lock=142"
+  },
+  {
+    "rule": "Enervate vs Energize",
+    "sentence": "A cold shower in the morning will ________ you!",
+    "options": [
+      "enervate",
+      "energize"
+    ],
+    "correct": "energize",
+    "sarcastic_comment": "If you want to feel weak, enervate. If you want to feel like a superhero, energize.",
+    "explanation": "'Energize' means to give vitality and enthusiasm to.",
+    "image": "https://loremflickr.com/800/600/shower?lock=143"
+  },
+  {
+    "rule": "Complacent vs Complaisant",
+    "sentence": "The butler was so ________ that he anticipated every guest's need.",
+    "options": [
+      "complacent",
+      "complaisant"
+    ],
+    "correct": "complaisant",
+    "sarcastic_comment": "Complacent means you're lazy and smug. Complaisant means you're eager to please. The butler isn't lazy.",
+    "explanation": "'Complaisant' means willing to please others; obliging.",
+    "image": "https://loremflickr.com/800/600/butler?lock=144"
+  },
+  {
+    "rule": "Flaunt vs Flout",
+    "sentence": "If you work hard for that body, feel free to ________ it.",
+    "options": [
+      "flaunt",
+      "flout"
+    ],
+    "correct": "flaunt",
+    "sarcastic_comment": "You flaunt (show off) your assets. You flout (disregard) the rules.",
+    "explanation": "'Flaunt' means to display (something) ostentatiously, especially in order to provoke envy or admiration.",
+    "image": "https://loremflickr.com/800/600/gym?lock=145"
+  },
+  {
+    "rule": "Amoral vs Immoral",
+    "sentence": "Stealing from the poor is considered ________ by almost everyone.",
+    "options": [
+      "amoral",
+      "immoral"
+    ],
+    "correct": "immoral",
+    "sarcastic_comment": "Amoral means you don't even know what right and wrong are. Immoral means you know, and you're just a bad person.",
+    "explanation": "'Immoral' means not conforming to accepted standards of morality.",
+    "image": "https://loremflickr.com/800/600/stealing?lock=146"
+  },
+  {
+    "rule": "Disinterested vs Uninterested",
+    "sentence": "The students were clearly ________ in the boring lecture.",
+    "options": [
+      "disinterested",
+      "uninterested"
+    ],
+    "correct": "uninterested",
+    "sarcastic_comment": "Uninterested means you're bored. Disinterested means you're a fair and impartial judge. Don't be a judge, just listen.",
+    "explanation": "'Uninterested' means not interested in or concerned about something.",
+    "image": "https://loremflickr.com/800/600/bored?lock=147"
+  },
+  {
+    "rule": "Appraise vs Apprise",
+    "sentence": "I need to ________ the value of this antique vase.",
+    "options": [
+      "appraise",
+      "apprise"
+    ],
+    "correct": "appraise",
+    "sarcastic_comment": "ApprIse means Inform. ApprAise means Assess. Assess the vase, please.",
+    "explanation": "'Appraise' means to assess the value or quality of.",
+    "image": "https://loremflickr.com/800/600/vase?lock=148"
+  },
+  {
+    "rule": "Loath vs Loathe",
+    "sentence": "I absolutely ________ having to wake up early on Saturdays.",
+    "options": [
+      "loath",
+      "loathe"
+    ],
+    "correct": "loathe",
+    "sarcastic_comment": "Loath (no 'e') is an adjective (reluctant). Loathe (with 'e') is a verb (hate). You HATE the early wake-up. Add the 'e'.",
+    "explanation": "'Loathe' is a verb meaning to feel intense dislike or disgust for.",
+    "image": "https://loremflickr.com/800/600/sleepy?lock=149"
+  },
+  {
+    "rule": "Sensual vs Sensuous",
+    "sentence": "The massage was a deeply ________ experience.",
+    "options": [
+      "sensual",
+      "sensuous"
+    ],
+    "correct": "sensual",
+    "sarcastic_comment": "Sensuous involves the senses (like art). Sensual involves physical/body gratifications. A massage is definitely physical.",
+    "explanation": "'Sensual' relates to or involves gratification of the senses and physical appetites.",
+    "image": "https://loremflickr.com/800/600/massage?lock=150"
+  },
+  {
+    "rule": "Ingenious vs Ingenuous",
+    "sentence": "Her ________ smile made it hard to believe she could ever lie.",
+    "options": [
+      "ingenious",
+      "ingenuous"
+    ],
+    "correct": "ingenuous",
+    "sarcastic_comment": "Ingenious is for geniuses. Ingenuous is for innocent, naive people. She's not a genius, she's just cute.",
+    "explanation": "'Ingenuous' means innocent and unsuspecting.",
+    "image": "https://loremflickr.com/800/600/smile?lock=151"
+  },
+  {
+    "rule": "Who vs Whom",
+    "sentence": "To ________ was the package delivered?",
+    "options": [
+      "who",
+      "whom"
+    ],
+    "correct": "whom",
+    "sarcastic_comment": "Deliver it to 'him'? Then use 'whom.' Deliver it to 'he'? No, you're not that person.",
+    "explanation": "Use 'whom' as the object of a preposition (in this case, 'to').",
+    "image": "https://loremflickr.com/800/600/package?lock=160"
+  },
+  {
+    "rule": "Affect vs Effect",
+    "sentence": "The ________ of the storm was felt for weeks.",
+    "options": [
+      "affect",
+      "effect"
+    ],
+    "correct": "effect",
+    "sarcastic_comment": "A result? Effect. To change something? Affect. The storm left a result.",
+    "explanation": "Effect is typically the noun referring to the result of an action.",
+    "image": "https://loremflickr.com/800/600/storm?lock=161"
+  },
+  {
+    "rule": "Compliment vs Complement",
+    "sentence": "The red wine will ________ the steak perfectly.",
+    "options": [
+      "compliment",
+      "complement"
+    ],
+    "correct": "complement",
+    "sarcastic_comment": "They go together! They complete each other! Like 'E' and 'E'.",
+    "explanation": "'Complement' means to add to something in a way that enhances or improves it.",
+    "image": "https://loremflickr.com/800/600/steak?lock=162"
+  },
+  {
+    "rule": "Advice vs Advise",
+    "sentence": "Could you please give me some ________ on my career?",
+    "options": [
+      "advice",
+      "advise"
+    ],
+    "correct": "advice",
+    "sarcastic_comment": "I give advice (the thing). I advise people (the action). You want the thing.",
+    "explanation": "'Advice' is the noun form.",
+    "image": "https://loremflickr.com/800/600/career?lock=163"
+  },
+  {
+    "rule": "Allusion vs Illusion",
+    "sentence": "The poem contains an ________ to a Greek myth.",
+    "options": [
+      "allusion",
+      "illusion"
+    ],
+    "correct": "allusion",
+    "sarcastic_comment": "A reference is an ALLUSION. A trick of the eye is an ILLUSION.",
+    "explanation": "An 'allusion' is an expression designed to call something to mind without mentioning it explicitly.",
+    "image": "https://loremflickr.com/800/600/poem?lock=164"
+  },
+  {
+    "rule": "Discreet vs Discrete",
+    "sentence": "He made a ________ exit through the back door.",
+    "options": [
+      "discreet",
+      "discrete"
+    ],
+    "correct": "discreet",
+    "discreet": "Be careful! E-E is for keepig it quiet. E-T-E is for separate units. You want the quiet one.",
+    "explanation": "'Discreet' means careful and circumspect in one's speech or actions.",
+    "image": "https://loremflickr.com/800/600/exit?lock=165"
+  },
+  {
+    "rule": "Elicit vs Illicit",
+    "sentence": "The teacher tried to ________ a response from the shy boy.",
+    "options": [
+      "elicit",
+      "illicit"
+    ],
+    "correct": "elicit",
+    "sarcastic_comment": "Extract a response (E). Don't start a crime (I).",
+    "explanation": "'Elicit' means to evoke or draw out (a reaction, answer, or fact) from someone.",
+    "image": "https://loremflickr.com/800/600/teacher?lock=166"
+  },
+  {
+    "rule": "Emigrate vs Immigrate",
+    "sentence": "My grandparents decided to ________ to Canada in 1950.",
+    "options": [
+      "emigrate",
+      "immigrate"
+    ],
+    "correct": "immigrate",
+    "sarcastic_comment": "Immigrate = In (moving into). Emigrate = Exit (moving out). They moved IN to Canada.",
+    "explanation": "'Immigrate' means to come to live permanently in a foreign country.",
+    "image": "https://loremflickr.com/800/600/canada?lock=167"
+  },
+  {
+    "rule": "Ensure vs Insure",
+    "sentence": "Checking the tires will ________ we arrive safely.",
+    "options": [
+      "ensure",
+      "insure"
+    ],
+    "correct": "ensure",
+    "sarcastic_comment": "Make sure? Ensure. Pay a company monthly for safety? Insure.",
+    "explanation": "'Ensure' means to make certain that something will occur or be the case.",
+    "image": "https://loremflickr.com/800/600/tires?lock=168"
+  },
+  {
+    "rule": "Lay vs Lie",
+    "sentence": "The dog loves to ________ in the sun all afternoon.",
+    "options": [
+      "lay",
+      "lie"
+    ],
+    "correct": "lie",
+    "sarcastic_comment": "The dog is doing it himself? Lie. The dog is placing an egg? No. Only chickens lay things.",
+    "explanation": "Use 'lie' for the action of reclining yourself or an animal reclining itself.",
+    "image": "https://loremflickr.com/800/600/dog?lock=169"
+  },
+  {
+    "rule": "Principal vs Principle",
+    "sentence": "The high school ________ retired after 40 years.",
+    "options": [
+      "principal",
+      "principle"
+    ],
+    "correct": "principal",
+    "sarcastic_comment": "Is he your PAL? Yes? Principal. Is it a rule? No? Then it's the pal.",
+    "explanation": "'Principal' is the person with the highest authority or most important position in an organization.",
+    "image": "https://loremflickr.com/800/600/authority?lock=170"
+  },
+  {
+    "rule": "Than vs Then",
+    "sentence": "I would much rather go to the beach ________ the gym.",
+    "options": [
+      "than",
+      "then"
+    ],
+    "correct": "than",
+    "sarcastic_comment": "Comparing two things? Use 'than.' Chronology? Use 'then.'",
+    "explanation": "'Than' is a conjunction used in comparisons.",
+    "image": "https://loremflickr.com/800/600/beach?lock=171"
+  },
+  {
+    "rule": "Passed vs Past",
+    "sentence": "A fast car ________ me on the narrow road.",
+    "options": [
+      "passed",
+      "past"
+    ],
+    "correct": "passed",
+    "sarcastic_comment": "It's a verb! He PASS-ED you. Action. Verb form.",
+    "explanation": "'Passed' is the past tense of 'to pass'.",
+    "image": "https://loremflickr.com/800/600/narrow?lock=172"
+  },
+  {
+    "rule": "Brake vs Break",
+    "sentence": "You really need a ________ from all this studying.",
+    "options": [
+      "brake",
+      "break"
+    ],
+    "correct": "break",
+    "sarcastic_comment": "A pause? Break. Stopping the car? Brake.",
+    "explanation": "A 'break' is a pause in work or activity.",
+    "image": "https://loremflickr.com/800/600/study?lock=173"
+  },
+  {
+    "rule": "Canvas vs Canvass",
+    "sentence": "The massive tent was made of durable ________.",
+    "options": [
+      "canvas",
+      "canvass"
+    ],
+    "correct": "canvas",
+    "sarcastic_comment": "Cloth? One 'S'. Searching for votes? Two 'S's.",
+    "explanation": "'Canvas' is a strong, coarse unbleached cloth.",
+    "image": "https://loremflickr.com/800/600/tent?lock=174"
+  },
+  {
+    "rule": "Council vs Counsel",
+    "sentence": "The student ________ organized the winter dance.",
+    "options": [
+      "council",
+      "counsel"
+    ],
+    "correct": "council",
+    "sarcastic_comment": "A group? Council. Advice? Counsel.",
+    "explanation": "A 'council' is an advisory, deliberative, or administrative body of people.",
+    "image": "https://loremflickr.com/800/600/dance?lock=175"
+  },
+  {
+    "rule": "Complacent vs Complaisant",
+    "sentence": "Success can make people ________ and prone to mistakes.",
+    "options": [
+      "complacent",
+      "complaisant"
+    ],
+    "correct": "complacent",
+    "sarcastic_comment": "Smug and lazy? Complacent. Eager to help? Complaisant. Don't be the lazy one.",
+    "explanation": "'Complacent' means showing smug or uncritical satisfaction with oneself or one's achievements.",
+    "image": "https://loremflickr.com/800/600/mistakes?lock=176"
+  },
+  {
+    "rule": "Flaunt vs Flout",
+    "sentence": "They chose to ________ the safety regulations for a thrill.",
+    "options": [
+      "flaunt",
+      "flout"
+    ],
+    "correct": "flout",
+    "sarcastic_comment": "Disregard a rule? Flout. Show off a watch? Flaunt.",
+    "explanation": "'Flout' means to openly disregard (a rule, law, or convention).",
+    "image": "https://loremflickr.com/800/600/thrill?lock=177"
+  },
+  {
+    "rule": "Amoral vs Immoral",
+    "sentence": "A machine is ________; it possesses no inherent sense of right or wrong.",
+    "options": [
+      "amoral",
+      "immoral"
+    ],
+    "correct": "amoral",
+    "sarcastic_comment": "Completely lacking a moral sense? Amoral. Violating a known moral code? Immoral. Computers don't have codes; they have bits.",
+    "explanation": "'Amoral' means lacking a moral sense; unconcerned with the rightness or wrongness of something.",
+    "image": "https://loremflickr.com/800/600/machine?lock=178"
+  },
+  {
+    "rule": "Appraise vs Apprise",
+    "sentence": "The manager will ________ the team of the upcoming changes.",
+    "options": [
+      "appraise",
+      "apprise"
+    ],
+    "correct": "apprise",
+    "sarcastic_comment": "Inform? Apprise. Value? Appraise. Inform them!",
+    "explanation": "'Apprise' means to inform or tell someone.",
+    "image": "https://loremflickr.com/800/600/upcoming?lock=179"
+  },
+  {
+    "rule": "Sensual vs Sensuous",
+    "sentence": "The velvet fabric felt incredibly ________ against her skin.",
+    "options": [
+      "sensual",
+      "sensuous"
+    ],
+    "correct": "sensuous",
+    "sarcastic_comment": "Aesthetically pleasing to the senses? Sensuous. Physically erotic? Sensual. Let's stick with the aesthetic texture here.",
+    "explanation": "'Sensuous' means relating to or affecting the senses rather than the intellect.",
+    "image": "https://loremflickr.com/800/600/velvet?lock=180"
+  },
+  {
+    "rule": "Ingenious vs Ingenuous",
+    "sentence": "That was an ________ solution to a very messy problem!",
+    "options": [
+      "ingenious",
+      "ingenuous"
+    ],
+    "correct": "ingenious",
+    "sarcastic_comment": "Genius? Ingenious. Naive? Ingenuous.",
+    "explanation": "'Ingenious' means clever, original, and inventive.",
+    "image": "https://loremflickr.com/800/600/genius?lock=181"
+  },
+  {
+    "rule": "Who vs Whom",
+    "sentence": "The boy ________ won the race is my younger brother.",
+    "options": [
+      "who",
+      "whom"
+    ],
+    "correct": "who",
+    "sarcastic_comment": "Is he a 'he' or a 'him'? He won. So it's 'who.' This isn't rocket science, but NASA-level punctuation errors exist, so stay sharp.",
+    "explanation": "'Who' is the subject of the verb 'won'.",
+    "image": "https://loremflickr.com/800/600/race?lock=190"
+  },
+  {
+    "rule": "Affect vs Effect",
+    "sentence": "We cannot let our emotions ________ our professional judgment.",
+    "options": [
+      "affect",
+      "effect"
+    ],
+    "correct": "affect",
+    "sarcastic_comment": "Action! Change! Verb! Affect. Unless you're trying to 'effect' a change, which you're not. Use the 'A'.",
+    "explanation": "'Affect' is the verb meaning to influence.",
+    "image": "https://loremflickr.com/800/600/emotions?lock=191"
+  },
+  {
+    "rule": "Compliment vs Complement",
+    "sentence": "That blue tie will ________ your suit perfectly.",
+    "options": [
+      "compliment",
+      "complement"
+    ],
+    "correct": "complement",
+    "sarcastic_comment": "They complete each other. The tie doesn't have a mouth to give a compliment.",
+    "explanation": "'Complement' means to complete or enhance.",
+    "image": "https://loremflickr.com/800/600/tie?lock=192"
+  },
+  {
+    "rule": "Lose vs Loose",
+    "sentence": "Did you ________ your car keys in the grass?",
+    "options": [
+      "lose",
+      "loose"
+    ],
+    "correct": "lose",
+    "sarcastic_comment": "You lost an 'O', and you lost your keys. One 'O' for the loser.",
+    "explanation": "'Lose' is the verb meaning to misplace.",
+    "image": "https://loremflickr.com/800/600/keys?lock=193"
+  },
+  {
+    "rule": "Their vs There vs They're",
+    "sentence": "The children left ________ toys scattered everywhere.",
+    "options": [
+      "Their",
+      "There",
+      "They're"
+    ],
+    "correct": "Their",
+    "sarcastic_comment": "The toys belong to them. Possession needs 'Their.' Keep your eyes on the prize.",
+    "explanation": "'Their' is the possessive pronoun.",
+    "image": "https://loremflickr.com/800/600/toys?lock=194"
+  },
+  {
+    "rule": "Its vs It's",
+    "sentence": "The dog wagged ________ tail in excitement.",
+    "options": [
+      "its",
+      "it's"
+    ],
+    "correct": "its",
+    "sarcastic_comment": "Is it 'it is tail'? No. That would be weird. Possession has no apostrophe for 'its'.",
+    "explanation": "Its = Belonging to it. It's = It is.",
+    "image": "https://loremflickr.com/800/600/tail?lock=195"
+  },
+  {
+    "rule": "Its vs It's",
+    "sentence": "________ raining cats and dogs outside right now.",
+    "options": [
+      "Its",
+      "It's"
+    ],
+    "correct": "It's",
+    "sarcastic_comment": "It IS raining. Contraction. Use the apostrophe or Grandpa gets it.",
+    "explanation": "It's = It is.",
+    "image": "https://loremflickr.com/800/600/rain?lock=196"
+  },
+  {
+    "rule": "Your vs You're",
+    "sentence": "________ going to love the surprise we planned!",
+    "options": [
+      "Your",
+      "You're"
+    ],
+    "correct": "You're",
+    "sarcastic_comment": "You ARE going. Contraction. Please, for the love of all that is holy.",
+    "explanation": "You're = You are.",
+    "image": "https://loremflickr.com/800/600/surprise?lock=197"
+  },
+  {
+    "rule": "Your vs You're",
+    "sentence": "Is that ________ brand new car in the driveway?",
+    "options": [
+      "your",
+      "you're"
+    ],
+    "correct": "your",
+    "sarcastic_comment": "Does the car belong to you? Yes. Possession. 'Your.' No apostrophe needed.",
+    "explanation": "Your = Belonging to you.",
+    "image": "https://loremflickr.com/800/600/driveway?lock=198"
+  },
+  {
+    "rule": "Whose vs Who's",
+    "sentence": "________ cell phone is ringing during the movie?",
+    "options": [
+      "Whose",
+      "Who's"
+    ],
+    "correct": "Whose",
+    "sarcastic_comment": "Who IS cell phone? No. Possession. Whose.",
+    "explanation": "Whose = Belonging to whom.",
+    "image": "https://loremflickr.com/800/600/ringing?lock=199"
+  },
+  {
+    "rule": "Whose vs Who's",
+    "sentence": "________ going to take responsibility for this mess?",
+    "options": [
+      "Whose",
+      "Who's"
+    ],
+    "correct": "Who's",
+    "sarcastic_comment": "Who IS going? Contraction. Use the apostrophe.",
+    "explanation": "Who's = Who is.",
+    "image": "https://loremflickr.com/800/600/mess?lock=200"
+  },
+  {
+    "rule": "Accept vs Except",
+    "sentence": "I gracefully ________ your kind apology.",
+    "options": [
+      "accept",
+      "except"
+    ],
+    "correct": "accept",
+    "sarcastic_comment": "A=Accept/Agree. E=Exclude. You're agreeing to the apology.",
+    "explanation": "Accept = To receive. Except = Excluding.",
+    "image": "https://loremflickr.com/800/600/apology?lock=201"
+  },
+  {
+    "rule": "Accept vs Except",
+    "sentence": "Everyone went to the party ________ for poor John.",
+    "options": [
+      "accept",
+      "except"
+    ],
+    "correct": "except",
+    "sarcastic_comment": "Excluding him? Except. Start with E.",
+    "explanation": "Except = Excluding.",
+    "image": "https://loremflickr.com/800/600/unhappy?lock=202"
+  },
+  {
+    "rule": "Beside vs Besides",
+    "sentence": "Please come and sit down ________ me on the bench.",
+    "options": [
+      "beside",
+      "besides"
+    ],
+    "correct": "beside",
+    "sarcastic_comment": "Next to? Beside. In addition to? Besides. You want him next to you, not in addition to you.",
+    "explanation": "Beside = Next to.",
+    "image": "https://loremflickr.com/800/600/bench?lock=203"
+  },
+  {
+    "rule": "Beside vs Besides",
+    "sentence": "________ being a doctor, she is also a world-class pilot.",
+    "options": [
+      "Beside",
+      "Besides"
+    ],
+    "correct": "Besides",
+    "sarcastic_comment": "In addition to? Plus? Extra S for besides.",
+    "explanation": "Besides = In addition to.",
+    "image": "https://loremflickr.com/800/600/pilot?lock=204"
+  },
+  {
+    "rule": "Farther vs Further",
+    "sentence": "We need to walk much ________ to find the trailhead.",
+    "options": [
+      "farther",
+      "further"
+    ],
+    "correct": "farther",
+    "sarcastic_comment": "Physical distance? Farther (has the word 'far'). Metaphorical? Further. This is a real walk.",
+    "explanation": "Farther = Physical distance. Further = Metaphorical distance/addition.",
+    "image": "https://loremflickr.com/800/600/trail?lock=205"
+  },
+  {
+    "rule": "Farther vs Further",
+    "sentence": "Let's discuss this matter ________ at tomorrow's meeting.",
+    "options": [
+      "farther",
+      "further"
+    ],
+    "correct": "further",
+    "sarcastic_comment": "Are we walking into the meeting? No. It's metaphorical. Further.",
+    "explanation": "Further = Metaphorical distance or depth.",
+    "image": "https://loremflickr.com/800/600/meeting?lock=206"
+  },
+  {
+    "rule": "Less vs Fewer",
+    "sentence": "There are ________ students in the class today than yesterday.",
+    "options": [
+      "less",
+      "fewer"
+    ],
+    "correct": "fewer",
+    "sarcastic_comment": "Can you count the students? Yes. (Unless you're very bad at math). Then use 'fewer.'",
+    "explanation": "Fewer is for countable items. Less is for uncountable mass.",
+    "image": "https://loremflickr.com/800/600/class?lock=207"
+  },
+  {
+    "rule": "Less vs Fewer",
+    "sentence": "I have ________ time to finish this project than I thought.",
+    "options": [
+      "less",
+      "fewer"
+    ],
+    "correct": "less",
+    "sarcastic_comment": "Can you count 'time'? No, you count minutes. So use 'less' for the general concept of time.",
+    "explanation": "Less is for uncountable quantities (like time, water, or money).",
+    "image": "https://loremflickr.com/800/600/time?lock=208"
+  },
+  {
+    "rule": "Oscar Wilde's Last Words",
+    "sentence": "Famous Last Words",
+    "options": [],
+    "correct": "",
+    "explanation": "Oscar Wilde spent his final days in a cheap Paris hotel, broken in health and spirit after his imprisonment in England. Even on his deathbed in November 1900, his legendary wit remained sharp. Looking at the gaudy, peeling wallpaper of the Hôtel d'Alsace, he reportedly remarked: 'My wallpaper and I are fighting a duel to the death. One or other of us has to go.' He died on November 30, with the wallpaper, unfortunately, outlasting him.",
+    "image": "https://loremflickr.com/800/600/wallpaper?lock=112",
+    "isLegendary": true
   }
 ]

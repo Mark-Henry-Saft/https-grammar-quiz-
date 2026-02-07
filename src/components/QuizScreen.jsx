@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
-import { ChevronLeft, Settings, CheckCircle, HelpCircle, SkipForward, Lightbulb, X, Flame } from 'lucide-react';
-import FeedbackSheet from './FeedbackSheet';
+import { ChevronLeft, Settings, CheckCircle, HelpCircle, SkipForward, Lightbulb, X, Flame, XCircle } from 'lucide-react';
 
 import correctNewSound from '../assets/sounds/correct_new.wav';
 import incorrectNewSound from '../assets/sounds/incorrect_new.wav';
@@ -58,7 +57,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
     React.useEffect(() => {
         if (currentStreak > 0 && currentStreak % 5 === 0) {
             setShowStreak(true);
-            const timer = setTimeout(() => setShowStreak(false), 3000);
+            const timer = setTimeout(() => setShowStreak(false), 2000);
             return () => clearTimeout(timer);
         }
 
@@ -144,7 +143,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
             )}
 
             {/* Header - Compact */}
-            <header className="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 pt-2 pb-1 shadow-sm">
+            <header className="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 pt-2 pb-1 shadow-sm">
                 <div className="flex items-center justify-between max-w-md mx-auto h-10">
                     <button
                         onClick={onBack}
@@ -152,10 +151,8 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                     >
                         <ChevronLeft size={20} />
                     </button>
-                    <h1 className="text-base font-bold tracking-tight opacity-80">Grammar Quiz</h1>
-                    <button className="w-8 h-8 flex items-center justify-end text-primary opacity-0 pointer-events-none">
-                        <Settings size={20} />
-                    </button>
+                    <h1 className="text-sm font-bold tracking-tight opacity-70 uppercase">Grammar Mastery</h1>
+                    <div className="w-8"></div>
                 </div>
 
                 {/* Progress Bar - Compact */}
@@ -185,11 +182,12 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                 </div>
             </header>
 
-            <main className="flex-1 flex flex-col px-3 py-2 max-w-md mx-auto w-full relative z-0 justify-center">
+            <main className="flex-1 flex flex-col justify-center px-4 py-4 max-w-md mx-auto w-full relative z-0">
 
-                {/* Image Area - Reduced height */}
-                <div className="bg-white dark:bg-slate-900 rounded-xl ios-shadow p-3 mb-3 border border-slate-100 dark:border-slate-800 relative overflow-hidden shrink-0">
-                    <div className="w-full h-32 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center overflow-hidden relative shadow-inner mb-3">
+                {/* Question Area */}
+                <div className="bg-white dark:bg-slate-900 rounded-2xl ios-shadow border border-slate-100 dark:border-slate-800 p-4 mb-4">
+                    {/* Image Area */}
+                    <div className="w-full h-40 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center overflow-hidden relative shadow-inner mb-4">
                         <img
                             key={questionData.image}
                             src={imgSrc}
@@ -199,113 +197,155 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                         />
                     </div>
 
-                    {/* Sentence - Compact Text */}
+                    {/* Sentence */}
                     <div className="flex flex-col items-center text-center">
-                        <h2 className="text-lg font-bold mb-1 text-slate-800 dark:text-white hidden">{questionData.rule}</h2>
-                        <p className="text-lg font-medium leading-snug px-1">
+                        <p className="text-xl font-bold leading-snug px-1 text-slate-800 dark:text-white">
                             {(() => {
                                 const parts = questionData.sentence.split('________');
-                                const answerParts = selectedAnswer
-                                    ? selectedAnswer.split('/').map(s => s.trim())
-                                    : Array(parts.length - 1).fill("");
 
-                                return parts.map((part, index) => (
-                                    <React.Fragment key={index}>
-                                        {part}
-                                        {index < parts.length - 1 && (
-                                            <span className={`inline-block border-b-2 mx-1 font-bold transition-colors duration-300 ${selectedAnswer ? 'text-primary border-primary' : 'min-w-[2.5rem] border-slate-300 text-transparent'}`}>
-                                                {answerParts[index] || "____"}
-                                            </span>
-                                        )}
-                                    </React.Fragment>
-                                ));
+                                // PROPER NOUN CHECK: If it has multiple caps or specific legendary names
+                                const isProperNoun = (str) => {
+                                    if (!str) return false;
+                                    const properNouns = ['Sparta', 'NASA', 'JFK', 'Stalin', 'Grammar Mastery'];
+                                    if (properNouns.includes(str)) return true;
+                                    if (str === "I") return true;
+                                    // Check if it's already mixed case or all caps (e.g. "iPhone" or "USA")
+                                    return str.length > 1 && str.substring(1).toLowerCase() !== str.substring(1);
+                                };
+
+                                const formatAnswer = (ans, isStart) => {
+                                    if (!ans) return "";
+                                    if (isStart) return ans; // Level 0: Start of sentence always capitalized
+                                    if (isProperNoun(ans)) return ans;
+                                    return ans.toLowerCase();
+                                };
+
+                                return parts.map((part, index) => {
+                                    const isStartOfSentence = index === 0 && part.trim() === "";
+                                    const answerParts = selectedAnswer && selectedAnswer !== "TIMEOUT"
+                                        ? selectedAnswer.split('/').map(s => s.trim())
+                                        : Array(parts.length - 1).fill("");
+
+                                    return (
+                                        <React.Fragment key={index}>
+                                            {part}
+                                            {index < parts.length - 1 && (
+                                                <span className={`inline-block border-b-2 mx-1 font-black transition-colors duration-300 ${selectedAnswer ? 'text-primary border-primary' : 'min-w-[2.5rem] border-slate-300 text-transparent'}`}>
+                                                    {selectedAnswer
+                                                        ? formatAnswer(answerParts[index], isStartOfSentence)
+                                                        : (selectedAnswer === "TIMEOUT" ? "???" : "____")
+                                                    }
+                                                </span>
+                                            )}
+                                        </React.Fragment>
+                                    );
+                                });
                             })()}
                         </p>
                     </div>
                 </div>
 
+                {/* Tally Stacks - Compact Restore! */}
+                <div className="flex justify-center gap-1 mb-4 h-6 overflow-hidden">
+                    {answerHistory.map((isCorrect, idx) => (
+                        <div
+                            key={idx}
+                            className={`w-4 h-4 rounded-full flex items-center justify-center animate-in zoom-in duration-300 shadow-sm border ${isCorrect
+                                ? 'bg-green-100 border-green-400 text-green-600'
+                                : 'bg-red-100 border-red-400 text-red-600'
+                                }`}
+                        >
+                            {isCorrect ? <span className="text-[10px] font-black">O</span> : <X size={10} strokeWidth={3} />}
+                        </div>
+                    ))}
+                    {/* Placeholder for remaining */}
+                    {Array.from({ length: 5 - (answerHistory.length % 5 || 0) }).map((_, i) => (
+                        <div key={`p-${i}`} className="w-4 h-4 rounded-full border border-dashed border-slate-200 bg-slate-50 opacity-30"></div>
+                    ))}
+                </div>
+
                 {/* Sarcastic Message on Wrong Answer (Inline) */}
-                {sarcasticMessage && (
-                    <div className="text-center mb-2 animate-in slide-in-from-bottom-2 fade-in">
-                        <span className="text-sm font-bold text-red-500 italic bg-red-50 px-3 py-1 rounded-full">{sarcasticMessage}</span>
+                {sarcasticMessage && !feedbackState.show && (
+                    <div className="text-center mb-4 animate-in slide-in-from-bottom-2 fade-in">
+                        <span className="text-sm font-bold text-red-500 italic bg-red-50 px-3 py-1 rounded-full border border-red-100 shadow-sm">{sarcasticMessage}</span>
                     </div>
                 )}
 
 
-                {/* Action Buttons - Compact Grid */}
-                <div className="grid grid-cols-1 gap-2 mb-2 w-full">
+                {/* Action Buttons - Grid */}
+                <div className="grid grid-cols-1 gap-3 mb-4 w-full">
                     {questionData.options.map((option, idx) => (
                         <button
                             key={idx}
                             onClick={() => handleAnswer(option)}
                             disabled={!!selectedAnswer}
-                            className={`w-full h-12 rounded-lg font-bold text-base flex items-center justify-center gap-2 group relative overflow-hidden active:scale-[0.98] transition-all duration-200 ${selectedAnswer === option
-                                ? (option === questionData.correct ? 'bg-green-500 text-white border-green-600 shadow-sm' : 'bg-red-500 text-white border-red-600 shadow-sm')
+                            className={`w-full h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 relative overflow-hidden active:scale-[0.98] transition-all duration-200 border-2 ${selectedAnswer === option
+                                ? (option === questionData.correct ? 'bg-green-500 text-white border-green-600 shadow-md' : 'bg-red-500 text-white border-red-600 shadow-md')
                                 : (selectedAnswer === "TIMEOUT" && option === questionData.correct
-                                    ? 'bg-green-100 text-green-700 border-2 border-green-300'
-                                    : 'btn-secondary bg-white dark:bg-slate-800 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50')
-                                } ${!!selectedAnswer && selectedAnswer !== option && option !== questionData.correct ? 'opacity-50 grayscale' : ''}`}
+                                    ? 'bg-green-100 text-green-700 border-green-300'
+                                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-white border-slate-200 dark:border-slate-700 hover:border-primary/50 shadow-sm')
+                                } ${!!selectedAnswer && selectedAnswer !== option && option !== questionData.correct ? 'opacity-50 grayscale scale-95' : ''}`}
                         >
                             <span className="truncate px-4">{option}</span>
                             {selectedAnswer === option && option === questionData.correct && (
-                                <CheckCircle className="absolute right-4 w-4 h-4 animate-in zoom-in spin-in-90 duration-300" />
+                                <CheckCircle className="absolute right-4 w-5 h-5 animate-in zoom-in spin-in-90 duration-300" />
                             )}
                             {selectedAnswer === option && option !== questionData.correct && (
-                                <X className="absolute right-4 w-4 h-4 animate-in zoom-in duration-300" />
+                                <X className="absolute right-4 w-5 h-5 animate-in zoom-in duration-300" />
                             )}
                         </button>
                     ))}
                 </div>
 
-                {/* Footer Utilities & Tally - Compact */}
-                <div className="mt-4 flex flex-col gap-1 px-1 pb-2 shrink-0">
-                    <div className="flex justify-between items-end h-16 relative">
-                        {/* Green Stacks */}
-                        <div className="flex gap-1 overflow-x-auto max-w-[42%] scrollbar-hide py-1 pl-1 mask-linear-fade-right">
-                            {Array.from({ length: Math.ceil(answerHistory.filter(Boolean).length / 5) || 1 }).map((_, stackIdx) => (
-                                <div key={stackIdx} className="flex flex-col-reverse gap-0.5 min-w-[16px]">
-                                    {answerHistory.filter(Boolean).slice(stackIdx * 5, (stackIdx + 1) * 5).map((_, i) => (
-                                        <div key={i} className="w-4 h-4 rounded bg-green-100 border border-green-400 flex items-center justify-center shrink-0 shadow-sm animate-in zoom-in duration-300">
-                                            <div className="w-1 h-1 rounded-full bg-green-500"></div>
-                                        </div>
-                                    ))}
+                {/* INLINE FEEDBACK CARD */}
+                {feedbackState.show && (
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 mb-6">
+                        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div className={`h-2 w-full ${feedbackState.correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                            <div className="p-5">
+                                <div className="flex items-start gap-4">
+                                    <div className={`p-2.5 rounded-xl ${feedbackState.correct ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'}`}>
+                                        {feedbackState.correct ? <CheckCircle size={24} /> : <XCircle size={24} />}
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="text-lg font-black text-slate-900 dark:text-white mb-1">
+                                            {feedbackState.correct ? 'Incredible!' : (selectedAnswer === "TIMEOUT" ? "Time Out!" : 'Not Quite')}
+                                        </h4>
+                                        <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
+                                            {questionData.explanation || (feedbackState.correct ? "Spot on! You mastered this rule." : "Study the rule above and try next time.")}
+                                        </p>
+                                        <button
+                                            onClick={handleNext}
+                                            className={`w-full h-14 rounded-xl font-bold text-lg text-white transition-all transform active:scale-95 shadow-lg ${feedbackState.correct ? 'bg-green-500 shadow-green-200' : 'bg-red-500 shadow-red-200'
+                                                }`}
+                                        >
+                                            {feedbackState.correct ? 'Next Question' : 'Got it, Continue'}
+                                        </button>
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
-
-                        {/* Skip Button */}
-                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
-                            <button
-                                onClick={() => handleAnswer("SKIP")}
-                                disabled={!!selectedAnswer}
-                                className={`flex flex-col items-center gap-0.5 text-[10px] font-bold text-slate-400 hover:text-slate-600 transition-colors ${!!selectedAnswer ? 'opacity-0' : 'opacity-100'}`}
-                            >
-                                <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center bg-white shadow-sm">
-                                    <SkipForward size={14} />
-                                </div>
-                                SKIP
-                            </button>
-                        </div>
-
-                        {/* Red Stacks */}
-                        <div className="flex gap-1 overflow-x-auto max-w-[42%] scrollbar-hide py-1 pr-1 justify-end flex-row-reverse mask-linear-fade-left">
-                            {Array.from({ length: Math.ceil(answerHistory.filter(x => !x).length / 5) || 1 }).map((_, stackIdx) => (
-                                <div key={stackIdx} className="flex flex-col-reverse gap-0.5 min-w-[16px]">
-                                    {answerHistory.filter(x => !x).slice(stackIdx * 5, (stackIdx + 1) * 5).map((_, i) => (
-                                        <div key={i} className="w-4 h-4 rounded bg-red-100 border border-red-400 flex items-center justify-center shrink-0 relative shadow-sm animate-in zoom-in duration-300">
-                                            <X size={10} className="text-red-600" />
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
+
+                {/* Skip Button (Only show if not answered) */}
+                {!selectedAnswer && (
+                    <button
+                        onClick={() => handleAnswer("SKIP")}
+                        className="flex flex-col items-center gap-1 mx-auto text-[10px] font-black text-slate-400 hover:text-slate-600 transition-all active:scale-90"
+                    >
+                        <div className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center bg-white shadow-sm">
+                            <SkipForward size={18} />
+                        </div>
+                        SKIP QUESTION
+                    </button>
+                )}
+
             </main>
 
             {/* Streak Animation Overlay */}
             {showStreak && (
-                <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-50 animate-in zoom-in fade-in duration-500">
+                <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-[100] animate-in zoom-in fade-in duration-500">
                     <div className="bg-orange-500 text-white px-8 py-6 rounded-3xl shadow-2xl skew-y-[-6deg] flex flex-col items-center border-4 border-yellow-300">
                         <Flame size={64} className="animate-bounce mb-2 fill-yellow-300 stroke-none" />
                         <h2 className="text-4xl font-black italic tracking-tighter uppercase drop-shadow-md">
@@ -315,14 +355,6 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                     </div>
                 </div>
             )}
-
-            <FeedbackSheet
-                show={feedbackState.show}
-                correct={feedbackState.correct}
-                explanation={questionData.explanation}
-                onNext={handleNext}
-                onRetry={handleRetry}
-            />
         </div>
     );
 }
