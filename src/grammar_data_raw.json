@@ -527,5 +527,55 @@
         ],
         "correct": "ingenious",
         "explanation": "'Ingenious' means clever or brilliant. 'Ingenuous' means innocent or naive."
+    },
+    {
+        "rule": "Hanged vs Hung",
+        "sentence": "The curtains were ________ with care, but the outlaw was ________ at dawn.",
+        "options": [
+            "hung / hanged",
+            "hanged / hung"
+        ],
+        "correct": "hung / hanged",
+        "explanation": "Objects are 'hung.' People are 'hanged' (executed). Unless you're a curtain, avoid being hanged."
+    },
+    {
+        "rule": "Lighted vs Lit",
+        "sentence": "He ________ the match and saw the fuse was already ________.",
+        "options": [
+            "lit / lit",
+            "lighted / lit"
+        ],
+        "correct": "lit / lit",
+        "explanation": "Both are actually correct, but 'lit' is the standard move in modern English. 'Lighted' sounds like you're writing a 19th-century novel."
+    },
+    {
+        "rule": "The Deadly Comma",
+        "sentence": "Choose the version that doesn't involve cannibalism: ________",
+        "options": [
+            "Let's eat, Grandpa!",
+            "Let's eat Grandpa!"
+        ],
+        "correct": "Let's eat, Grandpa!",
+        "explanation": "Punctuation saves lives. Use a comma to address someone, or Grandpa becomes dinner."
+    },
+    {
+        "rule": "The Oxford Comma",
+        "sentence": "I invited the strippers, ________.",
+        "options": [
+            "JFK and Stalin",
+            "JFK, and Stalin"
+        ],
+        "correct": "JFK, and Stalin",
+        "explanation": "Without the Oxford comma, it sounds like JFK and Stalin ARE the strippers. A truly terrifying image."
+    },
+    {
+        "rule": "Possessive Apostrophes",
+        "sentence": "The ________ locker room was a mess of sweaty socks.",
+        "options": [
+            "boys'",
+            "boys"
+        ],
+        "correct": "boys'",
+        "explanation": "Multiple boys own the room, so the apostrophe goes after the 's'. Without it, it's just a room full of boys."
     }
 ]
