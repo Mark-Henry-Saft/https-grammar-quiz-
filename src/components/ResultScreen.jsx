@@ -148,10 +148,10 @@ export default function ResultScreen({ score, total, totalTimeRemaining, topScor
                             <Flame size={16} className="text-rose-500 fill-rose-500 animate-pulse" />
                         </div>
                         <h4 className="text-sm font-black text-rose-900 dark:text-rose-200 uppercase tracking-tight mb-1">
-                            Enjoyed the sarcasm?
+                            Make English Grammar Great Again
                         </h4>
                         <p className="text-[11px] text-rose-700/70 dark:text-rose-300/60 font-medium mb-4 leading-relaxed">
-                            Fuel the writer to keep the grammar sharp and the humor darker.
+                            Support the project and keep the sarcasm flowing.
                         </p>
 
                         <SupportButton />
@@ -183,11 +183,11 @@ function SupportButton() {
                 }`}
         >
             {copied ? (
-                <>Address Copied! ✨</>
+                <>ETH Address Copied! 🚀</>
             ) : (
                 <>
                     <Flame size={16} className="fill-current" />
-                    Support the Project
+                    Copy ETH Address to Support
                 </>
             )}
         </button>
