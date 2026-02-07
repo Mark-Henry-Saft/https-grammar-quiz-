@@ -1,0 +1,411 @@
+[
+    {
+        "rule": "Well vs Good",
+        "sentence": "You did a ________ job on that presentation!",
+        "options": [
+            "well",
+            "good"
+        ],
+        "correct": "good",
+        "explanation": "'Good' is an adjective (describes the job). 'Well' is usually an adverb (describes how you did something)."
+    },
+    {
+        "rule": "Well vs Good",
+        "sentence": "She plays the piano very .",
+        "options": [
+            "well",
+            "good"
+        ],
+        "correct": "well",
+        "explanation": "Use 'well' to describe the action (how she plays)."
+    },
+    {
+        "rule": "To vs Too vs Two",
+        "sentence": "It is ________ cold to go outside.",
+        "options": [
+            "to",
+            "too",
+            "two"
+        ],
+        "correct": "too",
+        "explanation": "Use 'too' when you mean 'excessively' or 'also'."
+    },
+    {
+        "rule": "To vs Too vs Two",
+        "sentence": "I am going ________ the store.",
+        "options": [
+            "to",
+            "too",
+            "two"
+        ],
+        "correct": "to",
+        "explanation": "Use 'to' for direction or as part of a verb."
+    },
+    {
+        "rule": "Their vs There vs They're",
+        "sentence": " is no reason to be upset.",
+        "options": [
+            "Their",
+            "There",
+            "They're"
+        ],
+        "correct": "There",
+        "explanation": "Use 'There' for a location or to state that something exists."
+    },
+    {
+        "rule": "Their vs There vs They're",
+        "sentence": "It is ________ responsibility to finish the project.",
+        "options": [
+            "Their",
+            "There",
+            "They're"
+        ],
+        "correct": "Their",
+        "explanation": "Use 'Their' to show possession (it belongs to them)."
+    },
+    {
+        "rule": "Who vs Whom",
+        "sentence": "To ________ should I address this letter?",
+        "options": [
+            "who",
+            "whom"
+        ],
+        "correct": "whom",
+        "explanation": "Use 'whom' after a preposition like 'to' or 'for'. (Tip: Answer with 'him')."
+    },
+    {
+        "rule": "Affect vs Effect",
+        "sentence": "The lack of sleep began to ________ his work.",
+        "options": [
+            "affect",
+            "effect"
+        ],
+        "correct": "affect",
+        "explanation": "Use 'affect' as a verb (the action of changing something)."
+    },
+    {
+        "rule": "Affect vs Effect",
+        "sentence": "The main ________ of the law was lower taxes.",
+        "options": [
+            "affect",
+            "effect"
+        ],
+        "correct": "effect",
+        "explanation": "Use 'effect' as a noun (the result of a change)."
+    },
+    {
+        "rule": "Compliment vs Complement",
+        "sentence": "That silver frame will ________ the painting perfectly.",
+        "options": [
+            "compliment",
+            "complement"
+        ],
+        "correct": "complement",
+        "explanation": "'Complement' means to complete or enhance."
+    },
+    {
+        "rule": "Lose vs Loose",
+        "sentence": "If you don't be careful, you will ________ your wallet.",
+        "options": [
+            "lose",
+            "loose"
+        ],
+        "correct": "lose",
+        "explanation": "'Lose' is a verb meaning to misplace."
+    },
+    {
+        "rule": "Advice vs Advise",
+        "sentence": "I need some ________ on which car to buy.",
+        "options": [
+            "advice",
+            "advise"
+        ],
+        "correct": "advice",
+        "explanation": "'Advice' is the noun (the thing you receive)."
+    },
+    {
+        "rule": "Allusion vs Illusion",
+        "sentence": "The magician created a clever ________.",
+        "options": [
+            "allusion",
+            "illusion"
+        ],
+        "correct": "illusion",
+        "explanation": "An 'illusion' is a deceptive appearance or trick."
+    },
+    {
+        "rule": "Allusion vs Illusion",
+        "sentence": "He made an ________ to Shakespeare in his speech.",
+        "options": [
+            "allusion",
+            "illusion"
+        ],
+        "correct": "allusion",
+        "explanation": "An 'allusion' is an indirect reference to something."
+    },
+    {
+        "rule": "Discreet vs Discrete",
+        "sentence": "The data is broken down into ________ units.",
+        "options": [
+            "discreet",
+            "discrete"
+        ],
+        "correct": "discrete",
+        "explanation": "'Discrete' means separate or distinct."
+    },
+    {
+        "rule": "Discreet vs Discrete",
+        "sentence": "Please be ________ about our secret meeting.",
+        "options": [
+            "discreet",
+            "discrete"
+        ],
+        "correct": "discreet",
+        "explanation": "'Discreet' means careful or cautious in speech/action."
+    },
+    {
+        "rule": "Elicit vs Illicit",
+        "sentence": "The detective tried to ________ a confession.",
+        "options": [
+            "elicit",
+            "illicit"
+        ],
+        "correct": "elicit",
+        "explanation": "'Elicit' means to draw out or provoke."
+    },
+    {
+        "rule": "Emigrate vs Immigrate",
+        "sentence": "They plan to ________ from Ireland next year.",
+        "options": [
+            "emigrate",
+            "immigrate"
+        ],
+        "correct": "emigrate",
+        "explanation": "'Emigrate' means to leave your own country (Exit)."
+    },
+    {
+        "rule": "Emigrate vs Immigrate",
+        "sentence": "Many people ________ to the USA for new opportunities.",
+        "options": [
+            "emigrate",
+            "immigrate"
+        ],
+        "correct": "immigrate",
+        "explanation": "'Immigrate' means to come into a new country (In)."
+    },
+    {
+        "rule": "Ensure vs Insure",
+        "sentence": "Check the locks to ________ everyone is safe.",
+        "options": [
+            "ensure",
+            "insure"
+        ],
+        "correct": "ensure",
+        "explanation": "'Ensure' means to make certain."
+    },
+    {
+        "rule": "Ensure vs Insure",
+        "sentence": "You should ________ your house against fire.",
+        "options": [
+            "ensure",
+            "insure"
+        ],
+        "correct": "insure",
+        "explanation": "'Insure' refers to financial insurance policies."
+    },
+    {
+        "rule": "Lay vs Lie",
+        "sentence": "I am going to ________ down for a nap.",
+        "options": [
+            "lay",
+            "lie"
+        ],
+        "correct": "lie",
+        "explanation": "You 'lie' yourself down. (No object)."
+    },
+    {
+        "rule": "Lay vs Lie",
+        "sentence": "Please ________ the book on the table.",
+        "options": [
+            "lay",
+            "lie"
+        ],
+        "correct": "lay",
+        "explanation": "You 'lay' an object down."
+    },
+    {
+        "rule": "Principal vs Principle",
+        "sentence": "The ________ reason for the delay was the rain.",
+        "options": [
+            "principal",
+            "principle"
+        ],
+        "correct": "principal",
+        "explanation": "'Principal' means main or primary."
+    },
+    {
+        "rule": "Peak vs Peek vs Pique",
+        "sentence": "The mountain ________ was covered in snow.",
+        "options": [
+            "peak",
+            "peek",
+            "pique"
+        ],
+        "correct": "peak",
+        "explanation": "'Peak' is the top of a mountain."
+    },
+    {
+        "rule": "Peak vs Peek vs Pique",
+        "sentence": "Don't ________ at your presents before Christmas!",
+        "options": [
+            "peak",
+            "peek",
+            "pique"
+        ],
+        "correct": "peek",
+        "explanation": "'Peek' means to take a quick look."
+    },
+    {
+        "rule": "Peak vs Peek vs Pique",
+        "sentence": "That mystery story will ________ my interest.",
+        "options": [
+            "peak",
+            "peek",
+            "pique"
+        ],
+        "correct": "pique",
+        "explanation": "'Pique' means to excite or stimulate."
+    },
+    {
+        "rule": "Sight vs Site vs Cite",
+        "sentence": "The construction ________ is very noisy.",
+        "options": [
+            "sight",
+            "site",
+            "cite"
+        ],
+        "correct": "site",
+        "explanation": "'Site' is a location."
+    },
+    {
+        "rule": "Sight vs Site vs Cite",
+        "sentence": "Please ________ your sources in the essay.",
+        "options": [
+            "sight",
+            "site",
+            "cite"
+        ],
+        "correct": "cite",
+        "explanation": "'Cite' means to quote or reference."
+    },
+    {
+        "rule": "Stationary vs Stationery",
+        "sentence": "The bus hit a ________ car.",
+        "options": [
+            "stationary",
+            "stationery"
+        ],
+        "correct": "stationary",
+        "explanation": "'Stationary' means not moving."
+    },
+    {
+        "rule": "Than vs Then",
+        "sentence": "I am taller ________ my brother.",
+        "options": [
+            "than",
+            "then"
+        ],
+        "correct": "than",
+        "explanation": "'Than' is used for comparisons."
+    },
+    {
+        "rule": "Than vs Then",
+        "sentence": "We ate dinner, and ________ we went home.",
+        "options": [
+            "than",
+            "then"
+        ],
+        "correct": "then",
+        "explanation": "'Then' refers to time or a sequence of events."
+    },
+    {
+        "rule": "Passed vs Past",
+        "sentence": "We drove ________ the old church.",
+        "options": [
+            "passed",
+            "past"
+        ],
+        "correct": "past",
+        "explanation": "'Past' refers to a place or a time."
+    },
+    {
+        "rule": "Passed vs Past",
+        "sentence": "He ________ the ball to his teammate.",
+        "options": [
+            "passed",
+            "past"
+        ],
+        "correct": "passed",
+        "explanation": "'Passed' is the past tense of the verb 'to pass'."
+    },
+    {
+        "rule": "Brake vs Break",
+        "sentence": "You need to ________ slowly on icy roads.",
+        "options": [
+            "brake",
+            "break"
+        ],
+        "correct": "brake",
+        "explanation": "'Brake' is the device used to stop a vehicle."
+    },
+    {
+        "rule": "Brake vs Break",
+        "sentence": "Be careful not to ________ the glass.",
+        "options": [
+            "brake",
+            "break"
+        ],
+        "correct": "break",
+        "explanation": "'Break' means to smash or fracture."
+    },
+    {
+        "rule": "Canvas vs Canvass",
+        "sentence": "The artist painted on a large ________.",
+        "options": [
+            "canvas",
+            "canvass"
+        ],
+        "correct": "canvas",
+        "explanation": "'Canvas' is a heavy cloth used for painting or tents."
+    },
+    {
+        "rule": "Canvas vs Canvass",
+        "sentence": "The politician will ________ the neighborhood for votes.",
+        "options": [
+            "canvas",
+            "canvass"
+        ],
+        "correct": "canvass",
+        "explanation": "'Canvass' means to survey or seek support."
+    },
+    {
+        "rule": "Council vs Counsel",
+        "sentence": "The city ________ met to discuss the budget.",
+        "options": [
+            "council",
+            "counsel"
+        ],
+        "correct": "council",
+        "explanation": "A 'council' is a group of people who manage or advise."
+    },
+    {
+        "rule": "Council vs Counsel",
+        "sentence": "The therapist provided excellent ________.",
+        "options": [
+            "council",
+            "counsel"
+        ],
+        "correct": "counsel",
+        "explanation": "'Counsel' refers to advice or the act of giving it."
+    }
+]
