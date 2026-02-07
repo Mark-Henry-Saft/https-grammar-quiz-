@@ -633,7 +633,8 @@
     ],
     "correct": "Let's eat, Grandpa!",
     "explanation": "Punctuation saves lives. Use a comma to address someone, or Grandpa becomes dinner.",
-    "image": "https://loremflickr.com/800/600/Choose?lock=54"
+    "image": "https://loremflickr.com/800/600/Choose?lock=54",
+    "isLegendary": true
   },
   {
     "rule": "The Oxford Comma",
@@ -656,5 +657,123 @@
     "correct": "boys'",
     "explanation": "Multiple boys own the room, so the apostrophe goes after the 's'. Without it, it's just a room full of boys.",
     "image": "https://loremflickr.com/800/600/locker?lock=56"
+  },
+  {
+    "rule": "The Spartan 'If'",
+    "sentence": "When Philip of Macedon threatened Sparta, they replied with one word: ________.",
+    "options": [
+      "Never",
+      "If"
+    ],
+    "correct": "If",
+    "sarcastic_comment": "Brevity is power. You're talking too much; they only needed one word.",
+    "explanation": "This 'Laconic' reply (from Laconia, Sparta) caused Philip to abandon his invasion plans.",
+    "image": "https://loremflickr.com/800/600/sparta?lock=101",
+    "isLegendary": true
+  },
+  {
+    "rule": "Hanged vs Hung",
+    "sentence": "The stockings were ________ by the chimney, but the criminal was ________.",
+    "options": [
+      "hung / hanged",
+      "hanged / hung"
+    ],
+    "correct": "hung / hanged",
+    "sarcastic_comment": "Unless you're planning an execution, use 'hung.' Don't make things awkward.",
+    "explanation": "Objects are 'hung.' Humans are 'hanged' (executed).",
+    "image": "https://loremflickr.com/800/600/chimney?lock=102"
+  },
+  {
+    "rule": "NASA's Hyphen",
+    "sentence": "A missing ________ caused the Mariner 1 spacecraft to explode in 1962.",
+    "options": [
+      "comma",
+      "hyphen"
+    ],
+    "correct": "hyphen",
+    "sarcastic_comment": "Boom. $150 million gone because you skipped a dash. NASA is hiring, but maybe stay away.",
+    "explanation": "A missing overbar (hyphen) in the guidance code caused the rocket to fail.",
+    "image": "https://loremflickr.com/800/600/rocket?lock=103",
+    "isLegendary": true
+  },
+  {
+    "rule": "I vs Me",
+    "sentence": "The CEO invited Kanya and ________ to the gala.",
+    "options": [
+      "I",
+      "me"
+    ],
+    "correct": "me",
+    "explanation": "Tip: Remove 'Kanya'. You wouldn't say 'The CEO invited I.' You'd say 'invited me.'",
+    "image": "https://loremflickr.com/800/600/gala?lock=105"
+  },
+  {
+    "rule": "Tortuous vs Torturous",
+    "sentence": "The mountain road was ________, with hundreds of sharp turns.",
+    "options": [
+      "tortuous",
+      "torturous"
+    ],
+    "correct": "tortuous",
+    "explanation": "'Tortuous' means full of twists. 'Torturous' means involving pain.",
+    "image": "https://loremflickr.com/800/600/turns?lock=106"
+  },
+  {
+    "rule": "Enervate vs Energize",
+    "sentence": "The long, hot trek across the desert tended to ________ the hikers.",
+    "options": [
+      "enervate",
+      "energize"
+    ],
+    "correct": "enervate",
+    "explanation": "'Enervate' means to drain of energy. It's the most common trap for smart people!",
+    "image": "https://loremflickr.com/800/600/desert?lock=107"
+  },
+  {
+    "rule": "The Oxford Comma",
+    "sentence": "I'd like to thank my parents, ________.",
+    "options": [
+      "Ayn Rand and God",
+      "Ayn Rand, and God"
+    ],
+    "correct": "Ayn Rand, and God",
+    "sarcastic_comment": "Without that comma, you're claiming God is one of your parents. Ambitious!",
+    "explanation": "The Oxford comma prevents list items from being misread as descriptions.",
+    "image": "https://loremflickr.com/800/600/parents?lock=108"
+  },
+  {
+    "rule": "The Million Dollar Comma",
+    "sentence": "In 1872, a clerk's misplaced comma made ________ tax-free, costing millions.",
+    "options": [
+      "all fruit",
+      "only fruit-plants"
+    ],
+    "correct": "all fruit",
+    "sarcastic_comment": "One comma, two million dollars. I hope you're better with your taxes than your grammar.",
+    "explanation": "A comma between 'Fruit' and 'Plants' changed the legal tax status of imports.",
+    "image": "https://loremflickr.com/800/600/fruit?lock=109",
+    "isLegendary": true
+  },
+  {
+    "rule": "Disinterested vs Uninterested",
+    "sentence": "We need a ________ judge to hear the case fairly.",
+    "options": [
+      "disinterested",
+      "uninterested"
+    ],
+    "correct": "disinterested",
+    "explanation": "'Disinterested' means unbiased. 'Uninterested' means bored.",
+    "image": "https://loremflickr.com/800/600/court?lock=110"
+  },
+  {
+    "rule": "Loath vs Loathe",
+    "sentence": "I am ________ to admit that the mistake was mine.",
+    "options": [
+      "loath",
+      "loathe"
+    ],
+    "correct": "loath",
+    "explanation": "'Loath' (no 'e') means reluctant. 'Loathe' is the verb meaning to hate.",
+    "image": "https://loremflickr.com/800/600/mistake?lock=111"
   }
 ]

@@ -22,8 +22,8 @@ export default function ZenScreen({ onHome }) {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
             >
-                {/* Using a reliable creative commons nature loop */}
-                <source src="https://media.istockphoto.com/id/1362606558/video/lake-district-uk-shoot.mp4?s=mp4-640x640-is&k=20&c=L_Q0F3cQjH3gEwVwEwEwEwEwEwEwEwEwEwEwEwEwEwE=" type="video/mp4" />
+                {/* Using a reliable creative commons sunset loop */}
+                <source src="https://cdn.pixabay.com/video/2016/09/21/5361-183709590_large.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 

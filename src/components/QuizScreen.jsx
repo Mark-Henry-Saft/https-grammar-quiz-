@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { ChevronLeft, Settings, CheckCircle, HelpCircle, SkipForward, Lightbulb, X, Flame } from 'lucide-react';
 import FeedbackSheet from './FeedbackSheet';
 
-import correctSound from '../assets/sounds/correct.wav';
-import incorrectSound from '../assets/sounds/incorrect.wav';
+import correctNewSound from '../assets/sounds/correct_new.wav';
+import incorrectNewSound from '../assets/sounds/incorrect_new.wav';
+import fanfareSound from '../assets/sounds/fanfare.wav';
 
 const FALLBACK_IMAGE = "https://placehold.co/800x600/e2e8f0/475569?text=Grammar+Quiz";
 
@@ -14,7 +15,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
     const [imgSrc, setImgSrc] = useState(questionData.image);
     const [showStreak, setShowStreak] = useState(false);
     const [showEncouragement, setShowEncouragement] = useState(null);
-    const [timeLeft, setTimeLeft] = useState(10);
+    const [timeLeft, setTimeLeft] = useState(15);
 
     const [sarcasticMessage, setSarcasticMessage] = useState(null);
 
@@ -40,7 +41,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
             setFeedbackState({ show: true, correct: false });
             setSelectedAnswer("TIMEOUT");
             setSarcasticMessage("Time's up! Speed reading isn't your thing?");
-            const audio = new Audio(incorrectSound);
+            const audio = new Audio(incorrectNewSound);
             audio.volume = 0.5;
             audio.play().catch(e => console.error(e));
             return;
@@ -83,21 +84,27 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         setFeedbackState({ show: false, correct: false });
         setSelectedAnswer(null);
         setImgSrc(questionData.image);
-        setTimeLeft(10);
+        setTimeLeft(15);
         setSarcasticMessage(null);
     }, [questionData]);
 
     const playSound = (isCorrect) => {
-        const audio = new Audio(isCorrect ? correctSound : incorrectSound);
+        let soundToPlay = incorrectNewSound;
+        if (isCorrect) {
+            if (questionData.isLegendary) {
+                soundToPlay = fanfareSound;
+            } else {
+                soundToPlay = correctNewSound;
+            }
+        }
+        const audio = new Audio(soundToPlay);
         audio.volume = 0.5;
         audio.play().catch(e => console.error("Audio play failed:", e));
     };
 
     const handleAnswer = (answer) => {
         if (selectedAnswer) return; // Prevent double clicks
-        // Don't play default click here, let feedback sound take over? 
-        // User asked for "sound everytime a button is pushed".
-        // Let's add a subtle click for the selection itself, separate from correct/incorrect.
+
         if (playClick) playClick();
 
         const isCorrect = answer === questionData.correct;
@@ -107,8 +114,8 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         setFeedbackState({ show: true, correct: isCorrect });
 
         if (!isCorrect && answer !== "SKIP") {
-            const randomSarcasm = sarcasticReplies[Math.floor(Math.random() * sarcasticReplies.length)];
-            setSarcasticMessage(randomSarcasm);
+            const message = questionData.sarcastic_comment || sarcasticReplies[Math.floor(Math.random() * sarcasticReplies.length)];
+            setSarcasticMessage(message);
         } else if (answer === "SKIP") {
             setSarcasticMessage("Coward's way out? Okay.");
         }
@@ -121,7 +128,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
     };
 
     const handleNext = () => {
-        onComplete(feedbackState.correct);
+        onComplete(feedbackState.correct, timeLeft);
     };
 
     return (
@@ -251,7 +258,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                 </div>
 
                 {/* Footer Utilities & Tally - Compact */}
-                <div className="mt-auto flex flex-col gap-1 px-1 pb-2 shrink-0">
+                <div className="mt-4 flex flex-col gap-1 px-1 pb-2 shrink-0">
                     <div className="flex justify-between items-end h-16 relative">
                         {/* Green Stacks */}
                         <div className="flex gap-1 overflow-x-auto max-w-[42%] scrollbar-hide py-1 pl-1 mask-linear-fade-right">

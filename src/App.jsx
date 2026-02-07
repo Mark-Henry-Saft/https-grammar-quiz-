@@ -101,6 +101,8 @@ function App() {
         setQuestions(shuffled);
     }, []);
 
+    const [totalTimeRemaining, setTotalTimeRemaining] = useState(0);
+
     const handleStart = () => {
         playClick();
         startMusic();
@@ -110,6 +112,7 @@ function App() {
         setCurrentStreak(0);
         setCurrentQuestionIndex(0);
         setAnswerHistory([]);
+        setTotalTimeRemaining(0);
         setStartTime(Date.now());
         const shuffled = [...grammarData].sort(() => 0.5 - Math.random());
         setQuestions(shuffled);
@@ -131,13 +134,14 @@ function App() {
         setCurrentStreak(0);
         setCurrentQuestionIndex(0);
         setAnswerHistory([]);
+        setTotalTimeRemaining(0);
         setStartTime(Date.now());
 
         const shuffled = [...grammarData].sort(() => 0.5 - Math.random()).slice(0, 5);
         setQuestions(shuffled);
     };
 
-    const handleQuizComplete = (isCorrect) => {
+    const handleQuizComplete = (isCorrect, timeRemaining = 0) => {
         // This is called AFTER the user clicks Next or Time runs out
         // However, we want streak to update IMMEDATELY upon answering for music purposes.
         // QuizScreen will handle the immediate feedback. 
@@ -146,6 +150,7 @@ function App() {
         if (isCorrect) {
             setScore(s => s + 1);
             setCurrentStreak(s => s + 1);
+            setTotalTimeRemaining(t => t + (timeRemaining || 0));
         } else {
             setCurrentStreak(0);
         }
@@ -182,6 +187,14 @@ function App() {
         setCurrentScreen('start');
     };
 
+    const handleUpdateLeaderboard = (newEntry) => {
+        const updated = [...topScores, newEntry]
+            .sort((a, b) => b.score - a.score || b.time - a.time)
+            .slice(0, 5);
+        setTopScores(updated);
+        localStorage.setItem('grammarQuiz_leaderboard', JSON.stringify(updated));
+    };
+
     if (questions.length === 0) return null;
 
     return (
@@ -206,14 +219,19 @@ function App() {
                     <ResultScreen
                         score={score}
                         total={questions.length}
+                        totalTimeRemaining={totalTimeRemaining}
+                        topScores={topScores}
+                        onUpdateLeaderboard={handleUpdateLeaderboard}
                         onRestart={handleRestart}
                         playClick={playClick}
+                        onHome={() => setCurrentScreen('start')}
+                        onZen={() => setCurrentScreen('zen')}
                     />
                 )}
                 {currentScreen === 'zen' && (
                     <ZenScreen onHome={handleRestart} playClick={playClick} />
                 )}
-                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.4 (Bonus)</div>
+                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.5 (Legendary)</div>
             </div>
         </div>
     );
