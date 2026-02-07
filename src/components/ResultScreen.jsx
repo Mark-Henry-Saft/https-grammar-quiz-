@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { RotateCcw, Trophy } from 'lucide-react';
+import { RotateCcw, Trophy, Share2 } from 'lucide-react';
 
 export default function ResultScreen({ score, total, onRestart }) {
     const percentage = Math.round((score / total) * 100);
@@ -23,13 +23,35 @@ export default function ResultScreen({ score, total, onRestart }) {
                     />
                 </div>
 
-                <button
-                    onClick={onRestart}
-                    className="btn-secondary w-full h-14 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95"
-                >
-                    <RotateCcw size={20} />
-                    Try Again
-                </button>
+                <div className="flex flex-col gap-3 w-full">
+                    <button
+                        onClick={() => {
+                            const text = `🔥 I just hit ${score}/${total} on the Mastery Quiz! Can you beat my time?`;
+                            if (navigator.share) {
+                                navigator.share({
+                                    title: 'Grammar Quiz Mastery',
+                                    text: text,
+                                    url: window.location.href,
+                                }).catch(console.error);
+                            } else {
+                                navigator.clipboard.writeText(text);
+                                alert('Result copied to clipboard!');
+                            }
+                        }}
+                        className="btn-secondary w-full h-14 bg-blue-50 text-blue-600 border-2 border-blue-200 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95 hover:bg-blue-100"
+                    >
+                        <Share2 size={20} />
+                        Challenge a Friend
+                    </button>
+
+                    <button
+                        onClick={onRestart}
+                        className="btn-secondary w-full h-14 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95"
+                    >
+                        <RotateCcw size={20} />
+                        Try Again
+                    </button>
+                </div>
             </div>
         </div>
     );

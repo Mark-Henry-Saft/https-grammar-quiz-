@@ -2,7 +2,7 @@
 import React from 'react';
 import { Play, Calendar, Zap } from 'lucide-react';
 
-export default function StartScreen({ onStart, onDailyStart, dailyStats }) {
+export default function StartScreen({ onStart, onDailyStart, dailyStats, topScores }) {
     const today = new Date().toDateString();
     const isDailyComplete = dailyStats?.lastPlayed === today;
 
@@ -22,8 +22,8 @@ export default function StartScreen({ onStart, onDailyStart, dailyStats }) {
                         onClick={onDailyStart}
                         disabled={isDailyComplete}
                         className={`w-full h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95 border-2 ${isDailyComplete
-                                ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
-                                : 'bg-white text-orange-500 border-orange-500 hover:bg-orange-50'
+                            ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
+                            : 'bg-white text-orange-500 border-orange-500 hover:bg-orange-50'
                             }`}
                     >
                         <Calendar size={20} />
@@ -42,6 +42,26 @@ export default function StartScreen({ onStart, onDailyStart, dailyStats }) {
                         <Play size={24} className="fill-current" />
                         Begin My Mastery
                     </button>
+
+                    {/* Leaderboard */}
+                    {topScores && topScores.length > 0 && (
+                        <div className="mt-6 w-full text-left">
+                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fastest Perfect Scores</h3>
+                            <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-3 space-y-2">
+                                {topScores.map((score, index) => (
+                                    <div key={index} className="flex items-center justify-between text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${index === 0 ? 'bg-yellow-100 text-yellow-600' : 'bg-slate-200 text-slate-500'}`}>
+                                                {index + 1}
+                                            </span>
+                                            <span className="text-slate-600 dark:text-slate-300 font-medium">{score.date}</span>
+                                        </div>
+                                        <span className="font-mono font-bold text-slate-800 dark:text-white">{score.time}s</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

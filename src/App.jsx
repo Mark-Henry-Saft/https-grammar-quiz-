@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import StartScreen from './components/StartScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
+import ZenScreen from './components/ZenScreen';
 import grammarData from './grammar_data.json';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     const [questions, setQuestions] = useState([]);
     const [answerHistory, setAnswerHistory] = useState([]); // Array of true/false
     const [isDailyMode, setIsDailyMode] = useState(false);
+
 
     // Daily Challenge State
     const [dailyStats, setDailyStats] = useState(() => {
@@ -31,6 +33,7 @@ function App() {
         setScore(0);
         setCurrentQuestionIndex(0);
         setAnswerHistory([]);
+        setStartTime(Date.now());
         // Start with a fresh shuffle if needed, but on-mount is usually fine for a session
         const shuffled = [...grammarData].sort(() => 0.5 - Math.random());
         setQuestions(shuffled);
@@ -50,6 +53,7 @@ function App() {
         setScore(0);
         setCurrentQuestionIndex(0);
         setAnswerHistory([]);
+        setStartTime(Date.now());
 
         // Select 5 random questions for daily challenge
         const shuffled = [...grammarData].sort(() => 0.5 - Math.random()).slice(0, 5);
@@ -99,7 +103,7 @@ function App() {
 
     return (
         <div className="antialiased font-display">
-            {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} />}
+            {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} topScores={topScores} />}
             {currentScreen === 'quiz' && (
                 <QuizScreen
                     questionData={questions[currentQuestionIndex]}
@@ -116,6 +120,9 @@ function App() {
                     total={questions.length}
                     onRestart={handleRestart}
                 />
+            )}
+            {currentScreen === 'zen' && (
+                <ZenScreen onHome={handleRestart} />
             )}
         </div>
     );
