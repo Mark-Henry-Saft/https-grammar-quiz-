@@ -2,13 +2,9 @@
 import React, { useState } from 'react';
 import { ChevronLeft, Settings, CheckCircle, HelpCircle, SkipForward, Lightbulb, X, Flame, XCircle } from 'lucide-react';
 
-import correctNewSound from '../assets/sounds/correct_new.wav';
-import incorrectNewSound from '../assets/sounds/incorrect_new.wav';
-import fanfareSound from '../assets/sounds/fanfare.wav';
-
 const FALLBACK_IMAGE = "https://placehold.co/800x600/e2e8f0/475569?text=Grammar+Quiz";
 
-export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete, playClick, playCorrect, currentStreak }) {
+export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete, playClick, playCorrect, playIncorrect, playFanfare, currentStreak }) {
     const [feedbackState, setFeedbackState] = useState({ show: false, correct: false });
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [imgSrc, setImgSrc] = useState(questionData.image);
@@ -37,10 +33,7 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         if (timeLeft === 0) {
             setFeedbackState({ show: true, correct: false });
             setSelectedAnswer("TIMEOUT");
-            setSarcasticMessage("Time's up! Speed reading isn't your thing?");
-            const audio = new Audio(incorrectNewSound);
-            audio.volume = 0.5;
-            audio.play().catch(e => console.error(e));
+            if (playIncorrect) playIncorrect();
             return;
         }
 
@@ -112,27 +105,22 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
         "My disappointment is immeasurable."
     ];
 
-    const playSound = (isCorrect) => {
-        let soundToPlay = incorrectNewSound;
-        if (isCorrect) {
-            if (questionData.isLegendary) {
-                soundToPlay = fanfareSound;
-            } else {
-                soundToPlay = correctNewSound;
-            }
-        }
-        const audio = new Audio(soundToPlay);
-        audio.volume = 0.5;
-        audio.play().catch(e => console.error("Audio play failed:", e));
-    };
-
     const handleAnswer = (answer) => {
         if (selectedAnswer) return; // Prevent double clicks
 
         if (playClick) playClick();
 
         const isCorrect = answer === questionData.correct;
-        playSound(isCorrect);
+
+        if (isCorrect) {
+            if (questionData.isLegendary) {
+                if (playFanfare) playFanfare();
+            } else {
+                if (playCorrect) playCorrect();
+            }
+        } else {
+            if (playIncorrect && answer !== "SKIP") playIncorrect();
+        }
 
         setSelectedAnswer(answer);
         setFeedbackState({ show: true, correct: isCorrect });

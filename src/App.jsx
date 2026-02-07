@@ -12,6 +12,8 @@ import musicSound from './assets/sounds/music.mp3';
 import correct1 from './assets/sounds/correct_1.mp3';
 import correct2 from './assets/sounds/correct_2.mp3';
 import correct3 from './assets/sounds/correct_3.mp3';
+import incorrectSound from './assets/sounds/incorrect_new.wav';
+import fanfareSound from './assets/sounds/fanfare.wav';
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState('start');
@@ -58,6 +60,22 @@ function App() {
             const sounds = [correct1, correct2, correct3];
             const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
             const audio = new Audio(randomSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Audio play failed", e));
+        }
+    };
+
+    const playIncorrect = () => {
+        if (!isMuted) {
+            const audio = new Audio(incorrectSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Audio play failed", e));
+        }
+    };
+
+    const playFanfare = () => {
+        if (!isMuted) {
+            const audio = new Audio(fanfareSound);
             audio.volume = 0.5;
             audio.play().catch(e => console.error("Audio play failed", e));
         }
@@ -204,6 +222,8 @@ function App() {
                         onComplete={handleQuizComplete}
                         playClick={playClick}
                         playCorrect={playCorrect}
+                        playIncorrect={playIncorrect}
+                        playFanfare={playFanfare}
                         currentStreak={currentStreak}
                     />
                 )}
