@@ -126,8 +126,6 @@ export default function ResultScreen({ score, total, totalTimeRemaining, topScor
                                     <div className="flex items-center gap-3">
                                         <span className={`font-mono font-bold w-4 ${idx === 0 ? 'text-yellow-600' : 'text-slate-400'}`}>#{idx + 1}</span>
                                         <span className="font-semibold text-slate-700 dark:text-slate-200">
-                                            {/* Just identify current user if stats match? No, hard to know without ID. Just show list. */}
-                                            {/* User ID might be nice, but for now just "Player" */}
                                             {entry.score === score && entry.time === totalTimeRemaining ? (idx === 0 ? "You (Legend)" : "You") : `Player ${idx + 1}`}
                                         </span>
                                     </div>
@@ -141,16 +139,57 @@ export default function ResultScreen({ score, total, totalTimeRemaining, topScor
                     </div>
                 </div>
 
-                {/* Donation Section (Compact) */}
-                <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 w-full animate-fade-in opacity-80 hover:opacity-100 transition-opacity">
-                    <div className="flex flex-col gap-1 cursor-pointer" onClick={() => navigator.clipboard.writeText('0x109e87DfA42086D2BB09eEC03E4ed03Ada588E3e')}>
-                        <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold hover:text-primary transition-colors">
-                            Support: 0x109e...8E3e (ETH)
+                {/* HEART/SUPPORT CARD */}
+                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 w-full">
+                    <div className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-rose-900/10 dark:to-pink-900/10 rounded-2xl p-5 border border-pink-100 dark:border-pink-900/30 text-center animate-fade-in">
+                        <div className="flex justify-center gap-1 mb-2">
+                            <Flame size={16} className="text-rose-500 fill-rose-500 animate-pulse" />
+                            <Crown size={16} className="text-rose-400 fill-rose-400" />
+                            <Flame size={16} className="text-rose-500 fill-rose-500 animate-pulse" />
+                        </div>
+                        <h4 className="text-sm font-black text-rose-900 dark:text-rose-200 uppercase tracking-tight mb-1">
+                            Enjoyed the sarcasm?
+                        </h4>
+                        <p className="text-[11px] text-rose-700/70 dark:text-rose-300/60 font-medium mb-4 leading-relaxed">
+                            Fuel the writer to keep the grammar sharp and the humor darker.
                         </p>
+
+                        <SupportButton />
                     </div>
                 </div>
 
             </div>
         </div>
+    );
+}
+
+function SupportButton() {
+    const [copied, setCopied] = useState(false);
+    const address = '0x109e87DfA42086D2BB09eEC03E4ed03Ada588E3e';
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(address);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    return (
+        <button
+            onClick={handleCopy}
+            className={`w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-95 shadow-sm
+                ${copied
+                    ? 'bg-green-500 text-white scale-[1.02]'
+                    : 'bg-white dark:bg-slate-900 text-rose-600 border-2 border-rose-200 dark:border-rose-900/50 hover:bg-rose-50 dark:hover:bg-rose-900/20'
+                }`}
+        >
+            {copied ? (
+                <>Address Copied! ✨</>
+            ) : (
+                <>
+                    <Flame size={16} className="fill-current" />
+                    Support the Project
+                </>
+            )}
+        </button>
     );
 }
