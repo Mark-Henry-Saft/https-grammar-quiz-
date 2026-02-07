@@ -447,5 +447,137 @@
     "correct": "counsel",
     "explanation": "'Counsel' refers to advice or the act of giving it.",
     "image": "https://loremflickr.com/800/600/therapist?lock=39"
+  },
+  {
+    "rule": "I vs Me",
+    "sentence": "The manager invited Sarah and ________ to the private meeting.",
+    "options": [
+      "I",
+      "me"
+    ],
+    "correct": "me",
+    "explanation": "Tip: Remove 'Sarah'. You wouldn't say 'The manager invited I.' You'd say 'The manager invited me.'",
+    "image": "https://loremflickr.com/800/600/manager?lock=40"
+  },
+  {
+    "rule": "I vs Me",
+    "sentence": "Between you and ________, I think the project will be a huge success.",
+    "options": [
+      "I",
+      "me"
+    ],
+    "correct": "me",
+    "explanation": "After a preposition like 'between', always use the object pronoun 'me'.",
+    "image": "https://loremflickr.com/800/600/Between?lock=41"
+  },
+  {
+    "rule": "Tortuous vs Torturous",
+    "sentence": "The ________ mountain road was beautiful but made everyone car-sick.",
+    "options": [
+      "tortuous",
+      "torturous"
+    ],
+    "correct": "tortuous",
+    "explanation": "'Tortuous' means full of twists and turns. 'Torturous' means involving great pain.",
+    "image": "https://loremflickr.com/800/600/mountain?lock=42"
+  },
+  {
+    "rule": "Enervate vs Energize",
+    "sentence": "The humidity in the tropics can ________ even the most active travelers.",
+    "options": [
+      "enervate",
+      "energize"
+    ],
+    "correct": "enervate",
+    "explanation": "'Enervate' means to drain of energy or weaken. It is often confused with its opposite!",
+    "image": "https://loremflickr.com/800/600/humidity?lock=43"
+  },
+  {
+    "rule": "Complacent vs Complaisant",
+    "sentence": "A professional athlete can never afford to be ________ after a win.",
+    "options": [
+      "complacent",
+      "complaisant"
+    ],
+    "correct": "complacent",
+    "explanation": "'Complacent' means self-satisfied or smug. 'Complaisant' means willing to please others.",
+    "image": "https://loremflickr.com/800/600/professional?lock=44"
+  },
+  {
+    "rule": "Flaunt vs Flout",
+    "sentence": "The rebel decided to ________ the law in broad daylight.",
+    "options": [
+      "flaunt",
+      "flout"
+    ],
+    "correct": "flout",
+    "explanation": "'Flout' means to openly disregard a rule. 'Flaunt' means to show off ostentatiously.",
+    "image": "https://loremflickr.com/800/600/rebel?lock=45"
+  },
+  {
+    "rule": "Amoral vs Immoral",
+    "sentence": "Nature is ________; it follows the laws of survival, not the laws of ethics.",
+    "options": [
+      "amoral",
+      "immoral"
+    ],
+    "correct": "amoral",
+    "explanation": "'Amoral' means having no moral sense at all. 'Immoral' means knowing right but doing wrong.",
+    "image": "https://loremflickr.com/800/600/Nature?lock=46"
+  },
+  {
+    "rule": "Disinterested vs Uninterested",
+    "sentence": "We need a ________ party to mediate this business dispute.",
+    "options": [
+      "disinterested",
+      "uninterested"
+    ],
+    "correct": "disinterested",
+    "explanation": "'Disinterested' means unbiased or impartial. 'Uninterested' simply means bored.",
+    "image": "https://loremflickr.com/800/600/party?lock=47"
+  },
+  {
+    "rule": "Appraise vs Apprise",
+    "sentence": "Please ________ the board members of the recent developments.",
+    "options": [
+      "appraise",
+      "apprise"
+    ],
+    "correct": "apprise",
+    "explanation": "'Apprise' means to inform. 'Appraise' means to assess the value or quality of something.",
+    "image": "https://loremflickr.com/800/600/Please?lock=48"
+  },
+  {
+    "rule": "Loath vs Loathe",
+    "sentence": "I am ________ to spend more money until we see results.",
+    "options": [
+      "loath",
+      "loathe"
+    ],
+    "correct": "loath",
+    "explanation": "'Loath' (no 'e') is an adjective meaning reluctant. 'Loathe' is a verb meaning to hate.",
+    "image": "https://loremflickr.com/800/600/spend?lock=49"
+  },
+  {
+    "rule": "Sensual vs Sensuous",
+    "sentence": "The orchestra provided a ________ experience for the listeners.",
+    "options": [
+      "sensual",
+      "sensuous"
+    ],
+    "correct": "sensuous",
+    "explanation": "'Sensuous' relates to the five senses (art/music). 'Sensual' usually relates to physical appetites.",
+    "image": "https://loremflickr.com/800/600/orchestra?lock=50"
+  },
+  {
+    "rule": "Ingenious vs Ingenuous",
+    "sentence": "It was an ________ plan that saved the company millions.",
+    "options": [
+      "ingenious",
+      "ingenuous"
+    ],
+    "correct": "ingenious",
+    "explanation": "'Ingenious' means clever or brilliant. 'Ingenuous' means innocent or naive.",
+    "image": "https://loremflickr.com/800/600/saved?lock=51"
   }
 ]
