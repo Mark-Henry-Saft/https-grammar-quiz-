@@ -8,7 +8,7 @@ import incorrectSound from '../assets/sounds/incorrect.wav';
 
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800";
 
-export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete }) {
+export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete, playClick }) {
     const [feedbackState, setFeedbackState] = useState({ show: false, correct: false });
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [imgSrc, setImgSrc] = useState(questionData.image);
@@ -48,6 +48,10 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
 
     const handleAnswer = (answer) => {
         if (selectedAnswer) return; // Prevent double clicks
+        // Don't play default click here, let feedback sound take over? 
+        // User asked for "sound everytime a button is pushed".
+        // Let's add a subtle click for the selection itself, separate from correct/incorrect.
+        if (playClick) playClick();
 
         const isCorrect = answer === questionData.correct;
         playSound(isCorrect);

@@ -11,7 +11,7 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
     },
-    "homepage": "https://mark-henry-saft.github.io/grammar-quiz/",
+    "homepage": "https://mark-henry-saft.github.io/https-grammar-quiz-/",
     "dependencies": {
         "lucide-react": "^0.309.0",
         "react": "^18.2.0",

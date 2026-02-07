@@ -2,7 +2,7 @@
 import React from 'react';
 import { RotateCcw, Trophy, Share2 } from 'lucide-react';
 
-export default function ResultScreen({ score, total, onRestart }) {
+export default function ResultScreen({ score, total, onRestart, playClick }) {
     const percentage = Math.round((score / total) * 100);
 
     return (
@@ -26,6 +26,7 @@ export default function ResultScreen({ score, total, onRestart }) {
                 <div className="flex flex-col gap-3 w-full">
                     <button
                         onClick={() => {
+                            if (playClick) playClick();
                             const text = `🔥 I just hit ${score}/${total} on the Mastery Quiz! Can you beat my time?`;
                             if (navigator.share) {
                                 navigator.share({
@@ -45,7 +46,7 @@ export default function ResultScreen({ score, total, onRestart }) {
                     </button>
 
                     <button
-                        onClick={onRestart}
+                        onClick={() => { if (playClick) playClick(); onRestart(); }}
                         className="btn-secondary w-full h-14 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95"
                     >
                         <RotateCcw size={20} />

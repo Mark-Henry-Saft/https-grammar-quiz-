@@ -1,14 +1,20 @@
 
 import React from 'react';
-import { Play, Calendar, Zap } from 'lucide-react';
+import { Play, Calendar, Zap, Volume2, VolumeX } from 'lucide-react';
 
-export default function StartScreen({ onStart, onDailyStart, dailyStats, topScores }) {
+export default function StartScreen({ onStart, onDailyStart, dailyStats, topScores, isMuted, onToggleMute, playClick }) {
     const today = new Date().toDateString();
     const isDailyComplete = dailyStats?.lastPlayed === today;
 
     return (
         <div className="bg-pattern min-h-screen flex flex-col items-center justify-center p-6 text-center">
             <div className="bg-white dark:bg-slate-900 rounded-2xl ios-shadow p-8 max-w-sm w-full border border-slate-100 dark:border-slate-800">
+                <button
+                    onClick={() => { playClick(); onToggleMute(); }}
+                    className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full text-slate-600 dark:text-slate-300 transition-colors"
+                >
+                    {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+                </button>
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Play className="text-primary fill-current ml-1" size={40} />
                 </div>
