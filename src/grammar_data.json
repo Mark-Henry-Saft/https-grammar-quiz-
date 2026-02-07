@@ -1616,6 +1616,149 @@
     "image": "https://loremflickr.com/800/600/time?lock=208"
   },
   {
+    "rule": "The 'Thorn' in Ye Olde",
+    "sentence": "In 'Ye Olde Shoppe,' the word 'Ye' was actually pronounced ________.",
+    "options": [
+      "The",
+      "Yee"
+    ],
+    "correct": "The",
+    "sarcastic_comment": "You're not a medieval peasant. It's 'The.' Stop trying to sound fancy.",
+    "explanation": "The 'Y' in 'Ye Olde' is actually a dead letter called a 'Thorn' (þ). Early printing presses from Europe didn't have this character, so printers substituted it with a 'Y' because it looked somewhat similar in certain fonts. So, while it's written as 'Ye,' it was always meant to be pronounced as 'The.'",
+    "image": "https://loremflickr.com/800/600/medieval?lock=150",
+    "isLegendary": true
+  },
+  {
+    "rule": "The Origin of O.K.",
+    "sentence": "The term 'O.K.' stands for ________.",
+    "options": [
+      "Oll Korrect",
+      "Old Kind"
+    ],
+    "correct": "Oll Korrect",
+    "sarcastic_comment": "O.K.? More like O.K.-ish. It's 'Oll Korrect,' a 19th-century joke that survived for 150 years.",
+    "explanation": "In 1839, a Bureau of Statistics report used 'O.K.' as a joke for 'Oll Korrect'. It became legendary during Martin Van Buren's campaign and stuck as one of the most used words globally.",
+    "image": "https://loremflickr.com/800/600/ok?lock=151",
+    "isLegendary": true
+  },
+  {
+    "rule": "The Word 'Robot'",
+    "sentence": "The word 'Robot' comes from a Czech word meaning ________.",
+    "options": [
+      "forced labor",
+      "metal man"
+    ],
+    "correct": "forced labor",
+    "sarcastic_comment": "Robots aren't just gadgets; they're literal 'forced laborers.' Remember that when they take over.",
+    "explanation": "The term 'Robot' was first used in the 1920 play 'R.U.R.' by Karel Čapek. It was coined by his brother, Josef, from the Czech word 'robota,' which historically meant the forced labor of serfs.",
+    "image": "https://loremflickr.com/800/600/robot?lock=152",
+    "isLegendary": true
+  },
+  {
+    "rule": "The 'Clew' to the Labyrinth",
+    "sentence": "The word 'Clue' originally meant a ________.",
+    "options": [
+      "ball of thread",
+      "hidden key"
+    ],
+    "correct": "ball of thread",
+    "sarcastic_comment": "Follow the thread. Literally. That's where 'clue' comes from.",
+    "explanation": "In Greek mythology, Theseus used a 'clew' (a ball of thread/yarn) to find his way out of the Minotaur's Labyrinth. Over centuries, 'clew' became 'clue' and shifted from literal string to information.",
+    "image": "https://loremflickr.com/800/600/labyrinth?lock=153",
+    "isLegendary": true
+  },
+  {
+    "rule": "Silly History",
+    "sentence": "In Old English, the word 'Silly' actually meant ________.",
+    "options": [
+      "blessed",
+      "foolish"
+    ],
+    "correct": "blessed",
+    "sarcastic_comment": "You're so silly. Wait, stop smiling. In the modern sense, not the holy one.",
+    "explanation": "The word 'silly' (originally 'sælig') once meant 'blessed' or 'pious.' Over time, its meaning shifted to 'innocent,' then 'weak,' and finally to 'foolish.'",
+    "image": "https://loremflickr.com/800/600/angel?lock=154",
+    "isLegendary": true
+  },
+  {
+    "rule": "The Interrobang",
+    "sentence": "The ________ is a non-standard punctuation mark that combines a question mark and an exclamation point.",
+    "options": [
+      "interrobang",
+      "quesclamation"
+    ],
+    "correct": "interrobang",
+    "sarcastic_comment": "Interrobang. It sounds like a bad 80s action movie, but it's the punctuation mark of our digital age.",
+    "explanation": "Proposed in 1962, the interrobang (‽) combines 'interrogatio' (question) and 'bang' (exclamation). It's the ultimate 'What?!' mark.",
+    "image": "https://loremflickr.com/800/600/surprise?lock=155",
+    "isLegendary": true
+  },
+  {
+    "rule": "Goodbye's Secret",
+    "sentence": "The word 'Goodbye' is a contraction of the phrase ________.",
+    "options": [
+      "God be with ye",
+      "Good day to you"
+    ],
+    "correct": "God be with ye",
+    "sarcastic_comment": "Goodbye! I'm literally blessing you as I leave. You're welcome.",
+    "explanation": "The word 'Goodbye' appeared in the late 16th century as a contraction of 'God be with ye.' Over centuries it slurred into its current form.",
+    "image": "https://loremflickr.com/800/600/church?lock=156",
+    "isLegendary": true
+  },
+  {
+    "rule": "Pants History",
+    "sentence": "The word 'Pants' is short for 'Pantaloons,' named after a character from ________ comedy.",
+    "options": [
+      "Italian",
+      "French"
+    ],
+    "correct": "Italian",
+    "sarcastic_comment": "Fancy Italian comedy? No, just your trousers. Put them on one leg at a time.",
+    "explanation": "The word 'pants' is a shortening of 'pantaloons,' which comes from 'Pantaleone,' a thin, greedy, and foolish old man character in Italian 'Commedia dell'arte.' He wore tight-fitting trousers that became so popular they took his name.",
+    "image": "https://loremflickr.com/800/600/pants?lock=157",
+    "isLegendary": true
+  },
+  {
+    "rule": "Etymology of Sarcasm",
+    "sentence": "The word 'Sarcasm' literally means ________ in Greek.",
+    "options": [
+      "to tear flesh",
+      "to speak truth"
+    ],
+    "correct": "to tear flesh",
+    "sarcastic_comment": "I'm not being mean; I'm just practicing ancient Greek 'flesh-tearing.' It's culture.",
+    "explanation": "The word 'sarcasm' comes from the Greek 'sarkazein,' which literally means 'to tear flesh like a dog.' It implies a bitter, cutting remark that's intended to hurt. Now you know why it feels so good.",
+    "image": "https://loremflickr.com/800/600/dog?lock=158",
+    "isLegendary": true
+  },
+  {
+    "rule": "The Viking 'They'",
+    "sentence": "The words 'They,' 'Their,' and 'Them' were actually imported from ________.",
+    "options": [
+      "Old Norse",
+      "Latin"
+    ],
+    "correct": "Old Norse",
+    "sarcastic_comment": "Thank a Viking. They invaded, they pillaged, and they gave us plural pronouns. Fair trade?",
+    "explanation": "In Old English, the words for 'they' sounded very similar to 'he' and 'her,' causing massive confusion. When the Vikings invaded Britain, they brought their own pronouns ('þeir,' 'þeira,' 'þeim'). English speakers liked them so much they kept them to avoid the pronoun headaches.",
+    "image": "https://loremflickr.com/800/600/viking?lock=159",
+    "isLegendary": true
+  },
+  {
+    "rule": "A Sneezing Blessing",
+    "sentence": "Saying 'God bless you' after a sneeze reportedly started during the ________.",
+    "options": [
+      "Plague",
+      "Renaissance"
+    ],
+    "correct": "Plague",
+    "sarcastic_comment": "Bless you! No, seriously, it was for the plague. Stay away.",
+    "explanation": "In 590 AD, during a plague outbreak in Rome, Pope Gregory I ordered unceasing prayer and light-hearted blessings for those who sneezed, as sneezing was often an early symptom of the plague. It was quite literally a prayer for survival.",
+    "image": "https://loremflickr.com/800/600/health?lock=160",
+    "isLegendary": true
+  },
+  {
     "rule": "Oscar Wilde's Last Words",
     "sentence": "Famous Last Words",
     "options": [],

@@ -249,7 +249,7 @@ function App() {
                         score={score}
                         totalQuestions={currentQuestionIndex + 1}
                         playClick={playClick}
-                        factoid={legendaryFactoids[Math.floor((currentQuestionIndex + 1) / 10) - 1] || legendaryFactoids[0]}
+                        factoid={legendaryFactoids[(Math.floor((currentQuestionIndex + 1) / 10) - 1) % legendaryFactoids.length]}
                         onContinue={() => {
                             setCurrentQuestionIndex(prev => prev + 1);
                             setCurrentScreen('quiz');
