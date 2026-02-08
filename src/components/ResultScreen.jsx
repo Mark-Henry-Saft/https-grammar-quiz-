@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RotateCcw, Trophy, Share2, Crown, Flame, Zap, Coffee, ExternalLink, Heart } from 'lucide-react';
 import fanfareSound from '../assets/sounds/fanfare_v3.wav';
+import failStamp from '../assets/images/fail_stamp.png';
 
 export default function ResultScreen({ score, total, totalTimeRemaining, topScores = [], onUpdateLeaderboard, onRestart, playClick, onZen, isSupporter, setIsSupporter }) {
     const percentage = Math.round((score / total) * 100);
@@ -55,6 +56,14 @@ export default function ResultScreen({ score, total, totalTimeRemaining, topScor
                         <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-bounce">
                             LEGEND
                         </div>
+                    )}
+                    {/* Fail Stamp logic: < 50% score */}
+                    {percentage < 50 && (
+                        <img
+                            src={failStamp}
+                            alt="FAIL"
+                            className="absolute -bottom-6 -right-12 w-32 object-contain -rotate-12 animate-in zoom-in duration-500 drop-shadow-xl"
+                        />
                     )}
                 </div>
 

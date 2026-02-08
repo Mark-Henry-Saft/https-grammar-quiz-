@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Play, Calendar, Zap, Volume2, VolumeX } from 'lucide-react';
+import sarcasmBadge from '../assets/images/sarcasm_mode.png';
 
 export default function StartScreen({ onStart, onDailyStart, dailyStats, topScores, isMuted, onToggleMute, playClick }) {
     const today = new Date().toDateString();
@@ -22,6 +23,11 @@ export default function StartScreen({ onStart, onDailyStart, dailyStats, topScor
                 <p className="text-slate-500 dark:text-slate-400 mb-8 text-base leading-relaxed">
                     Unlock your potential as a master communicator. This quiz is designed to sharpen your skills, ensuring you always sound sharp, professional, and clear in every sentence you write or speak.
                 </p>
+
+                {/* Sarcasm Mode Badge */}
+                <div className="mb-6 flex justify-center">
+                    <img src={sarcasmBadge} alt="Sarcasm Mode On" className="h-16 object-contain animate-pulse drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]" />
+                </div>
 
                 <div className="flex flex-col gap-3">
                     <button

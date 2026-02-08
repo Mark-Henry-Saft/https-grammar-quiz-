@@ -1,13 +1,21 @@
 
 import React from 'react';
 import { Info, CheckCircle, XCircle } from 'lucide-react';
+import grammarPoliceBadge from '../assets/images/grammar_police.png';
 
 export default function FeedbackSheet({ show, correct, explanation, onNext, onRetry }) {
     if (!show) return null;
 
     return (
         <div className="fixed bottom-0 left-0 right-0 p-4 z-50 animate-in slide-in-from-bottom duration-300">
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl max-w-md mx-auto shadow-2xl overflow-hidden">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl max-w-md mx-auto shadow-2xl overflow-hidden relative">
+                {!correct && (
+                    <img
+                        src={grammarPoliceBadge}
+                        alt="Grammar Police"
+                        className="absolute -top-6 -right-6 w-24 h-24 object-contain rotate-12 drop-shadow-lg z-10 animate-in zoom-in duration-300"
+                    />
+                )}
                 <div className={`h-1.5 w-full ${correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
                 <div className="p-6">
                     <div className="flex items-start gap-4">
