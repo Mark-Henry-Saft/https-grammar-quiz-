@@ -47,6 +47,7 @@ function App() {
 
     const playClick = () => {
         if (!isMuted) {
+            console.log("🔊 Playing Click Sound (click_v2.wav)");
             const audio = new Audio(clickSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));
@@ -55,6 +56,7 @@ function App() {
 
     const playCorrect = () => {
         if (!isMuted) {
+            console.log("🔊 Playing Correct Sound (correct_v2.wav)");
             const audio = new Audio(correctSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));
@@ -63,6 +65,7 @@ function App() {
 
     const playIncorrect = () => {
         if (!isMuted) {
+            console.log("🔊 Playing Incorrect Sound (incorrect_v2.wav)");
             const audio = new Audio(incorrectSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));
@@ -71,6 +74,7 @@ function App() {
 
     const playFanfare = () => {
         if (!isMuted) {
+            console.log("🔊 Playing Fanfare Sound (fanfare_v2.wav)");
             const audio = new Audio(fanfareSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Audit</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .success {
+            background: #4ade80;
+            color: #064e3b;
+        }
+
+        .danger {
+            background: #f87171;
+            color: #7f1d1d;
+        }
+
+        .info {
+            background: #60a5fa;
+            color: #1e3a8a;
+        }
+
+        .warning {
+            background: #fbbf24;
+            color: #78350f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Audio Asset Audit</h1>
+    <p>Click each button to test if the file is "Clean" or "Screaming".</p>
+
+    <div>
+        <button class="success" onclick="play('correct_v2.wav')">Test "Correct" (Ping)</button>
+    </div>
+    <div>
+        <button class="danger" onclick="play('incorrect_v2.wav')">Test "Incorrect" (Thud)</button>
+    </div>
+    <div>
+        <button class="info" onclick="play('click_v2.wav')">Test "Click" (Tick)</button>
+    </div>
+    <div>
+        <button class="warning" onclick="play('fanfare_v2.wav')">Test "Fanfare" (Chime)</button>
+    </div>
+
+    <div id="status" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function play(filename) {
+            const status = document.getElementById('status');
+            status.innerText = `Attempting to play: src/assets/sounds/${filename}...`;
+
+            // Note: In Vite dev mode, assets are served from /src/assets/sounds/
+            // In production, they might be hashed. This test assumes dev mode structure or public folder.
+            // Since we are debugging loose files, we try the src path first.
+
+            const audio = new Audio(`/src/assets/sounds/${filename}`);
+
+            audio.onplay = () => status.innerText = `Playing: ${filename}`;
+            audio.onerror = (e) => {
+                console.error(e);
+                status.innerText = `Error playing ${filename}. trying public folder fallback...`;
+                // Fallback to check if they somehow got moved to public root?
+                const audio2 = new Audio(`/${filename}`);
+                audio2.play().catch(err => status.innerText = `FAILED: Could not find ${filename} in src or root.`);
+            };
+
+            audio.play().catch(e => {
+                status.innerText = `Play failed: ${e.message}`;
+            });
+        }
+    </script>
+</body>
+
+</html>
