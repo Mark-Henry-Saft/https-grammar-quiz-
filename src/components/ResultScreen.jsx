@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RotateCcw, Trophy, Share2, Crown, Flame, Zap, Coffee, ExternalLink, Heart } from 'lucide-react';
-import fanfareSound from '../assets/sounds/fanfare.wav';
+import fanfareSound from '../assets/sounds/fanfare_new.wav';
 
 export default function ResultScreen({ score, total, totalTimeRemaining, topScores = [], onUpdateLeaderboard, onRestart, playClick, onZen, isSupporter, setIsSupporter }) {
     const percentage = Math.round((score / total) * 100);

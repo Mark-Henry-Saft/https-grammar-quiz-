@@ -67,30 +67,22 @@ createWav('click_new.wav', 0.05, (t) => {
     return Math.sin(2 * Math.PI * f * t) * decay;
 }, 0.3);
 
-// 4. Fanfare (Trumpet - brassy saw/clipped sine sequence)
-createWav('fanfare.wav', 3.0, (t) => {
-    // Melody: C4 (261), E4 (329), G4 (392), C5 (523)
-    // Times: 0-0.2, 0.2-0.4, 0.4-0.6, 0.6-2.0
-    let f = 0;
-    let localT = 0;
+// 4. Fanfare (Chime - Simple Sine Arpeggio)
+createWav('fanfare_new.wav', 2.0, (t) => {
+    // Simple Arpeggio: C5, E5, G5, C6
+    const notes = [523.25, 659.25, 783.99, 1046.50];
+    const times = [0.0, 0.15, 0.3, 0.45];
 
-    if (t < 0.15) { f = 261.63; localT = t; }
-    else if (t < 0.3) { f = 329.63; localT = t - 0.15; }
-    else if (t < 0.45) { f = 392.00; localT = t - 0.3; }
-    else if (t < 3.0) { f = 523.25; localT = t - 0.45; }
-    else return 0;
+    let sample = 0;
 
-    if (f === 0) return 0;
+    for (let i = 0; i < notes.length; i++) {
+        const startTime = times[i];
+        if (t >= startTime) {
+            const localT = t - startTime;
+            const decay = Math.exp(-5 * localT);
+            sample += Math.sin(2 * Math.PI * notes[i] * localT) * decay * 0.3;
+        }
+    }
 
-    // Brass Synthesis: Sawtooth-ish (fundamental + odd harmonics)
-    const w = 2 * Math.PI * f * localT;
-    let v = Math.sin(w) + 0.5 * Math.sin(2 * w) + 0.25 * Math.sin(3 * w); // Simple brass approximation
-
-    // Envelope (ADSR) per note
-    let env = 0;
-    if (localT < 0.05) env = localT / 0.05; // Attack
-    else if (localT < 0.1) env = 1 - (localT - 0.05) * 2; // Decay
-    else env = 0.8 * Math.exp(-(localT - 0.1) * (t > 0.6 ? 2 : 10)); // Sustain/Release
-
-    return v * env;
+    return sample;
 }, 0.5);

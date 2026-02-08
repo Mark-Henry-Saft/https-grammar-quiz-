@@ -11,7 +11,7 @@ import clickSound from './assets/sounds/click_new.wav';
 import musicSound from './assets/sounds/music.mp3';
 import correctSound from './assets/sounds/correct_new.wav';
 import incorrectSound from './assets/sounds/incorrect_new.wav';
-import fanfareSound from './assets/sounds/fanfare.wav';
+import fanfareSound from './assets/sounds/fanfare_new.wav';
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState('start');
