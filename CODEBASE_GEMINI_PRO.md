@@ -1,3 +1,1347 @@
+# GRAMMAR MASTERY QUIZ - CODEBASE EXPORT
+
+
+## FILE: src/App.jsx
+
+import React, { useState, useEffect } from 'react';
+import StartScreen from './components/StartScreen';
+import QuizScreen from './components/QuizScreen';
+import ResultScreen from './components/ResultScreen';
+import ZenScreen from './components/ZenScreen';
+import grammarData from './grammar_data.json';
+import CheckpointScreen from './components/CheckpointScreen';
+import { Heart } from 'lucide-react';
+
+import clickSound from './assets/sounds/click.mp3';
+import musicSound from './assets/sounds/music.mp3';
+import correct1 from './assets/sounds/correct_1.mp3';
+import correct2 from './assets/sounds/correct_2.mp3';
+import correct3 from './assets/sounds/correct_3.mp3';
+import incorrectSound from './assets/sounds/incorrect_new.wav';
+import fanfareSound from './assets/sounds/fanfare.wav';
+
+function App() {
+    const [currentScreen, setCurrentScreen] = useState('start');
+    const [score, setScore] = useState(0);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [questions, setQuestions] = useState([]);
+    const [answerHistory, setAnswerHistory] = useState([]);
+    const [currentStreak, setCurrentStreak] = useState(0);
+    const [isDailyMode, setIsDailyMode] = useState(false);
+    const [startTime, setStartTime] = useState(null);
+    const [totalTimeRemaining, setTotalTimeRemaining] = useState(0);
+    const [isSupporter, setIsSupporter] = useState(() => localStorage.getItem('grammarQuiz_isSupporter') === 'true');
+
+    // Leaderboard State
+    const [topScores, setTopScores] = useState(() => {
+        try {
+            const saved = localStorage.getItem('grammarQuiz_leaderboard');
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) { console.error(e); return []; }
+    });
+
+    const [dailyStats, setDailyStats] = useState(() => {
+        try {
+            const saved = localStorage.getItem('grammarQuiz_dailyStats');
+            return saved ? JSON.parse(saved) : { streak: 0, lastPlayed: null };
+        } catch (e) { console.error(e); return { streak: 0, lastPlayed: null }; }
+    });
+
+    // Audio State
+    const [isMuted, setIsMuted] = useState(() => {
+        return localStorage.getItem('grammarQuiz_isMuted') === 'true';
+    });
+
+    const playClick = () => {
+        if (!isMuted) {
+            const audio = new Audio(clickSound);
+            audio.volume = 0.7;
+            audio.play().catch(e => console.error("Audio play failed", e));
+        }
+    };
+
+    const playCorrect = () => {
+        if (!isMuted) {
+            const sounds = [correct1, correct2, correct3];
+            const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+            const audio = new Audio(randomSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Audio play failed", e));
+        }
+    };
+
+    const playIncorrect = () => {
+        if (!isMuted) {
+            const audio = new Audio(incorrectSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Audio play failed", e));
+        }
+    };
+
+    const playFanfare = () => {
+        if (!isMuted) {
+            const audio = new Audio(fanfareSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Audio play failed", e));
+        }
+    };
+
+    const toggleMute = () => {
+        const newState = !isMuted;
+        setIsMuted(newState);
+        localStorage.setItem('grammarQuiz_isMuted', newState);
+        playClick();
+    };
+
+    // Manage Background Music & Intensity
+    useEffect(() => {
+        const bgMusic = document.getElementById('bg-music');
+        if (bgMusic) {
+            bgMusic.volume = 0.1;
+            const speed = 1 + Math.min(currentStreak, 20) * 0.02;
+            bgMusic.playbackRate = speed;
+            if (isMuted) {
+                bgMusic.pause();
+            }
+        }
+    }, [isMuted, currentStreak]);
+
+    const startMusic = () => {
+        if (!isMuted) {
+            const bgMusic = document.getElementById('bg-music');
+            if (bgMusic) {
+                bgMusic.play().catch(e => console.log("Music autoplay prevented", e));
+            }
+        }
+    };
+
+    // Question Filtering
+    const [legendaryFactoids, setLegendaryFactoids] = useState([]);
+
+    const getFilteredQuestions = (count = null) => {
+        const standards = grammarData.filter(q => !q.isLegendary && (!q.isElite || isSupporter));
+        const shuffled = [...standards].sort(() => 0.5 - Math.random());
+        return count ? shuffled.slice(0, count) : shuffled;
+    };
+
+    useEffect(() => {
+        setQuestions(getFilteredQuestions());
+        setLegendaryFactoids(grammarData.filter(q => q.isLegendary));
+    }, [isSupporter]);
+
+    const handleStart = () => {
+        playClick();
+        startMusic();
+        setIsDailyMode(false);
+        setCurrentScreen('quiz');
+        setScore(0);
+        setCurrentStreak(0);
+        setCurrentQuestionIndex(0);
+        setAnswerHistory([]);
+        setTotalTimeRemaining(0);
+        setStartTime(Date.now());
+        setQuestions(getFilteredQuestions());
+    };
+
+    const handleDailyStart = () => {
+        playClick();
+        startMusic();
+        const today = new Date().toDateString();
+        if (dailyStats.lastPlayed === today) {
+            alert("You've already completed today's challenge! Come back tomorrow.");
+            return;
+        }
+        setIsDailyMode(true);
+        setCurrentScreen('quiz');
+        setScore(0);
+        setCurrentStreak(0);
+        setCurrentQuestionIndex(0);
+        setAnswerHistory([]);
+        setTotalTimeRemaining(0);
+        setStartTime(Date.now());
+        setQuestions(getFilteredQuestions(5));
+    };
+
+    const handleQuizComplete = (isCorrect, timeRemaining = 0) => {
+        if (isCorrect) {
+            setScore(s => s + 1);
+            setCurrentStreak(s => s + 1);
+            setTotalTimeRemaining(t => t + (timeRemaining || 0));
+        } else {
+            setCurrentStreak(0);
+        }
+        setAnswerHistory(prev => [...prev, isCorrect]);
+        const nextIndex = currentQuestionIndex + 1;
+        if (nextIndex > 0 && nextIndex % 10 === 0 && nextIndex < questions.length) {
+            setCurrentScreen('checkpoint');
+            return;
+        }
+        if (nextIndex < questions.length) {
+            setCurrentQuestionIndex(nextIndex);
+        } else {
+            if (isDailyMode) {
+                const today = new Date().toDateString();
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayStr = yesterday.toDateString();
+                let newDailyStreak = dailyStats.streak;
+                if (dailyStats.lastPlayed === yesterdayStr) {
+                    newDailyStreak += 1;
+                } else if (dailyStats.lastPlayed !== today) {
+                    newDailyStreak = 1;
+                }
+                const newStats = { streak: newDailyStreak, lastPlayed: today };
+                setDailyStats(newStats);
+                localStorage.setItem('grammarQuiz_dailyStats', JSON.stringify(newStats));
+            }
+            setCurrentScreen('result');
+        }
+    };
+
+    const handleRestart = () => {
+        setCurrentScreen('start');
+    };
+
+    const handleUpdateLeaderboard = (newEntry) => {
+        const updated = [...topScores, newEntry]
+            .sort((a, b) => b.score - a.score || b.time - a.time)
+            .slice(0, 5);
+        setTopScores(updated);
+        localStorage.setItem('grammarQuiz_leaderboard', JSON.stringify(updated));
+    };
+
+    if (questions.length === 0) return null;
+
+    return (
+        <div className="antialiased font-display min-h-screen flex items-center justify-center p-4">
+            <div className="snake-border w-full max-w-md">
+                <audio id="bg-music" loop src={musicSound} />
+                {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} topScores={topScores} isMuted={isMuted} onToggleMute={toggleMute} playClick={playClick} isSupporter={isSupporter} />}
+                {currentScreen === 'quiz' && (
+                    <QuizScreen
+                        questionData={questions[currentQuestionIndex]}
+                        questionIndex={currentQuestionIndex}
+                        totalQuestions={questions.length}
+                        answerHistory={answerHistory}
+                        onBack={() => { playClick(); setCurrentScreen('start'); }}
+                        onComplete={handleQuizComplete}
+                        playClick={playClick}
+                        playCorrect={playCorrect}
+                        playIncorrect={playIncorrect}
+                        playFanfare={playFanfare}
+                        currentStreak={currentStreak}
+                    />
+                )}
+                {currentScreen === 'result' && (
+                    <ResultScreen
+                        score={score}
+                        total={questions.length}
+                        totalTimeRemaining={totalTimeRemaining}
+                        topScores={topScores}
+                        onUpdateLeaderboard={handleUpdateLeaderboard}
+                        onRestart={handleRestart}
+                        playClick={playClick}
+                        onHome={() => setCurrentScreen('start')}
+                        onZen={() => setCurrentScreen('zen')}
+                        isSupporter={isSupporter}
+                        setIsSupporter={setIsSupporter}
+                    />
+                )}
+                {currentScreen === 'zen' && (
+                    <ZenScreen onHome={handleRestart} playClick={playClick} />
+                )}
+                {currentScreen === 'checkpoint' && (
+                    <CheckpointScreen
+                        level={Math.floor((currentQuestionIndex + 1) / 10)}
+                        score={score}
+                        totalQuestions={currentQuestionIndex + 1}
+                        playClick={playClick}
+                        factoid={legendaryFactoids[(Math.floor((currentQuestionIndex + 1) / 10) - 1) % legendaryFactoids.length]}
+                        onContinue={() => {
+                            setCurrentQuestionIndex(prev => prev + 1);
+                            setCurrentScreen('quiz');
+                        }}
+                    />
+                )}
+                <div className="fixed bottom-1 left-1 flex items-center gap-1.5 opacity-50 hover:opacity-100 transition-opacity">
+                    <div className="relative">
+                        <Heart
+                            size={14}
+                            className={`${dailyStats.streak >= 7 ? 'text-rose-500 fill-rose-500 animate-pulse drop-shadow-[0_0_5px_rgba(244,63,94,0.8)]' : 'text-slate-400'}`}
+                        />
+                        {dailyStats.streak >= 7 && (
+                            <div className="absolute inset-0 bg-rose-400 blur-sm rounded-full opacity-30 animate-ping"></div>
+                        )}
+                    </div>
+                </div>
+                <div className="fixed bottom-1 right-1 text-xs text-slate-300 pointer-events-none opacity-50">v2.7 (Arsenal)</div>
+            </div>
+        </div>
+    );
+}
+
+export default App;
+``
+
+---
+
+## FILE: src/components/StartScreen.jsx
+
+
+import React from 'react';
+import { Play, Calendar, Zap, Volume2, VolumeX } from 'lucide-react';
+
+export default function StartScreen({ onStart, onDailyStart, dailyStats, topScores, isMuted, onToggleMute, playClick }) {
+    const today = new Date().toDateString();
+    const isDailyComplete = dailyStats?.lastPlayed === today;
+
+    return (
+        <div className="bg-pattern min-h-screen flex flex-col items-center justify-center p-6 text-center">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl ios-shadow p-8 max-w-sm w-full border border-slate-100 dark:border-slate-800">
+                <button
+                    onClick={() => { playClick(); onToggleMute(); }}
+                    className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full text-slate-600 dark:text-slate-300 transition-colors"
+                >
+                    {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+                </button>
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Play className="text-primary fill-current ml-1" size={40} />
+                </div>
+                <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">Grammar Quiz</h1>
+                <p className="text-slate-500 dark:text-slate-400 mb-8 text-base leading-relaxed">
+                    Unlock your potential as a master communicator. This quiz is designed to sharpen your skills, ensuring you always sound sharp, professional, and clear in every sentence you write or speak.
+                </p>
+
+                <div className="flex flex-col gap-3">
+                    <button
+                        onClick={onDailyStart}
+                        disabled={isDailyComplete}
+                        className={`w-full h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95 border-2 ${isDailyComplete
+                            ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
+                            : 'bg-white text-orange-500 border-orange-500 hover:bg-orange-50'
+                            }`}
+                    >
+                        <Calendar size={20} />
+                        {isDailyComplete ? 'Daily Challenge Complete' : 'Daily Challenge (5 Qs)'}
+                        {dailyStats?.streak > 0 && (
+                            <span className="ml-2 text-xs bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full flex items-center">
+                                <Zap size={10} className="mr-1 fill-current" /> {dailyStats.streak}
+                            </span>
+                        )}
+                    </button>
+
+                    <button
+                        onClick={onStart}
+                        className="btn-tactile w-full h-16 bg-primary text-white rounded-2xl font-bold text-xl flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/30"
+                    >
+                        <Play size={24} className="fill-current" />
+                        Begin My Mastery
+                    </button>
+
+                    {/* Leaderboard */}
+                    {topScores && topScores.length > 0 && (
+                        <div className="mt-6 w-full text-left">
+                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fastest Perfect Scores</h3>
+                            <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-3 space-y-2">
+                                {topScores.map((score, index) => (
+                                    <div key={index} className="flex items-center justify-between text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${index === 0 ? 'bg-yellow-100 text-yellow-600' : 'bg-slate-200 text-slate-500'}`}>
+                                                {index + 1}
+                                            </span>
+                                            <span className="text-slate-600 dark:text-slate-300 font-medium">{score.date}</span>
+                                        </div>
+                                        <span className="font-mono font-bold text-slate-800 dark:text-white">{score.time}s</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
+``
+
+---
+
+## FILE: src/components/QuizScreen.jsx
+
+
+import React, { useState } from 'react';
+import { ChevronLeft, Settings, CheckCircle, HelpCircle, SkipForward, Lightbulb, X, Flame, XCircle } from 'lucide-react';
+
+const FALLBACK_IMAGE = "https://placehold.co/800x600/e2e8f0/475569?text=Grammar+Quiz";
+
+export default function QuizScreen({ questionData, questionIndex, totalQuestions, answerHistory = [], onBack, onComplete, playClick, playCorrect, playIncorrect, playFanfare, currentStreak }) {
+    const [feedbackState, setFeedbackState] = useState({ show: false, correct: false });
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [imgSrc, setImgSrc] = useState(questionData.image);
+    const [showStreak, setShowStreak] = useState(false);
+    const [showEncouragement, setShowEncouragement] = useState(null);
+    const [timeLeft, setTimeLeft] = useState(15);
+
+    const [sarcasticMessage, setSarcasticMessage] = useState(null);
+
+    const positiveFeedbacks = [
+        "Incredible!", "Excellent!", "Fantastic!", "Superb!", "Amazing!",
+        "Magnificent!", "Outstanding!", "Brilliant!", "Splendid!", "Marvelous!",
+        "Stupendous!", "Terrific!", "Phenomenal!", "Exceptional!", "Wonderful!",
+        "First-rate!", "Impressive!", "Bravo!", "Unstoppable!", "Masterful!",
+        "Legendary!", "Correct!", "Spot on!", "Genius!", "Perfect!",
+        "A+!", "Top notch!", "Flawless!", "Admirable!", "Sensational!",
+        "Exquisite!", "Keep going!", "You're a pro!", "Grammar Guru!", "Elite!", "Whiz!"
+    ];
+
+    const [randomPositive, setRandomPositive] = useState("Incredible!");
+
+    // Timer Logic
+    React.useEffect(() => {
+        if (feedbackState.show) return;
+
+        if (timeLeft === 0) {
+            setFeedbackState({ show: true, correct: false });
+            setSelectedAnswer("TIMEOUT");
+            if (playIncorrect) playIncorrect();
+            return;
+        }
+
+        const timerId = setInterval(() => {
+            setTimeLeft(prev => prev - 1);
+        }, 1000);
+
+        return () => clearInterval(timerId);
+    }, [timeLeft, feedbackState.show]);
+
+    // Trigger animation on 5/10/15 etc
+    React.useEffect(() => {
+        if (currentStreak > 0 && currentStreak % 5 === 0) {
+            setShowStreak(true);
+            const timer = setTimeout(() => setShowStreak(false), 2000);
+            return () => clearTimeout(timer);
+        }
+
+        // Encouragement Logic
+        if (currentStreak > 1 && !feedbackState.show) {
+            const messages = [
+                "That's it!",
+                "You are doing it!!",
+                "You are on your way to mastery!",
+                "Keep it up!",
+                "Unstoppable!"
+            ];
+            if (currentStreak % 3 === 0) {
+                const msg = messages[Math.floor(Math.random() * messages.length)];
+                setShowEncouragement(msg);
+                setTimeout(() => setShowEncouragement(null), 2000);
+            }
+        }
+    }, [currentStreak]);
+
+    // Reset state when question changes
+    React.useEffect(() => {
+        setFeedbackState({ show: false, correct: false });
+        setSelectedAnswer(null);
+        setImgSrc(questionData.image);
+        setTimeLeft(15);
+        setSarcasticMessage(null);
+    }, [questionData]);
+
+    const [isSupporter] = useState(() => localStorage.getItem('grammarQuiz_isSupporter') === 'true');
+
+    // Sarcastic Replies for Incorrect Answers
+    const sarcasticReplies = [
+        "Oof. That happened.",
+        "Swing and a miss!",
+        "Did you even read the question?",
+        "Grammar is hard. Apparantly.",
+        "My cat could guess better.",
+        "Are you guessing?",
+        "Try again, but with feeling.",
+        "Close! But mostly wrong.",
+        "I'm judging you silently.",
+        "English is tough, huh?"
+    ];
+
+    const eliteSarcasticReplies = [
+        "Is this a joke? Because I'm not laughing.",
+        "Wow. A supporter who can't spell. Historic.",
+        "I expected better from a Grand Grammarian.",
+        "Money can't buy grammar, apparently.",
+        "Is your keyboard broken, or just your brain?",
+        "You paid for this privilege. Enjoy the failure.",
+        "A true elite would have known that.",
+        "My disappointment is immeasurable."
+    ];
+
+    const handleAnswer = (answer) => {
+        if (selectedAnswer) return; // Prevent double clicks
+
+        if (playClick) playClick();
+
+        const isCorrect = answer === questionData.correct;
+
+        if (isCorrect) {
+            if (questionData.isLegendary) {
+                if (playFanfare) playFanfare();
+            } else {
+                if (playCorrect) playCorrect();
+            }
+        } else {
+            if (playIncorrect && answer !== "SKIP") playIncorrect();
+        }
+
+        setSelectedAnswer(answer);
+        setFeedbackState({ show: true, correct: isCorrect });
+
+        if (!isCorrect && answer !== "SKIP") {
+            const pool = isSupporter ? [...sarcasticReplies, ...eliteSarcasticReplies] : sarcasticReplies;
+            const message = questionData.sarcastic_comment || pool[Math.floor(Math.random() * pool.length)];
+            setSarcasticMessage(message);
+        } else if (isCorrect) {
+            setRandomPositive(positiveFeedbacks[Math.floor(Math.random() * positiveFeedbacks.length)]);
+        } else if (answer === "SKIP") {
+            setSarcasticMessage(isSupporter ? "Elite runners don't skip. But here we are." : "Coward's way out? Okay.");
+        }
+    };
+
+    const handleRetry = () => {
+        setFeedbackState({ show: false, correct: false });
+        setSelectedAnswer(null);
+        setSarcasticMessage(null);
+    };
+
+    const handleNext = () => {
+        onComplete(feedbackState.correct, timeLeft);
+    };
+
+    // Word Card Component for Arsenal Questions
+    const WordCard = ({ word, pron, usage, definition }) => (
+        <div className="linen-paper rounded-2xl p-6 mt-4 mb-6 border-2 border-[#e5e0d0] relative overflow-hidden animate-in zoom-in-95 duration-500">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 opacity-30"></div>
+            <div className="flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                    <span className="text-2xl font-black text-slate-800 tracking-tight">{word}</span>
+                    <span className="text-xs font-serif italic text-slate-500">{pron}</span>
+                </div>
+                <div className="h-px bg-slate-200/50 w-full"></div>
+                <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-amber-600 mb-1 block">Usage Context</span>
+                    <p className="text-sm font-serif italic text-slate-700 leading-relaxed">
+                        "{usage}"
+                    </p>
+                </div>
+            </div>
+        </div>
+    );
+
+    return (
+        <div className="bg-pattern min-h-screen flex flex-col w-full text-slate-900 dark:text-slate-100 overflow-hidden">
+
+            {/* Encouragement Overlay */}
+            {showEncouragement && (
+                <div className="absolute top-20 left-0 right-0 z-50 flex justify-center pointer-events-none animate-in fade-in slide-in-from-top-4 duration-300">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-1.5 rounded-full font-bold text-base shadow-lg transform -rotate-1 border-2 border-white/50">
+                        {showEncouragement} <Flame className="inline w-4 h-4 ml-1 fill-white stroke-none" />
+                    </div>
+                </div>
+            )}
+
+            {/* Header - Compact */}
+            <header className="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 pt-2 pb-1 shadow-sm">
+                <div className="flex items-center justify-between max-w-md mx-auto h-10">
+                    <button
+                        onClick={onBack}
+                        className="w-8 h-8 flex items-center justify-start text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    >
+                        <ChevronLeft size={20} />
+                    </button>
+                    <h1 className="text-sm font-bold tracking-tight opacity-70 uppercase">Grammar Mastery</h1>
+                    <div className="w-8"></div>
+                </div>
+
+                {/* Progress Bar - Compact */}
+                <div className="max-w-md mx-auto mt-1 px-1">
+                    <div className="flex justify-between items-end mb-1">
+                        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider truncate max-w-[150px]">{questionData.rule}</span>
+                        <div className="flex items-center gap-2">
+                            {/* Timer */}
+                            <div className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-colors flex items-center gap-1 ${timeLeft <= 3 ? 'text-red-500 bg-red-100 animate-pulse' : 'text-slate-500 bg-slate-100'}`}>
+                                <span>⏱</span> {timeLeft}s
+                            </div>
+
+                            {currentStreak > 2 && (
+                                <span className="text-[10px] font-bold text-orange-500 animate-pulse flex items-center gap-1">
+                                    <Flame size={10} fill="currentColor" /> {currentStreak}
+                                </span>
+                            )}
+                            <span className="text-[10px] font-bold text-slate-400">{questionIndex + 1} / {totalQuestions}</span>
+                        </div>
+                    </div>
+                    <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div
+                            className="bg-primary h-full rounded-full transition-all duration-500 ease-out"
+                            style={{ width: `${((questionIndex + 1) / totalQuestions) * 100}%` }}
+                        ></div>
+                    </div>
+                </div>
+            </header>
+
+            <main className="flex-1 flex flex-col justify-center px-4 py-4 max-w-md mx-auto w-full relative z-0">
+
+                {/* Question Area */}
+                <div className="bg-white dark:bg-slate-900 rounded-2xl ios-shadow border border-slate-100 dark:border-slate-800 p-4 mb-4">
+                    {/* Image Area */}
+                    <div className="w-full h-40 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center overflow-hidden relative shadow-inner mb-4">
+                        <img
+                            key={questionData.image}
+                            src={imgSrc}
+                            alt={questionData.rule}
+                            onError={() => setImgSrc(FALLBACK_IMAGE)}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    {/* Sentence */}
+                    <div className="flex flex-col items-center text-center">
+                        <p className="text-xl font-bold leading-snug px-1 text-slate-800 dark:text-white">
+                            {(() => {
+                                const parts = questionData.sentence.split('________');
+
+                                // PROPER NOUN CHECK: If it has multiple caps or specific legendary names
+                                const isProperNoun = (str) => {
+                                    if (!str) return false;
+                                    const properNouns = ['Sparta', 'NASA', 'JFK', 'Stalin', 'Grammar Mastery'];
+                                    if (properNouns.includes(str)) return true;
+                                    if (str === "I") return true;
+                                    // Check if it's already mixed case or all caps (e.g. "iPhone" or "USA")
+                                    return str.length > 1 && str.substring(1).toLowerCase() !== str.substring(1);
+                                };
+
+                                const formatAnswer = (ans, isStart) => {
+                                    if (!ans) return "";
+                                    if (isStart) return ans; // Level 0: Start of sentence always capitalized
+                                    if (isProperNoun(ans)) return ans;
+                                    return ans.toLowerCase();
+                                };
+
+                                return parts.map((part, index) => {
+                                    const isStartOfSentence = index === 0 && part.trim() === "";
+                                    const answerParts = selectedAnswer && selectedAnswer !== "TIMEOUT"
+                                        ? selectedAnswer.split('/').map(s => s.trim())
+                                        : Array(parts.length - 1).fill("");
+
+                                    return (
+                                        <React.Fragment key={index}>
+                                            {part}
+                                            {index < parts.length - 1 && (
+                                                <span className={`inline-block border-b-2 mx-1 font-black transition-colors duration-300 ${selectedAnswer ? 'text-primary border-primary' : 'min-w-[2.5rem] border-slate-300 text-transparent'}`}>
+                                                    {selectedAnswer
+                                                        ? formatAnswer(answerParts[index], isStartOfSentence)
+                                                        : (selectedAnswer === "TIMEOUT" ? "???" : "____")
+                                                    }
+                                                </span>
+                                            )}
+                                        </React.Fragment>
+                                    );
+                                });
+                            })()}
+                        </p>
+                    </div>
+                </div>
+
+                {/* Tally Stacks - Compact Restore! */}
+                <div className="flex justify-center gap-1 mb-4 h-6 overflow-hidden">
+                    {answerHistory.map((isCorrect, idx) => (
+                        <div
+                            key={idx}
+                            className={`w-4 h-4 rounded-full flex items-center justify-center animate-in zoom-in duration-300 shadow-sm border ${isCorrect
+                                ? 'bg-green-100 border-green-400 text-green-600'
+                                : 'bg-red-100 border-red-400 text-red-600'
+                                }`}
+                        >
+                            {isCorrect ? <span className="text-[10px] font-black">O</span> : <X size={10} strokeWidth={3} />}
+                        </div>
+                    ))}
+                    {/* Placeholder for remaining */}
+                    {Array.from({ length: 5 - (answerHistory.length % 5 || 0) }).map((_, i) => (
+                        <div key={`p-${i}`} className="w-4 h-4 rounded-full border border-dashed border-slate-200 bg-slate-50 opacity-30"></div>
+                    ))}
+                </div>
+
+                {/* Sarcastic Message on Wrong Answer (Inline) */}
+                {sarcasticMessage && !feedbackState.show && (
+                    <div className="text-center mb-4 animate-in slide-in-from-bottom-2 fade-in">
+                        <span className="text-sm font-bold text-red-500 italic bg-red-50 px-3 py-1 rounded-full border border-red-100 shadow-sm">{sarcasticMessage}</span>
+                    </div>
+                )}
+
+
+                {/* Action Buttons - Grid */}
+                <div className="grid grid-cols-1 gap-3 mb-4 w-full">
+                    {questionData.options.map((option, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => handleAnswer(option)}
+                            disabled={!!selectedAnswer}
+                            className={`w-full h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 relative overflow-hidden active:scale-[0.98] transition-all duration-200 border-2 ${selectedAnswer === option
+                                ? (option === questionData.correct ? 'bg-green-500 text-white border-green-600 shadow-md' : 'bg-red-500 text-white border-red-600 shadow-md')
+                                : (selectedAnswer === "TIMEOUT" && option === questionData.correct
+                                    ? 'bg-green-100 text-green-700 border-green-300'
+                                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-white border-slate-200 dark:border-slate-700 hover:border-primary/50 shadow-sm')
+                                } ${!!selectedAnswer && selectedAnswer !== option && option !== questionData.correct ? 'opacity-50 grayscale scale-95' : ''}`}
+                        >
+                            <span className="truncate px-4">{option}</span>
+                            {selectedAnswer === option && option === questionData.correct && (
+                                <CheckCircle className="absolute right-4 w-5 h-5 animate-in zoom-in spin-in-90 duration-300" />
+                            )}
+                            {selectedAnswer === option && option !== questionData.correct && (
+                                <X className="absolute right-4 w-5 h-5 animate-in zoom-in duration-300" />
+                            )}
+                        </button>
+                    ))}
+                </div>
+
+                {/* INLINE FEEDBACK CARD */}
+                {feedbackState.show && (
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 mb-6">
+                        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+                            <div className={`h-2 w-full ${feedbackState.correct ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                            <div className="p-5">
+                                <div className="flex items-start gap-4">
+                                    <div className={`p-2.5 rounded-xl ${feedbackState.correct ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'}`}>
+                                        {feedbackState.correct ? <CheckCircle size={24} /> : <XCircle size={24} />}
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="text-lg font-black text-slate-900 dark:text-white mb-1">
+                                            {feedbackState.correct ? randomPositive : (selectedAnswer === "TIMEOUT" ? "Time Out!" : 'Not Quite')}
+                                        </h4>
+                                        <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
+                                            {feedbackState.correct
+                                                ? (questionData.explanation || "Spot on! You mastered this rule.")
+                                                : (selectedAnswer !== "TIMEOUT" && questionData.nuance && questionData.nuance[selectedAnswer]
+                                                    ? questionData.nuance[selectedAnswer]
+                                                    : (questionData.explanation || "Study the rule above and try next time."))}
+                                        </p>
+
+                                        {feedbackState.correct && questionData.category === "The Arsenal" && (
+                                            <WordCard
+                                                word={questionData.correct}
+                                                pron={questionData.pronunciation}
+                                                usage={questionData.usage}
+                                            />
+                                        )}
+                                        <button
+                                            onClick={handleNext}
+                                            className={`w-full h-14 rounded-xl font-bold text-lg text-white transition-all transform active:scale-95 shadow-lg ${feedbackState.correct ? 'bg-green-500 shadow-green-200' : 'bg-red-500 shadow-red-200'
+                                                }`}
+                                        >
+                                            {feedbackState.correct ? 'Next Question' : 'Got it, Continue'}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Skip Button (Only show if not answered) */}
+                {!selectedAnswer && (
+                    <button
+                        onClick={() => handleAnswer("SKIP")}
+                        className="flex flex-col items-center gap-1 mx-auto text-[10px] font-black text-slate-400 hover:text-slate-600 transition-all active:scale-90"
+                    >
+                        <div className="w-10 h-10 rounded-full border-2 border-slate-200 flex items-center justify-center bg-white shadow-sm">
+                            <SkipForward size={18} />
+                        </div>
+                        SKIP QUESTION
+                    </button>
+                )}
+
+            </main>
+
+            {/* Streak Animation Overlay */}
+            {showStreak && (
+                <div className="fixed inset-0 pointer-events-none flex items-center justify-center z-[100] animate-in zoom-in fade-in duration-500">
+                    <div className="bg-orange-500 text-white px-8 py-6 rounded-3xl shadow-2xl skew-y-[-6deg] flex flex-col items-center border-4 border-yellow-300">
+                        <Flame size={64} className="animate-bounce mb-2 fill-yellow-300 stroke-none" />
+                        <h2 className="text-4xl font-black italic tracking-tighter uppercase drop-shadow-md">
+                            {currentStreak} In A Row!
+                        </h2>
+                        <p className="font-bold text-orange-100 text-lg mt-2">Unstoppable!</p>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+``
+
+---
+
+## FILE: src/components/ResultScreen.jsx
+
+import React, { useState, useEffect, useRef } from 'react';
+import { RotateCcw, Trophy, Share2, Crown, Flame, Zap, Coffee, ExternalLink, Heart } from 'lucide-react';
+import fanfareSound from '../assets/sounds/fanfare.wav';
+
+export default function ResultScreen({ score, total, totalTimeRemaining, topScores = [], onUpdateLeaderboard, onRestart, playClick, onZen, isSupporter, setIsSupporter }) {
+    const percentage = Math.round((score / total) * 100);
+    const avgTimeRemaining = total > 0 ? (totalTimeRemaining / total).toFixed(1) : "0.0";
+
+    // Ensure we only save the score once per mount
+    const hasSavedRef = useRef(false);
+    const hasPlayedFanfareRef = useRef(false);
+
+    useEffect(() => {
+        if (score === total && !hasPlayedFanfareRef.current) {
+            const audio = new Audio(fanfareSound);
+            audio.volume = 0.5;
+            audio.play().catch(e => console.error("Fanfare play failed", e));
+            hasPlayedFanfareRef.current = true;
+        }
+
+        if (hasSavedRef.current) return;
+        hasSavedRef.current = true;
+
+        if (onUpdateLeaderboard) {
+            const newEntry = {
+                score,
+                time: totalTimeRemaining,
+                date: new Date().toISOString()
+            };
+            onUpdateLeaderboard(newEntry);
+        }
+    }, [score, totalTimeRemaining, onUpdateLeaderboard]);
+
+    const handleSupportSuccess = () => {
+        if (setIsSupporter) {
+            setIsSupporter(true);
+            localStorage.setItem('grammarQuiz_isSupporter', 'true');
+        }
+    };
+
+    return (
+        <div className="bg-pattern min-h-screen flex flex-col items-center justify-center p-6 text-center overflow-auto py-10">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl ios-shadow p-6 max-w-sm w-full border border-slate-100 dark:border-slate-800 relative overflow-hidden">
+
+                {/* 100% Zen Header */}
+                {score === total && (
+                    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-indigo-500 to-purple-600 p-2 text-white text-xs font-bold tracking-widest uppercase animate-pulse">
+                        Perfect Score • Zen Mode Unlocked
+                    </div>
+                )}
+
+                <div className="mt-6 w-24 h-24 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-slow relative group cursor-pointer transition-transform hover:scale-110">
+                    <Trophy className={`text-yellow-600 dark:text-yellow-400 fill-current filter drop-shadow-lg ${score === total ? 'animate-pulse' : ''}`} size={48} />
+                    {score === total && (
+                        <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-bounce">
+                            LEGEND
+                        </div>
+                    )}
+                </div>
+
+                <h1 className="text-3xl font-black text-slate-800 dark:text-white mb-1 tracking-tight">
+                    {score === total ? "LEGENDARY!" : "Nice Work!"}
+                </h1>
+
+                <div className="flex justify-center items-center gap-4 mb-6 text-slate-500 dark:text-slate-400 text-sm font-medium">
+                    <div className="flex flex-col items-center">
+                        <span className="text-2xl font-bold text-slate-800 dark:text-white">{score}/{total}</span>
+                        <span className="text-xs uppercase tracking-wider opacity-70">Score</span>
+                    </div>
+                    <div className="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+                    <div className="flex flex-col items-center">
+                        <span className="text-2xl font-bold text-slate-800 dark:text-white">{avgTimeRemaining}s</span>
+                        <span className="text-xs uppercase tracking-wider opacity-70">Avg. Limit Left</span>
+                    </div>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3 mb-6 overflow-hidden relative">
+                    <div
+                        className={`h-full rounded-full transition-all duration-1000 ease-out ${score === total ? 'bg-gradient-to-r from-yellow-400 to-orange-500 animate-pulse' : 'bg-primary'}`}
+                        style={{ width: `${percentage}%` }}
+                    />
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col gap-3 w-full mb-6 relative z-10">
+                    {score === total ? (
+                        <button
+                            onClick={() => { if (playClick) playClick(); onZen(); }}
+                            className="btn-primary w-full h-14 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all animate-pulse"
+                        >
+                            <Zap size={20} className="fill-yellow-300 stroke-none" />
+                            ENTER ZEN MODE
+                        </button>
+                    ) : (
+                        <button
+                            onClick={() => {
+                                if (playClick) playClick();
+                                const text = `🔥 I just scored ${score}/${total} with a ${avgTimeRemaining}s average Time Left on the Grammar Mastery Quiz! Can you beat my streak?`;
+                                if (navigator.share) {
+                                    navigator.share({
+                                        title: 'Grammar Quiz Mastery',
+                                        text: text,
+                                        url: window.location.href,
+                                    }).catch(console.error);
+                                } else {
+                                    navigator.clipboard.writeText(text);
+                                    alert('Result copied to clipboard!');
+                                }
+                            }}
+                            className="btn-secondary w-full h-14 bg-blue-50 text-blue-600 border-2 border-blue-200 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95 hover:bg-blue-100"
+                        >
+                            <Share2 size={20} />
+                            Challenge a Friend
+                        </button>
+                    )}
+
+                    <button
+                        onClick={() => { if (playClick) playClick(); onRestart(); }}
+                        className="btn-secondary w-full h-14 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-200 dark:border-slate-700 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-transform active:scale-95 hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                    >
+                        <RotateCcw size={20} />
+                        Try Again
+                    </button>
+                </div>
+
+                {/* Leaderboard Section */}
+                <div className="w-full bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-100 dark:border-slate-700 animate-in slide-in-from-bottom-4 duration-500 delay-100">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                        <Crown size={16} className="text-yellow-500 fill-yellow-500" />
+                        <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Global Top 5</h3>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        {topScores.length === 0 ? (
+                            <p className="text-xs text-slate-400 italic">Be the first to set a record!</p>
+                        ) : (
+                            topScores.map((entry, idx) => (
+                                <div key={idx} className={`flex items-center justify-between text-sm p-2 rounded-lg ${idx === 0 ? 'bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-900/30' : 'bg-white dark:bg-slate-800 border border-transparent'}`}>
+                                    <div className="flex items-center gap-2">
+                                        <span className={`font-mono font-bold w-4 ${idx === 0 ? 'text-yellow-600' : 'text-slate-400'}`}>#{idx + 1}</span>
+                                        <div className="flex flex-col items-start">
+                                            <span className="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-1">
+                                                {entry.score === score && entry.time === totalTimeRemaining ? (idx === 0 ? "You (Legend)" : "You") : `Player ${idx + 1}`}
+                                                {((entry.score === score && entry.time === totalTimeRemaining) && isSupporter) && (
+                                                    <span className="text-[10px] bg-rose-500 text-white px-1.5 py-0.5 rounded-full font-black animate-pulse uppercase tracking-tighter">Contributor</span>
+                                                )}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-3 font-mono text-xs">
+                                        <span className="font-bold text-slate-800 dark:text-white">{entry.score} pts</span>
+                                        <span className="text-slate-400">{(total > 0 ? (entry.time / total).toFixed(1) : 0)}s avg</span>
+                                    </div>
+                                </div>
+                            ))
+                        )}
+                    </div>
+                </div>
+
+                {/* ADVANCED MONETIZATION CARD */}
+                <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 w-full flex flex-col gap-6">
+
+                    {/* HEART/SUPPORT CARD */}
+                    <div className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-rose-900/10 dark:to-pink-900/10 rounded-2xl p-5 border border-pink-100 dark:border-pink-900/30 text-center animate-fade-in relative overflow-hidden">
+                        {isSupporter && (
+                            <div className="absolute -right-8 -top-8 w-24 h-24 bg-rose-500/10 rotate-45 flex items-center justify-center pt-8 pr-2">
+                                <Heart size={16} className="text-rose-500 fill-rose-500" />
+                            </div>
+                        )}
+
+                        <div className="flex justify-center gap-1 mb-2">
+                            <Flame size={16} className="text-rose-500 fill-rose-500 animate-pulse" />
+                            <Crown size={16} className="text-rose-400 fill-rose-400" />
+                            <Flame size={16} className="text-rose-500 fill-rose-500 animate-pulse" />
+                        </div>
+                        <h4 className="text-sm font-black text-rose-900 dark:text-rose-200 uppercase tracking-tight mb-1">
+                            {isSupporter ? "Thank you, Legend!" : "Make English Grammar Great Again"}
+                        </h4>
+                        <p className="text-[11px] text-rose-700/70 dark:text-rose-300/60 font-medium mb-4 leading-relaxed">
+                            {isSupporter
+                                ? "You've unlocked the Legendary Sarcasm Pack and the contributor badge! Stay sharp."
+                                : "Support the project and keep the sarcasm flowing. Unlock exclusive status!"}
+                        </p>
+
+                        <div className="flex flex-col gap-2">
+                            <SupportButton onSuccess={handleSupportSuccess} />
+
+                            {!isSupporter && (
+                                <a
+                                    href="https://www.buymeacoffee.com/yourlink"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => handleSupportSuccess()}
+                                    className="w-full py-3 bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-95 shadow-sm"
+                                >
+                                    <Coffee size={16} className="fill-current" />
+                                    Buy Me a Coffee
+                                </a>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* GRAMMAR TOOLKIT (AFFILIATE) */}
+                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 text-left">
+                        <div className="flex items-center gap-2 mb-3">
+                            <Zap size={14} className="text-primary fill-primary" />
+                            <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Grammarian's Toolkit</h4>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <a href="#" className="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary transition-colors group">
+                                <div className="flex flex-col">
+                                    <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">The Ultimate Dictionary</span>
+                                    <span className="text-[9px] text-slate-400">Expand your vocabulary daily</span>
+                                </div>
+                                <ExternalLink size={12} className="text-slate-300 group-hover:text-primary transition-colors" />
+                            </a>
+                            <a href="#" className="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary transition-colors group">
+                                <div className="flex flex-col">
+                                    <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">Premium Writing AI</span>
+                                    <span className="text-[9px] text-slate-400">Level up your essay game</span>
+                                </div>
+                                <ExternalLink size={12} className="text-slate-300 group-hover:text-primary transition-colors" />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    );
+}
+
+function SupportButton({ onSuccess }) {
+    const [copied, setCopied] = useState(false);
+    const address = '0x109e87DfA42086D2BB09eEC03E4ed03Ada588E3e';
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(address);
+        setCopied(true);
+        if (onSuccess) onSuccess();
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    return (
+        <button
+            onClick={handleCopy}
+            className={`w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-95 shadow-sm
+                ${copied
+                    ? 'bg-green-500 text-white scale-[1.02]'
+                    : 'bg-white dark:bg-slate-900 text-rose-600 border-2 border-rose-200 dark:border-rose-900/50 hover:bg-rose-50 dark:hover:bg-rose-900/20'
+                }`}
+        >
+            {copied ? (
+                <>ETH Address Copied! 🚀</>
+            ) : (
+                <>
+                    <Flame size={16} className="fill-current" />
+                    Support via ETH
+                </>
+            )}
+        </button>
+    );
+}
+``
+
+---
+
+## FILE: src/components/ZenScreen.jsx
+
+
+import React, { useRef, useEffect } from 'react';
+import { Home, Share2, Heart } from 'lucide-react';
+
+export default function ZenScreen({ onHome }) {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.8; // Slow down for extra zen
+        }
+    }, []);
+
+    return (
+        <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center text-white overflow-hidden">
+            {/* Background Video */}
+            <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-60"
+            >
+                {/* Thailand Sunset Loop */}
+                <source src="https://cdn.pixabay.com/video/2021/08/13/84950-588147458_large.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+
+            {/* Content Overlay */}
+            <div className="relative z-10 text-center p-8 animate-fade-in-up">
+                <div className="flex justify-center mb-6">
+                    <div className="relative">
+                        <Heart size={64} className="text-white fill-white opacity-20 blur-sm absolute inset-0 animate-ping" />
+                        <Heart size={64} className="text-rose-100 fill-rose-100/30 drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
+                    </div>
+                </div>
+                <h1 className="text-6xl font-black tracking-tighter mb-4 text-white drop-shadow-2xl">WELCOME HOME</h1>
+                <p className="text-xl font-light text-white/90 mb-12 max-w-md mx-auto leading-relaxed drop-shadow-md italic">
+                    The Missouri sky meets the Thailand sunset. You've mastered the grammar, now find your peace.
+                </p>
+
+                <button
+                    onClick={onHome}
+                    className="group bg-white/10 backdrop-blur-md border border-white/30 rounded-full px-8 py-3 flex items-center gap-3 transition-all hover:bg-white/20 hover:scale-105 active:scale-95 mx-auto"
+                >
+                    <Home size={20} className="text-white" />
+                    <span className="text-white tracking-widest text-sm font-semibold uppercase">Return Home</span>
+                </button>
+            </div>
+
+            <style>{`
+                @keyframes fade-in-up {
+                    0% { opacity: 0; transform: translateY(20px); }
+                    100% { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fade-in-up {
+                    animation: fade-in-up 2s ease-out forwards;
+                }
+            `}</style>
+        </div>
+    );
+}
+``
+
+---
+
+## FILE: src/components/CheckpointScreen.jsx
+
+import React from 'react';
+import { Trophy, Star, ArrowRight, Zap, BookOpen, Quote } from 'lucide-react';
+
+export default function CheckpointScreen({ level, score, totalQuestions, onContinue, playClick, factoid }) {
+    const ranks = [
+        "Grammar Novice",
+        "Sentence Scout",
+        "Verb Voyager",
+        "Syntax Sage",
+        "Grammar Guru",
+        "Punctuation Pro",
+        "Linguistic Legend"
+    ];
+
+    const currentRank = ranks[Math.min(level - 1, ranks.length - 1)];
+
+    return (
+        <div className="bg-pattern min-h-screen flex flex-col items-center justify-center px-4 w-full text-slate-900 dark:text-slate-100 animate-in fade-in duration-700">
+            <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl ios-shadow border-4 border-primary/20 p-8 flex flex-col items-center text-center relative overflow-hidden">
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+                <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl"></div>
+
+                <div className="relative mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-xl animate-bounce duration-[2000ms]">
+                        <Trophy size={40} className="text-white drop-shadow-lg" />
+                    </div>
+                </div>
+
+                <h1 className="text-3xl font-black italic tracking-tighter uppercase mb-1 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                    Level {level} Complete!
+                </h1>
+
+                <p className="text-sm font-black text-slate-400 mb-6 uppercase tracking-[0.2em]">
+                    Rank: {currentRank}
+                </p>
+
+                {/* Accuracy Badge */}
+                <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl px-4 py-2 flex items-center gap-3 border border-slate-100 dark:border-slate-800 mb-8 self-center">
+                    <Zap size={16} className="text-primary" />
+                    <span className="text-sm font-black text-slate-700 dark:text-slate-200">Accuracy: {Math.round((score / totalQuestions) * 100)}%</span>
+                </div>
+
+                {/* FACTOID SECTION */}
+                <div className="w-full bg-blue-50/50 dark:bg-blue-900/20 rounded-2xl p-6 border border-blue-100 dark:border-blue-800/50 mb-8 relative">
+                    <div className="absolute -top-3 left-6 bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-2">
+                        <BookOpen size={12} />
+                        Linguistic History
+                    </div>
+
+                    {factoid && (
+                        <div className="flex flex-col gap-4 text-left">
+                            <div className="w-full h-32 rounded-xl overflow-hidden border-2 border-white shadow-sm">
+                                <img
+                                    src={factoid.image}
+                                    alt={factoid.rule}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <h3 className="text-base font-black text-blue-900 dark:text-blue-300 mb-2 flex items-center gap-2">
+                                    <Quote size={14} className="opacity-50" />
+                                    {factoid.rule}
+                                </h3>
+                                <p className="text-sm font-medium text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                                    {factoid.explanation}
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                <button
+                    onClick={() => {
+                        if (playClick) playClick();
+                        onContinue();
+                    }}
+                    className="w-full h-16 bg-primary hover:bg-primary-dark text-white rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all transform active:scale-95 shadow-lg shadow-primary/25 group"
+                >
+                    KEEP GOING
+                    <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+            </div>
+        </div>
+    );
+}
+``
+
+---
+
+## FILE: src/index.css
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .ios-shadow {
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-tactile {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 4px 0 0 #0b5fb3;
+  }
+
+  .btn-tactile:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 0 #0b5fb3;
+  }
+
+  .btn-secondary {
+    box-shadow: 0 4px 0 0 #cbd5e1;
+  }
+
+  .btn-secondary:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 0 #cbd5e1;
+  }
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  @apply bg-background-light text-slate-900;
+}
+
+.bg-pattern {
+  background-color: #f6f7f8;
+  background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+}
+
+.dark .bg-pattern {
+  background-color: #101922;
+  background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px);
+}
+
+/* Snake Border Animation */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.snake-border {
+  position: relative;
+  border-radius: 1rem;
+  background: white;
+  padding: 3px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dark .snake-border {
+  background: #0f172a;
+}
+
+.snake-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.2rem;
+  background: conic-gradient(from var(--angle), transparent 70%, #3b82f6);
+  animation: rotate 3s linear infinite;
+  z-index: -1;
+}
+
+/* Fallback */
+@supports not (background: paint(something)) {
+  .snake-border::before {
+    background: conic-gradient(transparent 70%, #3b82f6);
+    animation: none;
+    border: 2px solid #3b82f6;
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.linen-paper {
+  background-color: #fdfaf1;
+  background-image: url("https://www.transparenttextures.com/patterns/linen-paper.png");
+  border: 1px solid #e5e0d0;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    inset 0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+.linen-texture {
+  position: relative;
+}
+
+.linen-texture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background: repeating-linear-gradient(45deg,
+      #000,
+      #000 1px,
+      transparent 1px,
+      transparent 5px);
+}
+``
+
+---
+
+## FILE: src/grammar_data.json
+
 [
   {
     "rule": "Well vs Good",
@@ -2886,24 +4230,20 @@
   },
   {
     "rule": "Power Word: Inevitable",
-    "sentence": "Benjamin Franklin famously wrote that death and taxes are the only ________ things in life.",
+    "sentence": "Death and taxes are the only ________ things in life.",
     "options": [
       "Invariable",
       "Inimitable",
       "Inevitable"
     ],
     "correct": "Inevitable",
-    "explanation": "Benjamin Franklin (1706–1790) used 'inevitable' (or 'certain') to emphasize that these two burdens are unavoidable. Franklin was a polymath: an author, printer, political theorist, scientist, and inventor of the lightning rod and bifocals.",
+    "explanation": "Certain to happen; unavoidable.",
     "sarcastic_comment": "Vocabulary is power. Inevitable means exactly that.",
     "image": "https://loremflickr.com/800/600/knowledge?lock=353",
     "isArsenal": true,
     "category": "The Arsenal",
     "pronunciation": "/ɪnˈɛvɪtəb(ə)l/",
-    "usage": "Given the lack of maintenance, the collapse of the ancient bridge was eventually inevitable.",
-    "nuance": {
-      "Certain": "While 'certain' is a synonym used in many versions of the quote, the challenge here is identifying the advanced 'Arsenal' word that describes something unavoidable.",
-      "Unavoidable": "Correct in meaning, but Benjamin Franklin's specific philosophical context often leads to discussions of the 'inevitable' nature of fate."
-    }
+    "usage": "Given the lack of maintenance, the collapse of the ancient bridge was eventually inevitable."
   },
   {
     "rule": "Power Word: Jubilant",
@@ -3626,25 +4966,71 @@
     "category": "The Arsenal",
     "pronunciation": "/vəˈreɪʃəs/",
     "usage": "A voracious reader from a young age, she had finished the entire school library before she was twelve."
-  },
-  {
-    "id": "factoid-franklin",
-    "category": "The Vault",
-    "rule": "Linguistic Lore: Benjamin Franklin",
-    "isLegendary": true,
-    "title": "The Polymath of Philadephia",
-    "story": "Benjamin Franklin was one of the most prolific 'gifts' to humanity. Beyond co-authoring the Declaration of Independence, he was a scientist who tamed lightning, an inventor who gave us bifocals and the lightning rod, and a writer who shaped American humor. His wit was sharpest when discussing human nature, noting that 'in this world, nothing can be said to be certain, except death and taxes.' He also famously (and humorously) remarked: 'Beer is living proof that God loves us and wants us to be happy.'",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Benjamin_Franklin_by_Joseph_Duplessis_1778.jpg",
-    "impact": "Franklin’s legacy of civic duty and scientific curiosity remains a cornerstone of modern democracy and innovation."
-  },
-  {
-    "id": "factoid-shakespeare",
-    "category": "The Vault",
-    "rule": "Linguistic Lore: The Bard's Legacy",
-    "isLegendary": true,
-    "title": "William Shakespeare: Architect of English",
-    "story": "William Shakespeare didn't just write plays; he invented the language we speak today. He is credited with coining or popularizing over 1,700 words and thousands of phrases. Expressions like 'heart of gold', 'break the ice', and 'faint-hearted' all trace back to his pen. Even the 'thumbs up' gesture (historically associated with gladiatorial approval) found its way into our lexicon through the theatrical traditions he inspired.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shakespeare.jpg",
-    "impact": "Without Shakespeare, the English language would lack the vibrant imagery and emotional depth that defines modern literature."
   }
 ]
+``
+
+---
+
+## FILE: package.json
+
+{
+    "name": "grammar-quiz",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "homepage": "https://mark-henry-saft.github.io/https-grammar-quiz-/",
+    "dependencies": {
+        "lucide-react": "^0.309.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.43",
+        "@types/react-dom": "^18.2.17",
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.16",
+        "eslint": "^8.55.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "gh-pages": "^6.3.0",
+        "postcss": "^8.4.32",
+        "tailwindcss": "^3.4.0",
+        "vite": "^5.0.8"
+    }
+}
+``
+
+---
+
+## FILE: index.html
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grammar Quiz</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
+``
+
+---
+

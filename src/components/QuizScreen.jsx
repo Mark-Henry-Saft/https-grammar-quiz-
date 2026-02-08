@@ -348,7 +348,11 @@ export default function QuizScreen({ questionData, questionIndex, totalQuestions
                                             {feedbackState.correct ? randomPositive : (selectedAnswer === "TIMEOUT" ? "Time Out!" : 'Not Quite')}
                                         </h4>
                                         <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">
-                                            {questionData.explanation || (feedbackState.correct ? "Spot on! You mastered this rule." : "Study the rule above and try next time.")}
+                                            {feedbackState.correct
+                                                ? (questionData.explanation || "Spot on! You mastered this rule.")
+                                                : (selectedAnswer !== "TIMEOUT" && questionData.nuance && questionData.nuance[selectedAnswer]
+                                                    ? questionData.nuance[selectedAnswer]
+                                                    : (questionData.explanation || "Study the rule above and try next time."))}
                                         </p>
 
                                         {feedbackState.correct && questionData.category === "The Arsenal" && (
