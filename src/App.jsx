@@ -7,11 +7,11 @@ import grammarData from './grammar_data.json';
 import CheckpointScreen from './components/CheckpointScreen';
 import { Heart } from 'lucide-react';
 
-import clickSound from './assets/sounds/click_v2.wav';
+import clickSound from './assets/sounds/click_v3.wav';
 // import musicSound from './assets/sounds/music.mp3';
-import correctSound from './assets/sounds/correct_v2.wav';
-import incorrectSound from './assets/sounds/incorrect_v2.wav';
-import fanfareSound from './assets/sounds/fanfare_v2.wav';
+import correctSound from './assets/sounds/correct_v3.wav';
+import incorrectSound from './assets/sounds/incorrect_v3.wav';
+import fanfareSound from './assets/sounds/fanfare_v3.wav';
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState('start');
@@ -47,7 +47,7 @@ function App() {
 
     const playClick = () => {
         if (!isMuted) {
-            console.log("🔊 Playing Click Sound (click_v2.wav)");
+            console.log("🔊 Playing Click Sound (click_v3.wav)");
             const audio = new Audio(clickSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));
@@ -56,7 +56,7 @@ function App() {
 
     const playCorrect = () => {
         if (!isMuted) {
-            console.log("🔊 Playing Correct Sound (correct_v2.wav)");
+            console.log("🔊 Playing Correct Sound (correct_v3.wav)");
             const audio = new Audio(correctSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));
@@ -65,7 +65,7 @@ function App() {
 
     const playIncorrect = () => {
         if (!isMuted) {
-            console.log("🔊 Playing Incorrect Sound (incorrect_v2.wav)");
+            console.log("🔊 Playing Incorrect Sound (incorrect_v3.wav)");
             const audio = new Audio(incorrectSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));
@@ -74,7 +74,7 @@ function App() {
 
     const playFanfare = () => {
         if (!isMuted) {
-            console.log("🔊 Playing Fanfare Sound (fanfare_v2.wav)");
+            console.log("🔊 Playing Fanfare Sound (fanfare_v3.wav)");
             const audio = new Audio(fanfareSound);
             audio.volume = 0.7;
             audio.play().catch(e => console.error("Audio play failed", e));

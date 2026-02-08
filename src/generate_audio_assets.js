@@ -46,29 +46,55 @@ function createWav(fileName, duration, generator, volume = 0.5) {
     console.log(`Generated ${fileName}`);
 }
 
-// 1. Correct (Ding - Simple Sine + Decay)
-createWav('correct_v2.wav', 0.5, (t) => {
-    const f = 523.25; // C5 (Softer than 880Hz)
-    const decay = Math.exp(-8 * t);
+// 1. Correct (Double Ding - "Ding-Ding")
+createWav('correct_v3.wav', 0.6, (t) => {
+    // Two dings: 0.0s and 0.1s
+    // High C (C6) and even higher (E6) to sound like a service bell
+    const f1 = 1046.50; // C6
+    const f2 = 1318.51; // E6
+
+    let sample = 0;
+
+    // First Ding
+    const decay1 = Math.exp(-10 * t);
+    sample += Math.sin(2 * Math.PI * f1 * t) * decay1 * 0.5;
+
+    // Second Ding (delayed 100ms)
+    if (t > 0.1) {
+        const t2 = t - 0.1;
+        const decay2 = Math.exp(-10 * t2);
+        sample += Math.sin(2 * Math.PI * f2 * t2) * decay2 * 0.5;
+    }
+
+    return sample;
+}, 0.6);
+
+// 2. Incorrect (Fail - Distinct "Buzzer/Fail")
+createWav('incorrect_v3.wav', 0.6, (t) => {
+    // Descending Sawtooth/Square hybrid for a "Game Show Wrong Answer" feel
+    const startFreq = 150;
+    const endFreq = 100;
+    // Linear slide down
+    const currentFreq = startFreq - (startFreq - endFreq) * (t / 0.6);
+
+    const decay = Math.exp(-5 * t);
+
+    // Mix of sine (body) and square (grit)
+    const sine = Math.sin(2 * Math.PI * currentFreq * t);
+    const square = sine > 0 ? 1 : -1;
+
+    return (sine * 0.7 + square * 0.3) * decay;
+}, 0.7);
+
+// 3. Click (Crisp Tick) - Kept largely same but renamed
+createWav('click_v3.wav', 0.05, (t) => {
+    const f = 800;
+    const decay = Math.exp(-30 * t);
     return Math.sin(2 * Math.PI * f * t) * decay;
-}, 0.5);
+}, 0.6);
 
-// 2. Incorrect (Thud - Low Sine/Triangle + Fast Decay)
-createWav('incorrect_v2.wav', 0.4, (t) => {
-    const f = 60; // Low frequency thud
-    const decay = Math.exp(-15 * t); // Fast decay
-    return (Math.sin(2 * Math.PI * f * t) + 0.5 * Math.sin(2 * Math.PI * (f * 1.5) * t)) * decay;
-}, 0.8); // Increased volume from 0.6 to 0.8
-
-// 3. Click (Short, high-frequency tick)
-createWav('click_v2.wav', 0.05, (t) => {
-    const f = 800; // Lowered from 1200 for more "body"
-    const decay = Math.exp(-30 * t); // Slower decay for more audibility
-    return Math.sin(2 * Math.PI * f * t) * decay;
-}, 0.6); // Increased volume from 0.3 to 0.6
-
-// 4. Fanfare (Chime - Simple Sine Arpeggio)
-createWav('fanfare_v2.wav', 2.0, (t) => {
+// 4. Fanfare (Chime - Simple Sine Arpeggio) - Renamed
+createWav('fanfare_v3.wav', 2.0, (t) => {
     // Simple Arpeggio: C5, E5, G5, C6
     const notes = [523.25, 659.25, 783.99, 1046.50];
     const times = [0.0, 0.15, 0.3, 0.45];
