@@ -8,7 +8,7 @@ import CheckpointScreen from './components/CheckpointScreen';
 import { Heart } from 'lucide-react';
 
 import clickSound from './assets/sounds/click_v2.wav';
-import musicSound from './assets/sounds/music.mp3';
+// import musicSound from './assets/sounds/music.mp3';
 import correctSound from './assets/sounds/correct_v2.wav';
 import incorrectSound from './assets/sounds/incorrect_v2.wav';
 import fanfareSound from './assets/sounds/fanfare_v2.wav';
@@ -206,7 +206,7 @@ function App() {
     return (
         <div className="antialiased font-display min-h-screen flex items-center justify-center p-4">
             <div className="snake-border w-full max-w-md">
-                <audio id="bg-music" loop src={musicSound} />
+                {/* <audio id="bg-music" loop src={musicSound} /> */}
                 {currentScreen === 'start' && <StartScreen onStart={handleStart} onDailyStart={handleDailyStart} dailyStats={dailyStats} topScores={topScores} isMuted={isMuted} onToggleMute={toggleMute} playClick={playClick} isSupporter={isSupporter} />}
                 {currentScreen === 'quiz' && (
                     <QuizScreen
