@@ -47,21 +47,27 @@ function createWav(fileName, duration, generator, volume = 0.5) {
 }
 
 // 1. Correct (Ding - Simple Sine + Decay)
-createWav('correct_new.wav', 1.0, (t) => {
-    const f = 880; // A5
-    const decay = Math.exp(-6 * t);
+createWav('correct_new.wav', 0.5, (t) => {
+    const f = 523.25; // C5 (Softer than 880Hz)
+    const decay = Math.exp(-8 * t);
     return Math.sin(2 * Math.PI * f * t) * decay;
-}, 0.6);
+}, 0.5);
 
 // 2. Incorrect (Thud - Low Sine/Triangle + Fast Decay)
-createWav('incorrect_new.wav', 0.5, (t) => {
+createWav('incorrect_new.wav', 0.4, (t) => {
     const f = 60; // Low frequency thud
     const decay = Math.exp(-15 * t); // Fast decay
-    // Adding some harmonics for "thud" texture
     return (Math.sin(2 * Math.PI * f * t) + 0.5 * Math.sin(2 * Math.PI * (f * 1.5) * t)) * decay;
-}, 0.7);
+}, 0.6);
 
-// 3. Fanfare (Trumpet - brassy saw/clipped sine sequence)
+// 3. Click (Short, high-frequency tick)
+createWav('click_new.wav', 0.05, (t) => {
+    const f = 1200;
+    const decay = Math.exp(-50 * t);
+    return Math.sin(2 * Math.PI * f * t) * decay;
+}, 0.3);
+
+// 4. Fanfare (Trumpet - brassy saw/clipped sine sequence)
 createWav('fanfare.wav', 3.0, (t) => {
     // Melody: C4 (261), E4 (329), G4 (392), C5 (523)
     // Times: 0-0.2, 0.2-0.4, 0.4-0.6, 0.6-2.0
@@ -87,4 +93,4 @@ createWav('fanfare.wav', 3.0, (t) => {
     else env = 0.8 * Math.exp(-(localT - 0.1) * (t > 0.6 ? 2 : 10)); // Sustain/Release
 
     return v * env;
-}, 0.6);
+}, 0.5);

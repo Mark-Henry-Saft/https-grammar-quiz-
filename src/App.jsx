@@ -7,7 +7,7 @@ import grammarData from './grammar_data.json';
 import CheckpointScreen from './components/CheckpointScreen';
 import { Heart } from 'lucide-react';
 
-import clickSound from './assets/sounds/click.mp3';
+import clickSound from './assets/sounds/click_new.wav';
 import musicSound from './assets/sounds/music.mp3';
 import correctSound from './assets/sounds/correct_new.wav';
 import incorrectSound from './assets/sounds/incorrect_new.wav';
