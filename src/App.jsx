@@ -7,11 +7,11 @@ import grammarData from './grammar_data.json';
 import CheckpointScreen from './components/CheckpointScreen';
 import { Heart } from 'lucide-react';
 
-import clickSound from './assets/sounds/click_new.wav';
+import clickSound from './assets/sounds/click_v2.wav';
 import musicSound from './assets/sounds/music.mp3';
-import correctSound from './assets/sounds/correct_new.wav';
-import incorrectSound from './assets/sounds/incorrect_new.wav';
-import fanfareSound from './assets/sounds/fanfare_new.wav';
+import correctSound from './assets/sounds/correct_v2.wav';
+import incorrectSound from './assets/sounds/incorrect_v2.wav';
+import fanfareSound from './assets/sounds/fanfare_v2.wav';
 
 function App() {
     const [currentScreen, setCurrentScreen] = useState('start');

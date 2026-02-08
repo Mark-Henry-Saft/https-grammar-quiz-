@@ -47,28 +47,28 @@ function createWav(fileName, duration, generator, volume = 0.5) {
 }
 
 // 1. Correct (Ding - Simple Sine + Decay)
-createWav('correct_new.wav', 0.5, (t) => {
+createWav('correct_v2.wav', 0.5, (t) => {
     const f = 523.25; // C5 (Softer than 880Hz)
     const decay = Math.exp(-8 * t);
     return Math.sin(2 * Math.PI * f * t) * decay;
 }, 0.5);
 
 // 2. Incorrect (Thud - Low Sine/Triangle + Fast Decay)
-createWav('incorrect_new.wav', 0.4, (t) => {
+createWav('incorrect_v2.wav', 0.4, (t) => {
     const f = 60; // Low frequency thud
     const decay = Math.exp(-15 * t); // Fast decay
     return (Math.sin(2 * Math.PI * f * t) + 0.5 * Math.sin(2 * Math.PI * (f * 1.5) * t)) * decay;
-}, 0.6);
+}, 0.8); // Increased volume from 0.6 to 0.8
 
 // 3. Click (Short, high-frequency tick)
-createWav('click_new.wav', 0.05, (t) => {
-    const f = 1200;
-    const decay = Math.exp(-50 * t);
+createWav('click_v2.wav', 0.05, (t) => {
+    const f = 800; // Lowered from 1200 for more "body"
+    const decay = Math.exp(-30 * t); // Slower decay for more audibility
     return Math.sin(2 * Math.PI * f * t) * decay;
-}, 0.3);
+}, 0.6); // Increased volume from 0.3 to 0.6
 
 // 4. Fanfare (Chime - Simple Sine Arpeggio)
-createWav('fanfare_new.wav', 2.0, (t) => {
+createWav('fanfare_v2.wav', 2.0, (t) => {
     // Simple Arpeggio: C5, E5, G5, C6
     const notes = [523.25, 659.25, 783.99, 1046.50];
     const times = [0.0, 0.15, 0.3, 0.45];
